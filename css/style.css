@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== Variables ===== */
+:root {
+  --bg:        #1F1F1F;
+  --primary:   #FFFFFF;
+  --secondary: #00E8E8;
+  --max-width: 1500px;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Base ===== */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--bg);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Conteneur ===== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== Boutons globaux ===== */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.btn-outline-secondary {
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--secondary);
+  color: var(--bg);
+}
+
+/* Bouton filled secondaire → outline blanc au hover */
+.btn-secondary-filled {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--bg);
+}
+
+.btn-secondary-filled:hover {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ===== Titre de section ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;   /* même largeur que le texte du titre */
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+/* ===== Contenu principal ===== */
+main {
+  flex: 1;
+}

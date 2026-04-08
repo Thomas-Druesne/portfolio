@@ -1,0 +1,227 @@
+/* ============================================================
+   HEADER
+============================================================ */
+header {
+  width: 100%;
+  background-color: #111111;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Logo texte temporaire (en attendant logo-portfolio-white.png) */
+.logo-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+  font-style: italic;
+}
+
+.logo-text span {
+  color: var(--secondary);
+}
+
+/* Nav links */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+header nav a {
+  position: relative;
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+/* Trait progressif gauche → droite */
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.35s ease;
+}
+
+header nav a:hover {
+  color: var(--primary);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Bouton Mon CV */
+.btn-cv {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  color: var(--bg);
+  background: var(--primary);
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-cv:hover {
+  background: transparent;
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: var(--primary);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  width: 100%;
+  background-color: #111111;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  color: var(--secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.footer-linkedin img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.footer-linkedin:hover img {
+  opacity: 0.7;
+}
+
+/* ============================================================
+   RESPONSIVE HEADER / FOOTER
+============================================================ */
+
+/* Laptop — 1200px */
+@media (max-width: 1200px) {
+  header nav {
+    gap: 2rem;
+  }
+}
+
+/* Tablette — 900px */
+@media (max-width: 900px) {
+  .header-inner {
+    height: 70px;
+  }
+
+  .logo img {
+    width: 140px;
+    height: auto;
+  }
+
+  header nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    background-color: #111111;
+    z-index: 999;
+  }
+
+  header nav.open {
+    display: flex;
+  }
+
+  .btn-cv {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Mobile — 400px */
+@media (max-width: 400px) {
+  .header-inner {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  header nav {
+    top: 60px;
+  }
+
+  .footer-inner {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}

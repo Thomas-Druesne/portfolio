@@ -1,0 +1,668 @@
+/* ============================================================
+   PAGE D'ACCUEIL
+============================================================ */
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  padding: 5rem 2rem 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 560px;
+}
+
+.hero-greeting {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title span {
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Bouton 1 : fond #00E8E8 → outline blanc au hover */
+.btn-hero-primary {
+  background: var(--secondary);
+  color: var(--bg);
+  border: 2px solid var(--secondary);
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Bouton 2 : outline #00E8E8 → fond blanc au hover */
+.btn-hero-secondary {
+  background: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: var(--primary);
+  color: var(--bg);
+  border-color: var(--primary);
+}
+
+.hero-photo {
+  flex-shrink: 0;
+}
+
+.photo-placeholder {
+  width: 340px;
+  height: 340px;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hero-photo img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 4rem auto 0;
+}
+
+/* ============================================================
+   MES PROJETS
+============================================================ */
+.projets {
+  padding: 5rem 2rem;
+}
+
+/* Titre double trait */
+.section-title--lines {
+  font-size: 3rem;        /* 48px */
+  padding-top: 0.75rem;
+}
+
+.section-title--lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* même largeur que le texte du titre */
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+/* Grid : 832px + 398px, centrée */
+.projets-grid {
+  display: grid;
+  grid-template-columns: 832px 398px;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+/* Card base */
+.projet-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 380px;        /* hauteur uniforme pour toutes les cards */
+}
+
+.projet-card--large  { background: #FFFFFF; }
+.projet-card--small  { background: #F0EAE0; }
+.projet-card--dinamic {
+  grid-column: 1 / -1;
+  width: 832px;
+  margin-left: auto;    /* alignée à droite */
+  background: #7EECEA;
+}
+
+/* Image : remplit exactement la card, sans déborder */
+.projet-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* affiche l'image entière sans couper */
+  display: block;
+}
+
+/* Overlay hover — couvre exactement la card (inset: 0) */
+.projet-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 237, 237, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.8rem 2rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.projet-card:hover .projet-overlay {
+  opacity: 1;
+}
+
+.projet-overlay h3 {
+  font-size: 2rem;      /* 32px */
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.projet-overlay p {
+  font-size: 1.5rem;    /* 24px */
+  font-weight: 500;
+  color: #111111;
+}
+
+/* Voir plus */
+.projets-more {
+  text-align: center;
+}
+
+.projets-more p {
+  color: var(--primary);
+  font-size: 1.5rem;     /* 24px */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   MON BOOK GRAPHIQUE
+============================================================ */
+.book {
+  background: #111111;
+  padding: 5rem 2rem;
+}
+
+.book-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* 1/3 image */
+.book-img {
+  flex: 1;
+}
+
+.book-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.book-img img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2/3 texte */
+.book-content {
+  flex: 2;
+}
+
+.book-content h2 {
+  font-size: 3rem;        /* 48px */
+  font-weight: 800;
+  color: var(--primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+
+.book-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.book-content h3 {
+  font-size: 1.5rem;      /* 24px */
+  font-weight: 700;
+  color: var(--secondary);
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.book-content p {
+  font-size: 1rem;
+  color: var(--primary);
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+}
+
+.book-content p strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.book-content .btn {
+  margin-top: 1rem;
+}
+
+/* ============================================================
+   MES COMPÉTENCES
+============================================================ */
+.competences {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.competences-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.competence-card {
+  background: #2a2a2a;
+  padding: 2rem 1.5rem;
+}
+
+.competence-picto {
+  margin-bottom: 1rem;
+}
+
+.competence-picto img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Placeholder picto quand l'image manque */
+.competence-picto-placeholder {
+  width: 40px;
+  height: 40px;
+  background: var(--secondary);
+  opacity: 0.4;
+  border-radius: 4px;
+}
+
+.competence-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.competence-card p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   MON PARCOURS PROFESSIONNEL
+============================================================ */
+.parcours {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 2.5rem 2.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--secondary);
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+}
+
+.timeline-content h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+}
+
+.parcours-more {
+  text-align: center;
+}
+
+/* ============================================================
+   MES OUTILS
+============================================================ */
+.outils {
+  background: #161616;
+  padding: 5rem 2rem;
+}
+
+.outils-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.outils-text {
+  flex: 0 0 340px;
+}
+
+.outils-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.outils-text h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+}
+
+.outils-text p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+}
+
+.outils-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1rem;
+}
+
+.outil-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.outil-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+.outil-placeholder {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.outil-item span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE — INDEX
+============================================================ */
+
+/* Laptop — 1200px */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .photo-placeholder,
+  .hero-photo img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .competences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .outils-inner {
+    gap: 3rem;
+  }
+
+  .outils-text {
+    flex: 0 0 280px;
+  }
+
+  /* Projets : passe en ratio 2fr/1fr */
+  .projets-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .projet-card--dinamic {
+    width: 66.7%;
+  }
+}
+
+/* Tablette — 900px */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 2.5rem;
+  }
+
+  .photo-placeholder,
+  .hero-photo img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .book-inner {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .outils-inner {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .outils-text {
+    flex: none;
+    width: 100%;
+  }
+
+  .outils-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Projets tablette : 1 colonne */
+  .projets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projet-card--large,
+  .projet-card--small,
+  .projet-card--dinamic {
+    width: 100% !important;
+    height: 280px;
+    margin-left: 0;
+    grid-column: auto;
+  }
+}
+
+/* Mobile — 400px */
+@media (max-width: 400px) {
+  .hero {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .photo-placeholder,
+  .hero-photo img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .projets {
+    padding: 3rem 1rem;
+  }
+
+  .projet-card--large,
+  .projet-card--small,
+  .projet-card--dinamic {
+    height: 200px;
+  }
+
+  .section-title--lines {
+    font-size: 2rem;
+  }
+
+  .competences-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outils-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .book {
+    padding: 3rem 1rem;
+  }
+
+  .book-placeholder,
+  .book-img img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .parcours {
+    padding: 3rem 1rem;
+  }
+
+  .outils {
+    padding: 3rem 1rem;
+  }
+}
