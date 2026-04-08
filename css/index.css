@@ -270,20 +270,10 @@
   font-size: 3rem;        /* 48px */
   font-weight: 800;
   color: var(--primary);
+  display: inline-block;
+  border-bottom: 3px solid var(--secondary);
   padding-bottom: 0.5rem;
   margin-bottom: 0.6rem;
-  position: relative;
-}
-
-.book-content h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--secondary);
-  border-radius: 2px;
 }
 
 .book-content h3 {
@@ -315,8 +305,10 @@
 ============================================================ */
 .competences {
   padding: 5rem 2rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
+}
+
+.competences .section-title {
+  font-size: 3rem;        /* 48px */
 }
 
 .competences-grid {
@@ -326,8 +318,15 @@
 }
 
 .competence-card {
-  background: #2a2a2a;
+  background: #111111;
   padding: 2rem 1.5rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.competence-card:hover {
+  box-shadow: 0 0 20px rgba(0, 237, 237, 0.3);  /* halo cyan subtil */
 }
 
 .competence-picto {
@@ -335,16 +334,16 @@
 }
 
 .competence-picto img {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   display: block;
 }
 
 /* Placeholder picto quand l'image manque */
 .competence-picto-placeholder {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   background: var(--secondary);
   opacity: 0.4;
   border-radius: 4px;
@@ -359,7 +358,7 @@
 
 .competence-card p {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--primary);
   line-height: 1.7;
 }
 
