@@ -5,14 +5,14 @@ const timeline = document.querySelector('.timeline');
 
 if (timeline) {
   function checkTimelineScroll() {
-    // Calculer le pourcentage du scroll
+    // Obtenir la position de la timeline dans le viewport
+    const timelineRect = timeline.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight - windowHeight;
-    const scrolled = window.scrollY;
-    const scrollPercent = (scrolled / documentHeight) * 100;
 
-    // Activer la timeline à 30% du scroll
-    if (scrollPercent >= 30) {
+    // Activer la timeline quand elle atteint 30% de la hauteur du viewport
+    const triggerPoint = windowHeight * 0.7;  // 70% de la hauteur (30% du bas)
+
+    if (timelineRect.top <= triggerPoint) {
       timeline.classList.add('active');
     } else {
       timeline.classList.remove('active');
