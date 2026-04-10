@@ -397,8 +397,8 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 6px;
-  bottom: 6px;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: var(--secondary);
   opacity: 0.25;
