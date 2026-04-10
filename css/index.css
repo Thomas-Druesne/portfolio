@@ -410,7 +410,7 @@
 
 .timeline-item {
   position: relative;
-  padding: 0 0 2.5rem 2.5rem;
+  padding: 0 0 4rem 3rem;
 }
 
 .timeline-item:last-child {
@@ -419,8 +419,8 @@
 
 .timeline-dot {
   position: absolute;
-  left: -6px;
-  top: 6px;
+  left: -8px;
+  top: 0;
   width: 14px;
   height: 14px;
   background: var(--secondary);
@@ -438,7 +438,7 @@
   font-weight: 800;
   color: var(--primary);
   letter-spacing: 0.03em;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-date {
@@ -535,7 +535,7 @@
 .outil-placeholder {
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #1F1F1F;
   border-radius: 8px;
 }
 
