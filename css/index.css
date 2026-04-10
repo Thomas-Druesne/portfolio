@@ -305,6 +305,8 @@
 ============================================================ */
 .competences {
   padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .competences .section-title {
@@ -314,7 +316,7 @@
 .competences-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;              /* 32px */
 }
 
 .competence-card {
@@ -334,16 +336,16 @@
 }
 
 .competence-picto img {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   display: block;
 }
 
 /* Placeholder picto quand l'image manque */
 .competence-picto-placeholder {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: var(--secondary);
   opacity: 0.4;
   border-radius: 4px;
@@ -528,6 +530,7 @@
 
   .competences-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;            /* 24px */
   }
 
   .outils-inner {
@@ -594,6 +597,11 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .competences-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;            /* 24px */
+  }
+
   /* Projets tablette : 1 colonne */
   .projets-grid {
     grid-template-columns: 1fr;
@@ -641,6 +649,7 @@
 
   .competences-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;              /* 16px */
   }
 
   .outils-grid {
