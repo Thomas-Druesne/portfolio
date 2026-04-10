@@ -127,13 +127,27 @@
 /* Titre double trait */
 .section-title--lines {
   font-size: 3rem;        /* 48px */
+  display: inline-block;
+  position: relative;
   padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .section-title--lines::before {
   content: '';
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;   /* même largeur que le texte du titre */
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.section-title--lines::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;   /* même largeur que le texte du titre */
   height: 3px;
