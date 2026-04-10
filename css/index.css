@@ -424,7 +424,7 @@
 
 .timeline-dot {
   position: absolute;
-  left: -8px;
+  left: -7px;
   top: 0;
   width: 14px;
   height: 14px;
@@ -488,7 +488,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .outils-text h3 {
