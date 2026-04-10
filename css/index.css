@@ -182,6 +182,10 @@
   background: #7EECEA;
 }
 
+.projet-card--dinamic img {
+  object-fit: cover;    /* remplit la card sans laisser d'espaces */
+}
+
 /* Image : remplit exactement la card, sans déborder */
 .projet-card img {
   position: absolute;
