@@ -148,6 +148,7 @@ footer {
   height: 25px;
   display: block;
   transition: opacity 0.2s;
+  margin: 16px 0;
 }
 
 .footer-linkedin:hover img {
