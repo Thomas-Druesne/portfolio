@@ -407,6 +407,7 @@
   background: var(--secondary);
   opacity: 0.25;
   transition: opacity 0.6s ease;
+  z-index: 1;
 }
 
 .timeline.active::before {
@@ -424,7 +425,7 @@
 
 .timeline-dot {
   position: absolute;
-  left: -7px;
+  left: -6px;
   top: 0;
   width: 14px;
   height: 14px;
@@ -432,10 +433,11 @@
   border-radius: 50%;
   border: 2px solid var(--bg);
   transition: background 0.6s ease;
+  z-index: 2;
 }
 
 .timeline.active .timeline-dot {
-  background: var(--primary);
+  background: var(--secondary);
 }
 
 .timeline-content h3 {
