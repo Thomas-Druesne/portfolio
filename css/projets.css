@@ -1,1 +1,628 @@
-/* Styles spécifiques à la page Projets */
+/* ============================================================
+   PAGE PROJETS — MES RÉALISATIONS
+
+   SPACING SYSTEM: 4px grid
+   Base unit: 0.25rem = 4px
+   All spacing, fonts, and dimensions follow multiples of 4px:
+   - 0.75rem (12px), 1rem (16px), 1.25rem (20px), 1.5rem (24px)
+   - 2rem (32px), 2.5rem (40px), 3rem (48px), 4rem (64px), 5rem (80px)
+
+   BREAKPOINTS: 1200px (laptop), 900px (tablet), 400px (mobile)
+============================================================ */
+
+/* ============================================================
+   SECTION WRAPPER
+============================================================ */
+.realisations {
+  padding: 5rem 0;
+}
+
+/* ============================================================
+   TITRE + INTRO — pleine largeur du container (1200px)
+============================================================ */
+.realisations-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.realisations-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.realisations-intro {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.2em;
+  margin-bottom: 5rem;
+  /* pleine largeur du container, pas de cap */
+}
+
+/* ============================================================
+   LISTE DES PROJETS
+============================================================ */
+.realisations-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   ITEM PROJET
+   - max-width 780px
+   - cercle 340px en absolu, DERRIÈRE la card (z-index 1)
+   - card z-index 2, décalée pour créer le chevauchement
+   - --left : aligné sur le bord gauche du container
+   - --right : aligné sur le bord droit du container
+============================================================ */
+.realisation {
+  position: relative;
+  max-width: 780px;
+  /* min-height pour que le cercle (340px) soit contenu même si la card est courte */
+  min-height: 440px;
+  margin-bottom: 5rem;
+}
+
+/* Projet 1 & 3 : serré sur la gauche */
+.realisation--left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Projet 2 : serré sur la droite */
+.realisation--right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* ============================================================
+   CERCLE LOGO — derrière la card (z-index 1)
+============================================================ */
+.realisation-circle {
+  position: absolute;
+  top: 0;
+  width: 340px;
+  height: 340px;
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  z-index: 1;
+}
+
+.realisation-circle img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  display: block;
+}
+
+.realisation-circle .logo-square {
+  width: 150px;
+  height: 150px;
+}
+
+/* Cercle gauche */
+.realisation--left .realisation-circle {
+  left: 0;
+}
+
+/* Cercle droit */
+.realisation--right .realisation-circle {
+  right: 0;
+}
+
+/* ============================================================
+   CARD PROJET — devant le cercle (z-index 2)
+   Le cercle perce au-dessus et sur le côté opposé à la card.
+   Chevauchement horizontal : 340 - 160 = 180px
+   Chevauchement vertical   : 340 - 160 = 180px (bas du cercle)
+============================================================ */
+.realisation-card {
+  background: #111111;
+  border-radius: 8px;
+  padding: 2rem 2rem 2.5rem;
+  position: relative;
+  z-index: 2;
+  /* ~75% du cercle (340px) reste visible au-dessus de la card */
+  margin-top: 260px;
+}
+
+/* Card décalée à droite (layout cercle-gauche) */
+.realisation--left .realisation-card {
+  margin-left: 160px;
+}
+
+/* Card décalée à gauche (layout cercle-droit) */
+.realisation--right .realisation-card {
+  margin-right: 160px;
+}
+
+/* ============================================================
+   CONTENU CARD
+============================================================ */
+.realisation-card-title {
+  font-size: 1.5rem;       /* 24px */
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.realisation-card p {
+  font-size: 1rem;         /* 16px */
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.2em;
+  margin-bottom: 0.75rem;
+}
+
+.realisation-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.realisation-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   BOUTON "VOIR LE SITE WEB"
+   Cyan (#00E8E8) de base → blanc (#ffffff) au hover, fluide
+============================================================ */
+.btn-voir-site {
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-voir-site:hover {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ============================================================
+   CTA BAS DE PAGE
+============================================================ */
+.realisations-cta {
+  text-align: center;
+  padding: 2rem 0 3rem;
+}
+
+.realisations-cta p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   RESPONSIVE — 1200px (laptop)
+============================================================ */
+@media (max-width: 1200px) {
+  .realisation {
+    max-width: 700px;
+  }
+
+  .realisations-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 900px (tablette)
+   Empilage vertical : cercle centré, card centrée de même largeur
+============================================================ */
+@media (max-width: 900px) {
+  .realisations {
+    padding: 4rem 0;
+  }
+
+  .realisations-title {
+    font-size: 2rem;
+  }
+
+  .realisations-intro {
+    margin-bottom: 3rem;
+  }
+
+  /* Colonne centrée, plus de positioning absolu */
+  .realisation {
+    position: static;
+    min-height: unset;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* largeur = cercle (340px) + padding card */
+    max-width: 400px;
+  }
+
+  .realisation-circle {
+    position: static;
+    flex-shrink: 0;
+    /* légère remontée pour rester visuellement lié à la card */
+    margin-bottom: -2rem;
+    z-index: 2;
+  }
+
+  .realisation-card {
+    margin-top: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    /* card = même largeur que l'item = même axe que le cercle */
+    width: 100%;
+    max-width: 100%;
+    /* le cercle passe devant au tablet en chevauchant légèrement */
+    z-index: 1;
+    padding-top: 3rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 400px (mobile)
+============================================================ */
+@media (max-width: 400px) {
+  .realisations {
+    padding: 3rem 0;
+  }
+
+  .realisations-title {
+    font-size: 1.75rem;
+  }
+
+  .realisation {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .realisation-circle {
+    width: 260px;
+    height: 260px;
+    margin-bottom: -1.5rem;
+  }
+
+  .realisation-circle img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .realisation-circle .logo-square {
+    width: 120px;
+    height: 120px;
+  }
+
+  .realisation-card {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .realisation-btns {
+    flex-direction: column;
+  }
+
+  .realisation-btns .btn {
+    text-align: center;
+  }
+
+  .realisations-cta p {
+    font-size: 1.25rem;
+  }
+}
+
+/* ============================================================
+   MODALE INZERTY
+   Overlay fixe noir 50% + boîte 1200px centrée
+   Animation : opacity + translateY fluide — aucune scrollbar interne
+============================================================ */
+
+/* ----- Overlay ----- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;           /* l'overlay scrolle si besoin, jamais la modale */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ----- Boîte modale — aucune scrollbar interne ----- */
+.modal {
+  background: #111111;
+  border: 1px solid #00E8E8;
+  border-radius: 8px;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  /* padding-top plus grand pour dégager la croix en haut à droite */
+  padding: 4rem 3rem 3rem;
+  margin: auto;
+  /* Animation d'entrée */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.modal-overlay.is-open .modal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Croix fermante — positionnée à la diagonale du coin ----- */
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background: var(--secondary);
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.modal-close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.modal-close::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.modal-close:hover::before,
+.modal-close:hover::after { background: var(--primary); }
+
+/* ----- Layout intérieur : col principale + image 450px fixe ----- */
+.modal-inner {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ----- Titre principal ----- */
+.modal-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2em;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* ----- Paragraphes de description ----- */
+.modal-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.2em;
+  margin-bottom: 0.75rem;
+}
+
+/* ----- Grille Technicité / Outils côte à côte ----- */
+.modal-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* ----- Titre de section (Technicité / Outils / Date) ----- */
+.modal-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1.2em;
+}
+
+.modal-detail-title img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ----- Liste Technicité ----- */
+.modal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-list li {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.2em;
+}
+
+.modal-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0.25rem;
+  color: var(--secondary);
+  font-size: 1.25rem;
+  line-height: 1.2em;
+}
+
+/* ----- Rangée icônes Outils (30px) ----- */
+.modal-tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.modal-tools-row img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ----- Date ----- */
+.modal-date-block {
+  margin-bottom: 2rem;
+}
+
+.modal-date-value {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.2em;
+  padding-left: calc(25px + 0.75rem);
+}
+
+/* ----- Boutons ----- */
+.modal-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ----- Colonne droite : image 450×450 sur fond blanc ----- */
+.modal-col-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal-img-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 450px;
+  height: 450px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.modal-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE MODALE — 1200px (laptop)
+============================================================ */
+@media (max-width: 1200px) {
+  .modal-inner {
+    grid-template-columns: 1fr 360px;
+  }
+
+  .modal-img-wrapper {
+    width: 360px;
+    height: 360px;
+  }
+
+  .modal-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE MODALE — 900px (tablette)
+   Une seule colonne, image centrée en premier
+============================================================ */
+@media (max-width: 900px) {
+  .modal-overlay {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .modal {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .modal-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-col-side {
+    order: -1;
+    justify-content: center;
+  }
+
+  .modal-img-wrapper {
+    width: 100%;
+    height: 260px;
+    padding: 1.5rem;
+  }
+
+  .modal-details-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE MODALE — 400px (mobile)
+============================================================ */
+@media (max-width: 400px) {
+  .modal {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .modal-btns {
+    flex-direction: column;
+  }
+
+  .modal-btns .btn {
+    text-align: center;
+  }
+}

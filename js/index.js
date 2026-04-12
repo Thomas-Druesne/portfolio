@@ -1,27 +1,34 @@
 // JavaScript spécifique à la page Accueil
 
-// Effet de scroll sur la timeline du parcours
+// Effet de jauge sur la timeline du parcours
 const timeline = document.querySelector('.timeline');
 
 if (timeline) {
-  function checkTimelineScroll() {
-    // Obtenir la position de la timeline dans le viewport
-    const timelineRect = timeline.getBoundingClientRect();
+  const dots = timeline.querySelectorAll('.timeline-dot');
+
+  function updateTimeline() {
+    const rect = timeline.getBoundingClientRect();
     const windowHeight = window.innerHeight;
+    const midpoint = windowHeight * 0.5;
+    const timelineHeight = rect.bottom - rect.top;
 
-    // Activer la timeline quand elle atteint 30% de la hauteur du viewport
-    const triggerPoint = windowHeight * 0.7;  // 70% de la hauteur (30% du bas)
+    // Progression du remplissage :
+    // 0% quand le haut de la timeline est au milieu de l'écran
+    // 100% quand le bas de la timeline est au milieu de l'écran
+    const fillProgress = Math.min(1, Math.max(0, (midpoint - rect.top) / timelineHeight));
 
-    if (timelineRect.top <= triggerPoint) {
-      timeline.classList.add('active');
-    } else {
-      timeline.classList.remove('active');
-    }
+    timeline.style.setProperty('--fill-percent', `${fillProgress * 100}%`);
+
+    // Chaque point devient blanc quand le niveau de remplissage l'atteint
+    dots.forEach(dot => {
+      const dotRect = dot.getBoundingClientRect();
+      const dotCenter = dotRect.top + dotRect.height / 2;
+      const dotRelativePos = (dotCenter - rect.top) / timelineHeight;
+
+      dot.style.background = fillProgress >= dotRelativePos ? '#ffffff' : 'var(--secondary)';
+    });
   }
 
-  // Écouter l'événement scroll
-  window.addEventListener('scroll', checkTimelineScroll);
-
-  // Vérifier au chargement de la page
-  checkTimelineScroll();
+  window.addEventListener('scroll', updateTimeline);
+  updateTimeline();
 }

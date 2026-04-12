@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
 
+/* ============================================================
+   GLOBAL STYLES - SPACING SYSTEM
+
+   This portfolio uses a 4px grid-based spacing system.
+   Base unit: 0.25rem = 4px (html font-size: 16px)
+
+   Standardized values:
+   - Font sizes: 0.75rem, 1rem, 1.25rem, 1.5rem, 2rem, 2.5rem, 3rem, 4rem
+   - Spacing: 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 2rem, 2.5rem, 3rem, etc.
+   - Gaps: same as spacing values
+
+   Design Tokens:
+   - --bg: #1F1F1F (dark background)
+   - --primary: #FFFFFF (white text/borders)
+   - --secondary: #00E8E8 (cyan accent)
+   - --max-width: 1200px (container max-width)
+
+   Responsive Breakpoints:
+   - Desktop: 1200px+
+   - Laptop: 1200px
+   - Tablet: 900px
+   - Mobile: 400px
+============================================================ */
+
 /* ===== Variables ===== */
 :root {
   --bg:        #1F1F1F;
@@ -28,6 +52,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.2em;
 }
 
 /* ===== Conteneur ===== */
@@ -41,10 +66,10 @@ body {
 /* ===== Boutons globaux ===== */
 .btn {
   display: inline-block;
-  padding: 0.65rem 1.6rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-family: 'Raleway', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.02em;
@@ -75,7 +100,7 @@ body {
   color: var(--bg);
 }
 
-/* Bouton filled secondaire → outline blanc au hover */
+/* Bouton filled secondaire → fond blanc au hover */
 .btn-secondary-filled {
   background: var(--secondary);
   border-color: var(--secondary);
@@ -83,9 +108,9 @@ body {
 }
 
 .btn-secondary-filled:hover {
-  background: transparent;
+  background: var(--primary);
   border-color: var(--primary);
-  color: var(--primary);
+  color: var(--bg);
 }
 
 /* ===== Titre de section ===== */

@@ -1,5 +1,13 @@
 /* ============================================================
    PAGE D'ACCUEIL
+
+   SPACING SYSTEM: 4px grid
+   Base unit: 0.25rem = 4px
+   All spacing, fonts, and dimensions follow multiples of 4px:
+   - 0.75rem (12px), 1rem (16px), 1.25rem (20px), 1.5rem (24px)
+   - 2rem (32px), 2.5rem (40px), 3rem (48px), 4rem (64px), 5rem (80px)
+
+   BREAKPOINTS: 1200px (laptop), 900px (tablet), 400px (mobile)
 ============================================================ */
 
 /* ============================================================
@@ -33,7 +41,7 @@
 .hero-title {
   font-size: 4rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.2em;
   color: var(--primary);
   margin-bottom: 1.5rem;
 }
@@ -44,9 +52,9 @@
 }
 
 .hero-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.7;
+  line-height: 1.2em;
   margin-bottom: 2.5rem;
 }
 
@@ -204,7 +212,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.8rem 2rem;
+  padding: 2rem;
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -217,7 +225,7 @@
   font-size: 2rem;      /* 32px */
   font-weight: 800;
   color: #111111;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
 }
 
@@ -299,14 +307,14 @@
   font-weight: 700;
   color: var(--secondary);
   margin-top: 1rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.25rem;
 }
 
 .book-content p {
   font-size: 1rem;
   color: var(--primary);
-  line-height: 1.8;
-  margin-bottom: 0.9rem;
+  line-height: 1.2em;
+  margin-bottom: 1rem;
 }
 
 .book-content p strong {
@@ -370,16 +378,16 @@
 }
 
 .competence-card h3 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.75rem;
 }
 
 .competence-card p {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--primary);
-  line-height: 1.7;
+  line-height: 1.2em;
 }
 
 /* ============================================================
@@ -401,18 +409,12 @@
 .timeline::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -2px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: var(--secondary);
-  opacity: 0.25;
-  transition: opacity 0.6s ease;
+  width: 4px;
+  background: linear-gradient(to bottom, #ffffff var(--fill-percent, 0%), var(--secondary) var(--fill-percent, 0%));
   z-index: -1;
-}
-
-.timeline.active::before {
-  opacity: 1;
 }
 
 .timeline-item {
@@ -426,19 +428,15 @@
 
 .timeline-dot {
   position: absolute;
-  left: -6px;
+  left: -10px;
   top: 0;
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
   background: var(--secondary);
   border-radius: 50%;
   border: 2px solid var(--bg);
-  transition: background 0.6s ease;
+  transition: background 0.15s ease;
   z-index: 1;
-}
-
-.timeline.active .timeline-dot {
-  background: var(--secondary);
 }
 
 .timeline-content h3 {
@@ -460,7 +458,7 @@
 .timeline-content p {
   font-size: 1rem;          /* 16px */
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.7;
+  line-height: 1.2em;
 }
 
 .parcours-more {
@@ -498,15 +496,15 @@
   font-size: 1rem;
   font-weight: 700;
   color: var(--secondary);
-  margin-bottom: 1.2rem;
-  line-height: 1.4;
+  margin-bottom: 1.25rem;
+  line-height: 1.2em;
 }
 
 .outils-text p {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.8;
-  margin-bottom: 0.9rem;
+  line-height: 1.2em;
+  margin-bottom: 1rem;
 }
 
 .outils-grid {
@@ -521,7 +519,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   background: #1F1F1F;
   padding: 2rem 1.5rem;
   border-radius: 8px;
@@ -549,7 +547,7 @@
 }
 
 .outil-item span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--primary);
   text-align: center;
@@ -562,7 +560,7 @@
 /* Laptop — 1200px */
 @media (max-width: 1200px) {
   .hero-title {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
   }
 
   .photo-placeholder,
@@ -596,6 +594,30 @@
 
 /* Tablette — 900px */
 @media (max-width: 900px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+
+  .projets {
+    padding: 4rem 2rem;
+  }
+
+  .book {
+    padding: 4rem 2rem;
+  }
+
+  .competences {
+    padding: 4rem 2rem;
+  }
+
+  .parcours {
+    padding: 4rem 2rem;
+  }
+
+  .outils {
+    padding: 4rem 2rem;
+  }
+
   .hero-inner {
     flex-direction: column-reverse;
     gap: 2.5rem;

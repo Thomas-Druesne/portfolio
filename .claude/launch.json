@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "/c/Users/Thomas/AppData/Local/Microsoft/WindowsApps/python3",
+      "runtimeExecutable": "C:/Users/Thomas/AppData/Local/Microsoft/WindowsApps/python3",
       "runtimeArgs": ["-m", "http.server", "3000"],
       "port": 3000
     }
