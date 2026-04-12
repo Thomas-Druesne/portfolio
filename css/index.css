@@ -393,8 +393,9 @@
 
 .timeline {
   position: relative;
-  padding-left: 2rem;
-  margin-bottom: 3rem;
+  padding-left: 0;
+  margin: 0 auto 3rem;
+  width: fit-content;
 }
 
 .timeline::before {
