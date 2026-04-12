@@ -477,7 +477,7 @@
   margin: 0 auto;
   display: flex;
   gap: 5rem;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .outils-text {
