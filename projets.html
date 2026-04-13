@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
   <link rel="stylesheet" href="css/projets.css" />
+  <link rel="stylesheet" href="css/modal-inzerty.css" />
 </head>
 <body>
 
@@ -90,7 +91,7 @@
                 de l'E2C Grand-Lille.
               </p>
               <div class="realisation-btns">
-                <a href="#" class="btn btn-secondary-filled">En savoir plus</a>
+                <button class="btn btn-secondary-filled" id="btn-open-e2c" aria-haspopup="dialog">En savoir plus</button>
                 <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
               </div>
             </div>
@@ -115,7 +116,7 @@
                 de Dinamic.
               </p>
               <div class="realisation-btns">
-                <a href="#" class="btn btn-secondary-filled">En savoir plus</a>
+                <button class="btn btn-secondary-filled" id="btn-open-dinamic" aria-haspopup="dialog">En savoir plus</button>
                 <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
               </div>
             </div>
@@ -236,7 +237,180 @@
     </div><!-- /.modal -->
   </div><!-- /.modal-overlay#modal-inzerty -->
 
+  <!-- ================================================
+       MODALE — E2C Grand-Lille
+  ================================================ -->
+  <div class="modal-overlay" id="modal-e2c" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-e2c-title">
+    <div class="modal">
+
+      <!-- Bouton fermer -->
+      <button class="modal-close" id="btn-close-e2c" aria-label="Fermer la modale"></button>
+
+      <!-- Corps : 2 colonnes -->
+      <div class="modal-inner">
+
+        <!-- ── Colonne gauche ── -->
+        <div class="modal-col-main">
+
+          <h2 class="modal-title" id="modal-e2c-title">Refonte complète du site web de l'E2C Grand-Lille</h2>
+
+          <p class="modal-desc">
+            La refonte du site web de l'E2C Grand-Lille répond à un besoin de modernisation et de meilleure
+            valorisation de ses missions. L'ancienne version manquait de clarté et ne mettait pas suffisamment
+            en avant l'accompagnement proposé aux jeunes ni la diversité des parcours.
+          </p>
+          <p class="modal-desc">
+            Au-delà d'un design actualisé et d'une expérience utilisateur améliorée, l'objectif était de
+            structurer les contenus pour mieux refléter les actions de l'école. Cette refonte propose ainsi
+            une interface plus claire, moderne et accessible, facilitant la compréhension et renforçant
+            l'attractivité auprès des jeunes, des entreprises et des partenaires.
+          </p>
+
+          <div class="modal-details-grid">
+
+            <div class="modal-detail-block">
+              <h3 class="modal-detail-title">
+                <img src="img/picto_technicité_modale.png" alt="" />
+                Technicité
+              </h3>
+              <ul class="modal-list">
+                <li>Intégration</li>
+                <li>Responsive</li>
+                <li>Retouche d'image</li>
+              </ul>
+            </div>
+
+            <div class="modal-detail-block">
+              <h3 class="modal-detail-title">
+                <img src="img/picto_outils.png" alt="" />
+                Outils
+              </h3>
+              <div class="modal-tools-row">
+                <img src="img/picto_wordpress.png" alt="WordPress" title="WordPress" />
+                <img src="img/picto_html.png"      alt="HTML5"     title="HTML5" />
+                <img src="img/picto_css.png"       alt="CSS3"      title="CSS3" />
+                <img src="img/picto_js.png"        alt="JavaScript" title="JavaScript" />
+                <img src="img/picto_chatgpt.png"   alt="ChatGPT"   title="ChatGPT" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-date-block">
+            <h3 class="modal-detail-title">
+              <img src="img/picto_date.png" alt="" />
+              Date de mise en ligne
+            </h3>
+            <p class="modal-date-value">Avril 2026</p>
+          </div>
+
+          <div class="modal-btns">
+            <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&t=zUaQqvaAB9L7t0k9-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
+            <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+          </div>
+
+        </div><!-- /.modal-col-main -->
+
+        <!-- ── Colonne droite : image projet ── -->
+        <div class="modal-col-side">
+          <div class="modal-img-wrapper modal-img-wrapper--beige">
+            <img src="img/img_modale_e2C.png" alt="Aperçu du site E2C Grand-Lille" />
+          </div>
+        </div>
+
+      </div><!-- /.modal-inner -->
+    </div><!-- /.modal -->
+  </div><!-- /.modal-overlay#modal-e2c -->
+
+  <!-- ================================================
+       MODALE — Dinamic
+  ================================================ -->
+  <div class="modal-overlay" id="modal-dinamic" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-dinamic-title">
+    <div class="modal">
+
+      <button class="modal-close" id="btn-close-dinamic" aria-label="Fermer la modale"></button>
+
+      <div class="modal-inner">
+
+        <!-- ── Colonne gauche ── -->
+        <div class="modal-col-main">
+
+          <h2 class="modal-title" id="modal-dinamic-title">Refonte du site web de Dinamic</h2>
+
+          <p class="modal-desc">
+            La refonte du site web de Dinamic répond à un besoin de modernisation et de clarification
+            de ses services. L'ancienne version ne reflétait plus pleinement l'expertise de l'entreprise ni
+            la diversité de ses prestations, avec un manque de lisibilité dans l'organisation des contenus.
+          </p>
+          <p class="modal-desc">
+            Au-delà d'un design actualisé et d'une expérience utilisateur optimisée, l'objectif était de
+            structurer clairement les différentes offres afin de mieux valoriser le savoir-faire de
+            Dinamic. Cette refonte propose ainsi une interface plus claire, moderne et responsive,
+            facilitant la compréhension des services et améliorant l'expérience des utilisateurs.
+          </p>
+
+          <div class="modal-details-grid">
+
+            <div class="modal-detail-block">
+              <h3 class="modal-detail-title">
+                <img src="img/picto_technicité_modale.png" alt="" />
+                Technicité
+              </h3>
+              <ul class="modal-list">
+                <li>Maquettage</li>
+                <li>Prototypage</li>
+                <li>Intégration</li>
+                <li>Responsive</li>
+                <li>UI/UX</li>
+              </ul>
+            </div>
+
+            <div class="modal-detail-block">
+              <h3 class="modal-detail-title">
+                <img src="img/picto_outils.png" alt="" />
+                Outils
+              </h3>
+              <div class="modal-tools-row">
+                <img src="img/picto_figma_outils_homepage.png" alt="Figma"      title="Figma" />
+                <img src="img/picto_wordpress.png"             alt="WordPress"  title="WordPress" />
+                <img src="img/picto_html.png"                  alt="HTML5"      title="HTML5" />
+                <img src="img/picto_css.png"                   alt="CSS3"       title="CSS3" />
+                <img src="img/picto_chatgpt.png"               alt="ChatGPT"    title="ChatGPT" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-date-block">
+            <h3 class="modal-detail-title">
+              <img src="img/picto_date.png" alt="" />
+              Date de mise en ligne
+            </h3>
+            <p class="modal-date-value">Aout 2025</p>
+          </div>
+
+          <div class="modal-btns">
+            <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&t=stdYP5JJlu2JZKkR-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
+            <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+          </div>
+
+        </div><!-- /.modal-col-main -->
+
+        <!-- ── Colonne droite : image projet ── -->
+        <div class="modal-col-side">
+          <div class="modal-img-wrapper">
+            <img src="img/img_modale_dinamic.png" alt="Aperçu du site Dinamic" />
+          </div>
+        </div>
+
+      </div><!-- /.modal-inner -->
+    </div><!-- /.modal -->
+  </div><!-- /.modal-overlay#modal-dinamic -->
+
   <script src="js/main.js"></script>
   <script src="js/projets.js"></script>
+  <script src="js/modal-inzerty.js"></script>
+  <script src="js/modal-e2c.js"></script>
+  <script src="js/modal-dinamic.js"></script>
 </body>
 </html>

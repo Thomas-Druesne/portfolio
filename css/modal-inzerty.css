@@ -1,0 +1,286 @@
+/* ============================================================
+   MODALE INZERTY — fichier partagé (index.html + projets.html)
+   Overlay fixe noir 50% + boîte 1200px centrée
+   Animation : opacity + translateY fluide — aucune scrollbar interne
+============================================================ */
+
+/* ----- Overlay ----- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ----- Boîte modale ----- */
+.modal {
+  background: #111111;
+  border: 1px solid #00E8E8;
+  border-radius: 32px;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  padding: 4rem 3rem 3rem;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.modal-overlay.is-open .modal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Croix fermante ----- */
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background: var(--secondary);
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.modal-close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.modal-close::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.modal-close:hover::before,
+.modal-close:hover::after { background: var(--primary); }
+
+/* ----- Layout intérieur : col principale + image 450px fixe ----- */
+.modal-inner {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ----- Titre ----- */
+.modal-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.3rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* ----- Paragraphes ----- */
+.modal-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ----- Grille Technicité / Outils ----- */
+.modal-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* ----- Titres de section internes ----- */
+.modal-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1.3rem;
+}
+
+.modal-detail-title img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ----- Liste Technicité ----- */
+.modal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-list li {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.3rem;
+}
+
+.modal-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0.25rem;
+  color: var(--secondary);
+  font-size: 1.25rem;
+  line-height: 1.3rem;
+}
+
+/* ----- Icônes Outils (30px) ----- */
+.modal-tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.modal-tools-row img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ----- Date ----- */
+.modal-date-block {
+  margin-bottom: 2rem;
+}
+
+.modal-date-value {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3rem;
+  padding-left: calc(25px + 0.75rem);
+}
+
+/* ----- Boutons ----- */
+.modal-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ----- Colonne droite : image 450×450 sur fond blanc ----- */
+.modal-col-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal-img-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 450px;
+  height: 450px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Variante fond beige pour logos sur fond clair (ex: E2C) */
+.modal-img-wrapper--beige {
+  background: #f5ede8;
+}
+
+.modal-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   BOUTON "VOIR LE SITE WEB" — défini ici pour être dispo sur index.html
+============================================================ */
+.btn-voir-site {
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-voir-site:hover {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ============================================================
+   RESPONSIVE — 1200px
+============================================================ */
+@media (max-width: 1200px) {
+  .modal { border-radius: 24px; }
+
+  .modal-inner { grid-template-columns: 1fr 360px; }
+
+  .modal-img-wrapper { width: 360px; height: 360px; }
+
+  .modal-title { font-size: 1.75rem; }
+}
+
+/* ============================================================
+   RESPONSIVE — 900px
+============================================================ */
+@media (max-width: 900px) {
+  .modal-overlay { padding: 1rem; align-items: flex-start; }
+
+  .modal { border-radius: 16px; padding: 3rem 2rem 2rem; }
+
+  .modal-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+  .modal-col-side { order: -1; justify-content: center; }
+
+  .modal-img-wrapper { width: 100%; height: 260px; padding: 1.5rem; }
+
+  .modal-details-grid { gap: 1.5rem; }
+}
+
+/* ============================================================
+   RESPONSIVE — 400px
+============================================================ */
+@media (max-width: 400px) {
+  .modal { border-radius: 8px; padding: 3rem 1.5rem 1.5rem; }
+
+  .modal-title { font-size: 1.5rem; }
+
+  .modal-details-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .modal-btns { flex-direction: column; }
+
+  .modal-btns .btn { text-align: center; }
+}

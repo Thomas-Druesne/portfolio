@@ -1,1 +1,576 @@
-/* Styles spécifiques à la page À propos */
+/* ============================================================
+   PAGE À PROPOS
+
+   SPACING SYSTEM: 4px grid
+   BREAKPOINTS: 1200px (laptop), 900px (tablet), 400px (mobile)
+============================================================ */
+
+/* ============================================================
+   INTRO
+============================================================ */
+.apropos-intro {
+  padding: 5rem 2rem 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.apropos-intro-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.apropos-intro-content {
+  flex: 1;
+}
+
+.apropos-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.apropos-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.apropos-intro-content p {
+  font-size: 1rem;
+  color: var(--primary);
+  line-height: 1.6em;
+  margin-bottom: 1.25rem;
+}
+
+.apropos-intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Photo circulaire avec animation au hover */
+.apropos-intro-photo {
+  flex-shrink: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.apropos-intro-photo img {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cercle qui s'agrandit depuis le bord de la photo au hover */
+.apropos-intro-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--secondary);
+  opacity: 0;
+  transform: scale(1);
+  transition: transform 0.45s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.apropos-intro-photo:hover::after {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+.apropos-cards-section {
+  padding: 0 2rem 5rem;
+}
+
+.apropos-cards-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.apropos-cards-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.apropos-card {
+  background: #111111;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.apropos-card:hover {
+  box-shadow: 0 0 20px rgba(0, 237, 237, 0.3);
+}
+
+.apropos-card-picto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.apropos-card-picto img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.apropos-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.apropos-card .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Boutons nav carousel (masqués sur desktop) */
+.apropos-cards-nav {
+  display: none;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.apropos-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+  background: transparent;
+  color: var(--secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.apropos-nav-btn:hover {
+  background: var(--secondary);
+  color: var(--bg);
+}
+
+/* ============================================================
+   TITRE DOUBLE LIGNE
+   (section-title--lines est défini dans index.css,
+    on le redéclare ici car a-propos ne charge pas index.css)
+============================================================ */
+.section-title--lines {
+  font-size: 3rem;
+  display: inline-block;
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.section-title--lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.section-title--lines::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   PARCOURS SCOLAIRE
+============================================================ */
+.scolaire {
+  background: #111111;
+  padding: 5rem 2rem;
+}
+
+.scolaire-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.scolaire-list {
+  margin-top: 1rem;
+}
+
+.scolaire-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.scolaire-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Indentation croissante vers la droite */
+.scolaire-item:nth-child(1) { padding-left: 9rem; }
+.scolaire-item:nth-child(2) { padding-left: 16rem; }
+.scolaire-item:nth-child(3) { padding-left: 20rem; }
+.scolaire-item:nth-child(4) { padding-left: 24rem; }
+
+/* Boîte année */
+.scolaire-year-box {
+  border: 2px solid var(--secondary);
+  padding: 0.75rem 2rem;
+  min-width: 180px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Ligne de connexion avec flèche */
+.scolaire-connector {
+  position: relative;
+  width: 3rem;
+  height: 2px;
+  background: var(--secondary);
+  flex-shrink: 0;
+}
+
+.scolaire-connector::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--secondary);
+}
+
+/* Texte de description */
+.scolaire-desc {
+  font-size: 1rem;
+  color: var(--primary);
+  line-height: 1.6em;
+  padding-left: 1.5rem;
+  max-width: 500px;
+}
+
+/* ============================================================
+   HOBBIES
+============================================================ */
+.hobbies {
+  padding: 5rem 2rem;
+}
+
+.hobbies-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.hobbies-card {
+  background: #111111;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hobbies-card:hover {
+  box-shadow: 0 0 20px rgba(0, 237, 237, 0.3);
+}
+
+.hobbies-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Boîte picto avec bordure cyan */
+.hobbies-picto-box {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.hobbies-picto-box img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.hobbies-card:hover .hobbies-picto-box {
+  transform: scale(1.15);
+}
+
+.hobbies-card:hover .hobbies-picto-box img {
+  transform: scale(1.1);
+}
+
+.hobbies-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.hobbies-desc {
+  font-size: 1rem;
+  color: var(--primary);
+  line-height: 1.6em;
+}
+
+/* Image en bas de la card */
+.hobbies-img {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.hobbies-img img {
+  width: 100%;
+  height: 215px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+/* Laptop — 1200px */
+@media (max-width: 1200px) {
+  .apropos-intro-photo img {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Le pseudo-element suit automatiquement via inset: 0 */
+
+  .apropos-intro-inner {
+    gap: 3rem;
+  }
+
+  /* Scolaire : indentation légèrement réduite à 1200px */
+  .scolaire-item:nth-child(1) { padding-left: 7rem; }
+  .scolaire-item:nth-child(2) { padding-left: 13rem; }
+  .scolaire-item:nth-child(3) { padding-left: 17rem; }
+  .scolaire-item:nth-child(4) { padding-left: 21rem; }
+
+  .scolaire-year-box {
+    font-size: 1.35rem;
+    padding: 0.7rem 1.75rem;
+    min-width: 170px;
+  }
+}
+
+/* Tablette — 900px */
+@media (max-width: 900px) {
+  .apropos-intro {
+    padding: 4rem 2rem 3rem;
+  }
+
+  .apropos-cards-section {
+    padding: 0 2rem 4rem;
+  }
+
+  .apropos-intro-inner {
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .apropos-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .apropos-intro-photo img {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* Carousel sur tablette : 2 cards visibles */
+  .apropos-cards-inner {
+    overflow: hidden;
+  }
+
+  .apropos-cards-track {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+
+  .apropos-card {
+    flex: 0 0 calc(50% - 1rem);
+    min-width: calc(50% - 1rem);
+  }
+
+  .apropos-cards-nav {
+    display: flex;
+  }
+
+  /* Scolaire tablette : suppression de l'indentation, layout horizontal conservé */
+  .scolaire-item:nth-child(1),
+  .scolaire-item:nth-child(2),
+  .scolaire-item:nth-child(3),
+  .scolaire-item:nth-child(4) {
+    padding-left: 0;
+  }
+
+  .scolaire-item {
+    margin-bottom: 2.5rem;
+  }
+
+  .scolaire-year-box {
+    font-size: 1.1rem;
+    min-width: 130px;
+    padding: 0.6rem 1rem;
+  }
+
+  .scolaire-connector {
+    width: 1.5rem;
+  }
+
+  .scolaire-desc {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  /* Hobbies tablette : 1 colonne */
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbies {
+    padding: 4rem 2rem;
+  }
+
+  .hobbies-img img {
+    height: 180px;
+  }
+}
+
+/* Mobile — 400px */
+@media (max-width: 400px) {
+  .apropos-intro {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .apropos-cards-section {
+    padding: 0 1rem 3rem;
+  }
+
+  .apropos-title {
+    font-size: 2rem;
+  }
+
+  .apropos-intro-photo img {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* 1 card visible sur mobile */
+  .apropos-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .apropos-cards-track {
+    gap: 1rem;
+  }
+
+  /* Scolaire mobile : empilement vertical */
+  .scolaire {
+    padding: 3rem 1rem;
+  }
+
+  .scolaire-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .scolaire-connector {
+    display: none;
+  }
+
+  .scolaire-year-box {
+    min-width: unset;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .scolaire-desc {
+    padding-left: 0;
+    max-width: 100%;
+    font-size: 0.875rem;
+  }
+
+  /* Hobbies mobile */
+  .hobbies {
+    padding: 3rem 1rem;
+  }
+
+  .hobbies-card {
+    padding: 1.5rem;
+  }
+
+  .hobbies-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .hobbies-img img {
+    height: 150px;
+  }
+}

@@ -41,7 +41,7 @@
 .hero-title {
   font-size: 4rem;
   font-weight: 800;
-  line-height: 1.2em;
+  line-height: 1.3rem;
   color: var(--primary);
   margin-bottom: 1.5rem;
 }
@@ -54,7 +54,7 @@
 .hero-subtitle {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.2em;
+  line-height: 1.3rem;
   margin-bottom: 2.5rem;
 }
 
@@ -106,7 +106,7 @@
   align-items: center;
   justify-content: center;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   text-align: center;
 }
@@ -137,8 +137,8 @@
   font-size: 3rem;        /* 48px */
   display: inline-block;
   position: relative;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .section-title--lines::before {
@@ -187,7 +187,7 @@
   grid-column: 1 / -1;
   width: 832px;
   margin-left: auto;    /* alignée à droite */
-  background: #7EECEA;
+  background: #FFFFFF;
 }
 
 .projet-card--dinamic img {
@@ -276,7 +276,7 @@
   align-items: center;
   justify-content: center;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -313,7 +313,7 @@
 .book-content p {
   font-size: 1rem;
   color: var(--primary);
-  line-height: 1.2em;
+  line-height: 1.3rem;
   margin-bottom: 1rem;
 }
 
@@ -385,9 +385,9 @@
 }
 
 .competence-card p {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--primary);
-  line-height: 1.2em;
+  line-height: 1.3rem;
 }
 
 /* ============================================================
@@ -458,7 +458,7 @@
 .timeline-content p {
   font-size: 1rem;          /* 16px */
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.2em;
+  line-height: 1.3rem;
 }
 
 .parcours-more {
@@ -497,13 +497,13 @@
   font-weight: 700;
   color: var(--secondary);
   margin-bottom: 1.25rem;
-  line-height: 1.2em;
+  line-height: 1.3rem;
 }
 
 .outils-text p {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.55);
-  line-height: 1.2em;
+  line-height: 1.3rem;
   margin-bottom: 1rem;
 }
 
@@ -547,7 +547,7 @@
 }
 
 .outil-item span {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--primary);
   text-align: center;
