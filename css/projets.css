@@ -18,7 +18,9 @@
 }
 
 /* ============================================================
-   TITRE + INTRO — pleine largeur du container (1200px)
+   TITRE — ALIGNÉ À GAUCHE
+   Surlignage à gauche (50% de la largeur du titre)
+   NB: Différent des titres centrés (style.css)
 ============================================================ */
 .realisations-title {
   font-size: 3rem;
@@ -26,16 +28,17 @@
   color: var(--primary);
   display: inline-block;
   position: relative;
-  padding-bottom: 0.75rem;
+  padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
 
+/* Surlignage aligné à gauche */
 .realisations-title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 50%;
   height: 3px;
   background: var(--secondary);
   border-radius: 2px;
@@ -104,7 +107,7 @@
   cursor: pointer;
 }
 
-.realisation:hover .realisation-circle {
+.realisation-circle:hover {
   transform: scale(1.08);
 }
 

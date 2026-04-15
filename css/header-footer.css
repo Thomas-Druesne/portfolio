@@ -23,7 +23,7 @@ header {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
-  height: 90px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,7 +59,7 @@ header nav {
 
 header nav a {
   position: relative;
-  color: var(--secondary);
+  color: #888888;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
@@ -80,33 +80,43 @@ header nav a::after {
 }
 
 header nav a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 header nav a:hover::after {
   width: 100%;
+  background-color: var(--secondary);
+}
+
+/* Lien actif (page actuelle) */
+header nav a.active {
+  color: var(--secondary);
+}
+
+header nav a.active::after {
+  width: 100%;
+  background-color: var(--secondary);
 }
 
 /* Bouton Mon CV */
 .btn-cv {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   border-radius: 4px;
-  color: var(--bg);
-  background: var(--primary);
+  color: var(--secondary);
+  background: transparent;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.35s ease, border-color 0.35s ease;
 }
 
 .btn-cv:hover {
-  background: transparent;
-  color: var(--secondary);
-  border-color: var(--secondary);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 /* Hamburger */
@@ -178,7 +188,7 @@ footer {
 /* Tablette — 900px */
 @media (max-width: 900px) {
   .header-inner {
-    height: 70px;
+    height: 80px;
   }
 
   .logo img {
@@ -189,7 +199,7 @@ footer {
   header nav {
     display: none;
     position: fixed;
-    top: 70px;
+    top: 80px;
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -217,7 +227,7 @@ footer {
 @media (max-width: 400px) {
   .header-inner {
     padding: 0 1rem;
-    height: 60px;
+    height: 70px;
   }
 
   .logo img {
@@ -225,7 +235,7 @@ footer {
   }
 
   header nav {
-    top: 60px;
+    top: 70px;
   }
 
   .footer-inner {

@@ -19,13 +19,13 @@ if (timeline) {
 
     timeline.style.setProperty('--fill-percent', `${fillProgress * 100}%`);
 
-    // Chaque point devient blanc quand le niveau de remplissage l'atteint
+    // Chaque point devient cyan quand le niveau de remplissage l'atteint
     dots.forEach(dot => {
       const dotRect = dot.getBoundingClientRect();
       const dotCenter = dotRect.top + dotRect.height / 2;
       const dotRelativePos = (dotCenter - rect.top) / timelineHeight;
 
-      dot.style.background = fillProgress >= dotRelativePos ? '#ffffff' : 'var(--secondary)';
+      dot.style.background = fillProgress >= dotRelativePos ? 'var(--secondary)' : '#ffffff';
     });
   }
 
