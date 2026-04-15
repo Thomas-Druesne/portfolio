@@ -104,20 +104,20 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--bg);
 }
 
-/* Bouton filled secondaire → fond blanc au hover */
+/* Bouton outline secondaire → cyan outline blanc au hover */
 .btn-secondary-filled {
-  background: var(--secondary);
+  background: transparent;
   border-color: var(--secondary);
-  color: var(--bg);
+  color: var(--secondary);
+  transition: color 0.35s ease, border-color 0.35s ease;
 }
 
 .btn-secondary-filled:hover {
-  background: var(--primary);
   border-color: var(--primary);
-  color: var(--bg);
+  color: var(--primary);
 }
 
-/* ===== Titre de section ===== */
+/* ===== Titre de section — CENTRÉ ===== */
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -132,12 +132,14 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
 }
 
+/* Surlignage centré (sous le titre) */
 .section-title::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;   /* même largeur que le texte du titre */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
   height: 3px;
   background: var(--secondary);
   border-radius: 2px;
@@ -183,6 +185,7 @@ main {
 
 .back-to-top:hover {
   background: var(--primary);
+  transform: translateY(-8px);
 }
 
 .back-to-top:hover svg {

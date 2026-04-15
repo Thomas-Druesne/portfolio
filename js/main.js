@@ -1,5 +1,25 @@
 // main.js - JavaScript global (header / footer)
 
+// ===== Page Active Indicator =====
+(function () {
+  const nav = document.getElementById('main-nav');
+  if (nav) {
+    const currentPage = window.location.pathname;
+    const links = nav.querySelectorAll('a');
+
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      // Vérifier si le lien correspond à la page actuelle
+      if ((currentPage.includes('projets.html') && href === 'projets.html') ||
+          (currentPage.includes('a-propos.html') && href === 'a-propos.html') ||
+          (currentPage.includes('contact.html') && href === 'contact.html') ||
+          ((currentPage === '/' || currentPage.endsWith('index.html')) && href === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  }
+})();
+
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 
