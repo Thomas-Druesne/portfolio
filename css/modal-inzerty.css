@@ -31,8 +31,8 @@
   border: none;
   box-shadow: 0 0 50px rgba(0, 232, 232, 0.35);
   border-radius: 32px;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 1120px;
+  width: calc(100% - 4rem);
   position: relative;
   padding: 4rem 3rem 3rem;
   margin: auto;

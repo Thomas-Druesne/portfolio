@@ -117,9 +117,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary);
 }
 
-/* ===== Titre de section — CENTRÉ ===== */
+/* ===== Titre de section — ALIGNÉ À GAUCHE ===== */
 .section-header {
-  text-align: center;
   margin-bottom: 3rem;
 }
 
@@ -132,13 +131,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
 }
 
-/* Surlignage centré (sous le titre) */
+/* Surlignage aligné à gauche (50% de la largeur) */
 .section-title::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 50%;
   height: 3px;
   background: var(--secondary);

@@ -129,6 +129,8 @@
 ============================================================ */
 .projets {
   padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* Titre avec ligne du bas */
@@ -137,16 +139,15 @@
   display: inline-block;
   position: relative;
   padding-top: 0;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
 .section-title--lines::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;   /* 50% de la largeur du titre */
+  left: 0;
+  width: 50%;   /* 50% de la largeur du titre, aligné à gauche */
   height: 3px;
   background: var(--secondary);
   border-radius: 2px;
@@ -286,7 +287,7 @@
   font-weight: 800;
   color: var(--primary);
   display: inline-block;
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
   margin-bottom: 0.6rem;
   background: linear-gradient(to right, var(--secondary) 0%, var(--secondary) 50%, transparent 50%, transparent 100%);
   background-position: bottom;
@@ -481,7 +482,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, var(--secondary) 0%, var(--secondary) 50%, transparent 50%, transparent 100%);
   background-position: bottom;

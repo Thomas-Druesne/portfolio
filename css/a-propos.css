@@ -31,7 +31,7 @@
   color: var(--primary);
   display: inline-block;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
   margin-bottom: 2rem;
 }
 
@@ -39,8 +39,7 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 50%;
   height: 3px;
   background: var(--secondary);
@@ -96,11 +95,11 @@
 ============================================================ */
 .apropos-cards-section {
   padding: 0 2rem 5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .apropos-cards-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
   position: relative;
 }
 
@@ -189,15 +188,14 @@
   font-size: 3rem;
   display: inline-block;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
 }
 
 .section-title--lines::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 50%;
   height: 3px;
   background: var(--secondary);
@@ -286,11 +284,11 @@
 ============================================================ */
 .hobbies {
   padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .hobbies-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
 }
 
 .hobbies-grid {
