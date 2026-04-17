@@ -26,13 +26,13 @@
 }
 
 .apropos-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
   display: inline-block;
   position: relative;
   padding-bottom: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .apropos-title::after {
@@ -48,9 +48,16 @@
 
 .apropos-intro-content p {
   font-size: 1rem;
-  color: var(--primary);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.6em;
   margin-bottom: 1.25rem;
+}
+
+.apropos-intro-content .section-subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
 }
 
 .apropos-intro-content p:last-child {
@@ -105,7 +112,7 @@
 
 .apropos-cards-track {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -185,7 +192,7 @@
     on le redéclare ici car a-propos ne charge pas index.css)
 ============================================================ */
 .section-title--lines {
-  font-size: 3rem;
+  font-size: 2rem;
   display: inline-block;
   position: relative;
   padding-bottom: 1.25rem;
@@ -367,7 +374,7 @@
 
 .hobbies-img img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   display: block;
   object-fit: cover;
 }
@@ -428,24 +435,6 @@
     height: 220px;
   }
 
-  /* Carousel sur tablette : 2 cards visibles */
-  .apropos-cards-inner {
-    overflow: hidden;
-  }
-
-  .apropos-cards-track {
-    display: flex;
-    transition: transform 0.4s ease;
-  }
-
-  .apropos-card {
-    flex: 0 0 calc(50% - 1rem);
-    min-width: calc(50% - 1rem);
-  }
-
-  .apropos-cards-nav {
-    display: flex;
-  }
 
   /* Scolaire tablette : suppression de l'indentation, layout horizontal conservé */
   .scolaire-item:nth-child(1),
@@ -507,15 +496,6 @@
     height: 180px;
   }
 
-  /* 1 card visible sur mobile */
-  .apropos-card {
-    flex: 0 0 100%;
-    min-width: 100%;
-  }
-
-  .apropos-cards-track {
-    gap: 1rem;
-  }
 
   /* Scolaire mobile : empilement vertical */
   .scolaire {

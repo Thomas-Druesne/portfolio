@@ -14,7 +14,7 @@ main {
 /* ===== Section Contact ===== */
 .contact-section {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   background-color: var(--bg);
 }
 
@@ -30,6 +30,16 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.contact-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info .section-subtitle,
+.contact-form .section-subtitle {
+  margin-bottom: 0;
 }
 
 .contact-info h1 {
@@ -52,7 +62,7 @@ main {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .contact-details {
@@ -60,6 +70,10 @@ main {
   flex-direction: column;
   gap: 1.5rem;
   align-items: flex-start;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
 }
 
 .contact-item {
@@ -69,28 +83,28 @@ main {
 }
 
 .contact-icon {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   object-fit: contain;
 }
 
 .contact-item a {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .contact-item span {
   color: var(--primary);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -178,6 +192,14 @@ main {
 .form-group textarea.error {
   border: 2px solid #FF6B6B;
   background: rgba(255, 107, 107, 0.05);
+}
+
+/* ===== Section Subtitle ===== */
+.contact-title-block .section-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-top: 0.5rem;
 }
 
 /* ===== Bouton Submit ===== */
@@ -273,6 +295,7 @@ main {
 
   .contact-details {
     gap: 1.25rem;
+    padding: 1.5rem;
   }
 
   .contact-item {
@@ -280,8 +303,8 @@ main {
   }
 
   .contact-icon {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
   }
 
   .contact-form {

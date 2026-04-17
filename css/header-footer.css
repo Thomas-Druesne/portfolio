@@ -197,7 +197,6 @@ footer {
   }
 
   header nav {
-    display: none;
     position: fixed;
     top: 80px;
     left: 0;
@@ -208,14 +207,21 @@ footer {
     padding: 2rem 0;
     background-color: #111111;
     z-index: 999;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.35s ease, max-height 0.35s ease;
   }
 
   header nav.open {
-    display: flex;
+    opacity: 1;
+    max-height: 500px;
   }
 
   .btn-cv {
-    display: none;
+    display: block;
+    padding: 0.75rem 1.5rem;
+    width: fit-content;
   }
 
   .hamburger {
@@ -227,7 +233,7 @@ footer {
 @media (max-width: 400px) {
   .header-inner {
     padding: 0 1rem;
-    height: 70px;
+    height: 80px;
   }
 
   .logo img {
@@ -235,7 +241,7 @@ footer {
   }
 
   header nav {
-    top: 70px;
+    top: 80px;
   }
 
   .footer-inner {
