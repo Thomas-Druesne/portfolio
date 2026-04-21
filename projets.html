@@ -13,17 +13,22 @@
 </head>
 <body>
 
+  <!-- ===== LANG BUTTON ===== -->
+  <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+    <img src="img/english_flag.png" alt="EN" id="lang-flag" />
+  </button>
+
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
         <img src="img/logo-portfolio-white.png" alt="Logo TO" />
       </a>
       <nav id="main-nav">
-        <a href="projets.html">Mes projets</a>
-        <a href="a-propos.html">À Propos</a>
-        <a href="contact.html">Me contacter</a>
+        <a href="projets.html" data-fr="Mes projets" data-en="My projects">Mes projets</a>
+        <a href="a-propos.html" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="contact.html" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
       </nav>
-      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener">Mon CV</a>
+      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener" data-fr="Mon CV" data-en="My Resume">Mon CV</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -36,9 +41,9 @@
     <section class="realisations">
       <div class="container">
 
-        <h1 class="realisations-title">Mes réalisations</h1>
-        <p class="section-subtitle">Des projets réels, des vrais clients, des solutions concrètes</p>
-        <p class="realisations-intro">
+        <h1 class="realisations-title" data-fr="Mes réalisations" data-en="My achievements">Mes réalisations</h1>
+        <p class="section-subtitle" data-fr="Des projets réels, des vrais clients, des solutions concrètes" data-en="Real projects, real clients, concrete solutions">Des projets réels, des vrais clients, des solutions concrètes</p>
+        <p class="realisations-intro" data-fr="Que ce soit des réalisations en équipe ou des projets entièrement réalisés avec mes petites mains, que ce soient des sites vitrines ou e-commerce, retrouvez ici les principaux projets sur lesquels j'ai travaillé. J'ai eu l'opportunité de participer à leur élaboration durant mes différentes formations et prises de postes. J'y ai pris beaucoup de plaisir et certains ont représenté de véritables défis. Bonne visite !" data-en="Whether team achievements or projects carried out entirely by hand, whether showcase or e-commerce sites, find here the main projects I have worked on. I had the opportunity to participate in their development during my various training courses and positions. I enjoyed them greatly and some represented real challenges. Enjoy your visit!">
           Que ce soit des réalisations en équipe ou des projets entièrement réalisés avec mes petites mains,
           que ce soient des sites vitrines ou e-commerce, retrouvez ici les principaux projets sur lesquels
           j'ai travaillé. J'ai eu l'opportunité de participer à leur élaboration durant mes différentes
@@ -55,20 +60,20 @@
             </div>
             <div class="realisation-card">
               <h2 class="realisation-card-title">Inzerty</h2>
-              <p>
+              <p data-fr="La refonte du site web d'Inzerty est née d'un besoin clair de modernisation et d'alignement avec les standards actuels du digital. L'ancienne version ne reflétait plus pleinement l'image dynamique et professionnelle de l'entreprise, tant sur le plan visuel que sur l'expérience utilisateur." data-en="The redesign of the Inzerty website arose from a clear need for modernisation and alignment with current digital standards. The old version no longer fully reflected the dynamic and professional image of the company, both visually and in terms of user experience.">
                 La refonte du site web d'Inzerty est née d'un besoin clair de modernisation et
                 d'alignement avec les standards actuels du digital. L'ancienne version ne reflétait plus
                 pleinement l'image dynamique et professionnelle de l'entreprise, tant sur le plan visuel
                 que sur l'expérience utilisateur.
               </p>
-              <p>
+              <p data-fr="Le design manquait de modernité, l'ergonomie pouvait être optimisée et la navigation ne permettait pas de mettre suffisamment en valeur les expertises et les points forts d'Inzerty." data-en="The design lacked modernity, ergonomics could be optimised and the navigation did not sufficiently highlight Inzerty's expertise and strengths.">
                 Le design manquait de modernité, l'ergonomie pouvait être optimisée et la navigation ne
                 permettait pas de mettre suffisamment en valeur les expertises et les points forts
                 d'Inzerty.
               </p>
               <div class="realisation-btns">
-                <button class="btn btn-secondary-filled" id="btn-open-inzerty" aria-haspopup="dialog">En savoir plus</button>
-                <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+                <button class="btn btn-secondary-filled" id="btn-open-inzerty" aria-haspopup="dialog" data-fr="En savoir plus" data-en="Learn more">En savoir plus</button>
+                <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
               </div>
             </div>
           </article>
@@ -80,20 +85,20 @@
             </div>
             <div class="realisation-card">
               <h2 class="realisation-card-title">E2C Grand-Lille</h2>
-              <p>
+              <p data-fr="La refonte du site web de l'E2C Grand-Lille est née d'un besoin clair de modernisation et d'alignement avec les standards actuels du digital. L'ancienne version ne reflétait plus pleinement l'image dynamique et professionnelle de l'entreprise, tant sur le plan visuel que sur l'expérience utilisateur." data-en="The redesign of the E2C Grand-Lille website arose from a clear need for modernisation and alignment with current digital standards. The old version no longer fully reflected the dynamic and professional image of the company, both visually and in terms of user experience.">
                 La refonte du site web de l'E2C Grand-Lille est née d'un besoin clair de modernisation
                 et d'alignement avec les standards actuels du digital. L'ancienne version ne reflétait
                 plus pleinement l'image dynamique et professionnelle de l'entreprise, tant sur le plan
                 visuel que sur l'expérience utilisateur.
               </p>
-              <p>
+              <p data-fr="Le design manquait de modernité, l'ergonomie pouvait être optimisée et la navigation ne permettait pas de mettre suffisamment en valeur les expertises et les points forts de l'E2C Grand-Lille." data-en="The design lacked modernity, ergonomics could be optimised and the navigation did not sufficiently highlight the expertise and strengths of E2C Grand-Lille.">
                 Le design manquait de modernité, l'ergonomie pouvait être optimisée et la navigation ne
                 permettait pas de mettre suffisamment en valeur les expertises et les points forts
                 de l'E2C Grand-Lille.
               </p>
               <div class="realisation-btns">
-                <button class="btn btn-secondary-filled" id="btn-open-e2c" aria-haspopup="dialog">En savoir plus</button>
-                <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+                <button class="btn btn-secondary-filled" id="btn-open-e2c" aria-haspopup="dialog" data-fr="En savoir plus" data-en="Learn more">En savoir plus</button>
+                <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
               </div>
             </div>
           </article>
@@ -105,20 +110,20 @@
             </div>
             <div class="realisation-card">
               <h2 class="realisation-card-title">Dinamic</h2>
-              <p>
+              <p data-fr="La refonte du site web de Dinamic est née d'un besoin clair de modernisation et d'alignement avec les standards actuels du digital. L'ancienne version ne reflétait plus pleinement l'image dynamique et professionnelle de l'entreprise, tant sur le plan visuel que sur l'expérience utilisateur." data-en="The redesign of the Dinamic website arose from a clear need for modernisation and alignment with current digital standards. The old version no longer fully reflected the dynamic and professional image of the company, both visually and in terms of user experience.">
                 La refonte du site web de Dinamic est née d'un besoin clair de modernisation et
                 d'alignement avec les standards actuels du digital. L'ancienne version ne reflétait plus
                 pleinement l'image dynamique et professionnelle de l'entreprise, tant sur le plan visuel
                 que sur l'expérience utilisateur.
               </p>
-              <p>
+              <p data-fr="Le design manquait de modernité, l'ergonomie pouvait être optimisée et la navigation ne permettait pas de mettre suffisamment en valeur les expertises et les points forts de Dinamic." data-en="The design lacked modernity, ergonomics could be optimised and the navigation did not sufficiently highlight Dinamic's expertise and strengths.">
                 Le design manquait de modernité, l'ergonomie pouvait être optimisée et la navigation ne
                 permettait pas de mettre suffisamment en valeur les expertises et les points forts
                 de Dinamic.
               </p>
               <div class="realisation-btns">
-                <button class="btn btn-secondary-filled" id="btn-open-dinamic" aria-haspopup="dialog">En savoir plus</button>
-                <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+                <button class="btn btn-secondary-filled" id="btn-open-dinamic" aria-haspopup="dialog" data-fr="En savoir plus" data-en="Learn more">En savoir plus</button>
+                <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
               </div>
             </div>
           </article>
@@ -127,8 +132,8 @@
 
         <!-- CTA -->
         <div class="realisations-cta">
-          <p>Envie d'en voir davantage&nbsp;?</p>
-          <a href="#" class="btn btn-secondary-filled">Voir mon book</a>
+          <p data-fr="Envie d'en voir davantage ?" data-en="Want to see more?">Envie d'en voir davantage&nbsp;?</p>
+          <a href="#" class="btn btn-secondary-filled" data-fr="Voir mon book" data-en="View my portfolio">Voir mon book</a>
         </div>
 
       </div><!-- /.container -->
@@ -137,7 +142,7 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">©2026 - Tous droits réservés DRUESNE Thomas</p>
+      <p class="footer-copy" data-fr="©2026 - Tous droits réservés DRUESNE Thomas" data-en="©2026 - All rights reserved DRUESNE Thomas">©2026 - Tous droits réservés DRUESNE Thomas</p>
       <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="footer-linkedin" target="_blank" rel="noopener">
         <img src="img/logo_lkd_footer.png" alt="LinkedIn" />
       </a>
@@ -150,41 +155,35 @@
   <div class="modal-overlay" id="modal-inzerty" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-inzerty-title">
     <div class="modal">
 
-      <!-- Bouton fermer -->
       <button class="modal-close" id="btn-close-inzerty" aria-label="Fermer la modale"></button>
 
-      <!-- Corps : 2 colonnes -->
       <div class="modal-inner">
 
-        <!-- ── Colonne gauche ── -->
         <div class="modal-col-main">
-
-          <h2 class="modal-title" id="modal-inzerty-title">Refonte complète du site web d'Inzerty</h2>
-
-          <p class="modal-desc">
+          <h2 class="modal-title" id="modal-inzerty-title" data-fr="Refonte complète du site web d'Inzerty" data-en="Complete redesign of the Inzerty website">Refonte complète du site web d'Inzerty</h2>
+          <p class="modal-desc" data-fr="Refonte de la présence digitale d'Inzerty pour clarifier son offre entre le service recrutement (Régie) et le centre de service (Studio). L'enjeu était de moderniser le design et structurer clairement les deux piliers de l'entreprise pour une meilleure compréhension des utilisateurs." data-en="Redesign of Inzerty's digital presence to clarify its offering between the recruitment service (Régie) and the service centre (Studio). The challenge was to modernise the design and clearly structure the two pillars of the company for better user understanding.">
             Refonte de la présence digitale d'Inzerty pour clarifier son offre entre le service recrutement (Régie) et le centre de service (Studio). L'enjeu était de moderniser le design et structurer clairement les deux piliers de l'entreprise pour une meilleure compréhension des utilisateurs.
           </p>
 
           <div class="modal-details-grid">
-
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_technicité_modale.png" alt="" />
-                Technicité
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
               </h3>
               <ul class="modal-list">
-                <li>Maquettage</li>
-                <li>Prototypage</li>
-                <li>Intégration</li>
-                <li>Responsive</li>
-                <li>UI/UX</li>
+                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
+                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
+                <li data-fr="Intégration" data-en="Integration">Intégration</li>
+                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
+                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
               </ul>
             </div>
 
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_outils.png" alt="" />
-                Outils
+                <span data-fr="Outils" data-en="Tools">Outils</span>
               </h3>
               <div class="modal-tools-row">
                 <img src="img/picto_figma_outils_homepage.png" alt="Figma" title="Figma" />
@@ -196,27 +195,23 @@
                 <img src="img/picto_chatgpt.png"               alt="ChatGPT" title="ChatGPT" />
               </div>
             </div>
-
           </div>
 
-          <!-- Boutons -->
           <div class="modal-btns">
-            <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&t=mxUGkuSDbsskrGGO-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
-            <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+            <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&t=mxUGkuSDbsskrGGO-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+            <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
           </div>
+        </div>
 
-        </div><!-- /.modal-col-main -->
-
-        <!-- ── Colonne droite : image projet ── -->
         <div class="modal-col-side">
           <div class="modal-img-wrapper">
             <img src="img/img-projet-inzerty.png" alt="Aperçu du site Inzerty" />
           </div>
         </div>
 
-      </div><!-- /.modal-inner -->
-    </div><!-- /.modal -->
-  </div><!-- /.modal-overlay#modal-inzerty -->
+      </div>
+    </div>
+  </div>
 
   <!-- ================================================
        MODALE — E2C Grand-Lille
@@ -224,39 +219,33 @@
   <div class="modal-overlay" id="modal-e2c" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-e2c-title">
     <div class="modal">
 
-      <!-- Bouton fermer -->
       <button class="modal-close" id="btn-close-e2c" aria-label="Fermer la modale"></button>
 
-      <!-- Corps : 2 colonnes -->
       <div class="modal-inner">
 
-        <!-- ── Colonne gauche ── -->
         <div class="modal-col-main">
-
-          <h2 class="modal-title" id="modal-e2c-title">Refonte complète du site web de l'E2C Grand-Lille</h2>
-
-          <p class="modal-desc">
+          <h2 class="modal-title" id="modal-e2c-title" data-fr="Refonte complète du site web de l'E2C Grand-Lille" data-en="Complete redesign of the E2C Grand-Lille website">Refonte complète du site web de l'E2C Grand-Lille</h2>
+          <p class="modal-desc" data-fr="Modernisation et meilleure valorisation des missions de l'E2C. L'ancienne version manquait de clarté sur l'accompagnement des jeunes et la diversité des parcours. La refonte structure les contenus pour refléter les actions de l'école et renforcer son attractivité." data-en="Modernisation and better promotion of the E2C's missions. The old version lacked clarity on support for young people and the diversity of pathways. The redesign structures the content to reflect the school's actions and strengthen its attractiveness.">
             Modernisation et meilleure valorisation des missions de l'E2C. L'ancienne version manquait de clarté sur l'accompagnement des jeunes et la diversité des parcours. La refonte structure les contenus pour refléter les actions de l'école et renforcer son attractivité.
           </p>
 
           <div class="modal-details-grid">
-
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_technicité_modale.png" alt="" />
-                Technicité
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
               </h3>
               <ul class="modal-list">
-                <li>Intégration</li>
-                <li>Responsive</li>
-                <li>Retouche d'image</li>
+                <li data-fr="Intégration" data-en="Integration">Intégration</li>
+                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
+                <li data-fr="Retouche d'image" data-en="Image editing">Retouche d'image</li>
               </ul>
             </div>
 
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_outils.png" alt="" />
-                Outils
+                <span data-fr="Outils" data-en="Tools">Outils</span>
               </h3>
               <div class="modal-tools-row">
                 <img src="img/picto_wordpress.png" alt="WordPress" title="WordPress" />
@@ -266,26 +255,23 @@
                 <img src="img/picto_chatgpt.png"   alt="ChatGPT"   title="ChatGPT" />
               </div>
             </div>
-
           </div>
 
           <div class="modal-btns">
-            <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&t=zUaQqvaAB9L7t0k9-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
-            <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+            <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&t=zUaQqvaAB9L7t0k9-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+            <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
           </div>
+        </div>
 
-        </div><!-- /.modal-col-main -->
-
-        <!-- ── Colonne droite : image projet ── -->
         <div class="modal-col-side">
           <div class="modal-img-wrapper modal-img-wrapper--beige">
             <img src="img/img_modale_e2C.png" alt="Aperçu du site E2C Grand-Lille" />
           </div>
         </div>
 
-      </div><!-- /.modal-inner -->
-    </div><!-- /.modal -->
-  </div><!-- /.modal-overlay#modal-e2c -->
+      </div>
+    </div>
+  </div>
 
   <!-- ================================================
        MODALE — Dinamic
@@ -297,35 +283,31 @@
 
       <div class="modal-inner">
 
-        <!-- ── Colonne gauche ── -->
         <div class="modal-col-main">
-
-          <h2 class="modal-title" id="modal-dinamic-title">Refonte du site web de Dinamic</h2>
-
-          <p class="modal-desc">
+          <h2 class="modal-title" id="modal-dinamic-title" data-fr="Refonte du site web de Dinamic" data-en="Redesign of the Dinamic website">Refonte du site web de Dinamic</h2>
+          <p class="modal-desc" data-fr="Refonte du site Dinamic pour moderniser la présentation de ses services. L'objectif était de structurer les offres, valoriser le savoir-faire de l'entreprise et offrir une interface plus claire et responsive facilitant la compréhension des services." data-en="Redesign of the Dinamic website to modernise the presentation of its services. The objective was to structure the offers, highlight the company's expertise and offer a clearer and more responsive interface facilitating the understanding of services.">
             Refonte du site Dinamic pour moderniser la présentation de ses services. L'objectif était de structurer les offres, valoriser le savoir-faire de l'entreprise et offrir une interface plus claire et responsive facilitant la compréhension des services.
           </p>
 
           <div class="modal-details-grid">
-
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_technicité_modale.png" alt="" />
-                Technicité
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
               </h3>
               <ul class="modal-list">
-                <li>Maquettage</li>
-                <li>Prototypage</li>
-                <li>Intégration</li>
-                <li>Responsive</li>
-                <li>UI/UX</li>
+                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
+                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
+                <li data-fr="Intégration" data-en="Integration">Intégration</li>
+                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
+                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
               </ul>
             </div>
 
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_outils.png" alt="" />
-                Outils
+                <span data-fr="Outils" data-en="Tools">Outils</span>
               </h3>
               <div class="modal-tools-row">
                 <img src="img/picto_figma_outils_homepage.png" alt="Figma"      title="Figma" />
@@ -335,31 +317,29 @@
                 <img src="img/picto_chatgpt.png"               alt="ChatGPT"    title="ChatGPT" />
               </div>
             </div>
-
           </div>
 
           <div class="modal-btns">
-            <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&t=stdYP5JJlu2JZKkR-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
-            <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+            <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&t=stdYP5JJlu2JZKkR-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+            <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
           </div>
+        </div>
 
-        </div><!-- /.modal-col-main -->
-
-        <!-- ── Colonne droite : image projet ── -->
         <div class="modal-col-side">
           <div class="modal-img-wrapper">
             <img src="img/img_modale_dinamic.png" alt="Aperçu du site Dinamic" />
           </div>
         </div>
 
-      </div><!-- /.modal-inner -->
-    </div><!-- /.modal -->
-  </div><!-- /.modal-overlay#modal-dinamic -->
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
   <script src="js/projets.js"></script>
   <script src="js/modal-inzerty.js"></script>
   <script src="js/modal-e2c.js"></script>
   <script src="js/modal-dinamic.js"></script>
+  <script src="js/lang.js"></script>
 </body>
 </html>

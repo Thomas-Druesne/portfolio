@@ -157,13 +157,14 @@
   border-radius: 2px;
 }
 
-/* Grid : 832px + 398px, centrée */
+/* Grid : 2fr 1fr, centrée */
 .projets-grid {
   display: grid;
-  grid-template-columns: 832px 398px;
-  gap: 24px;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;              /* 24px */
   justify-content: center;
   margin-bottom: 3rem;
+  max-width: 100%;
 }
 
 /* Card base */
@@ -422,7 +423,7 @@
 .timeline-item {
   position: relative;
   padding: 0 0 4rem 3rem;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .timeline-item:last-child {

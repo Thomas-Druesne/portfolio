@@ -12,17 +12,22 @@
 </head>
 <body>
 
+  <!-- ===== LANG BUTTON ===== -->
+  <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+    <img src="img/english_flag.png" alt="EN" id="lang-flag" />
+  </button>
+
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
         <img src="img/logo-portfolio-white.png" alt="Logo TO" />
       </a>
       <nav id="main-nav">
-        <a href="projets.html">Mes projets</a>
-        <a href="a-propos.html">À Propos</a>
-        <a href="contact.html">Me contacter</a>
+        <a href="projets.html" data-fr="Mes projets" data-en="My projects">Mes projets</a>
+        <a href="a-propos.html" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="contact.html" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
       </nav>
-      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener">Mon CV</a>
+      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener" data-fr="Mon CV" data-en="My Resume">Mon CV</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -37,11 +42,11 @@
     <section class="apropos-intro">
       <div class="apropos-intro-inner">
         <div class="apropos-intro-content">
-          <h1 class="apropos-title">Un p'tit mot sur moi</h1>
-          <p class="section-subtitle">Designer curieux & intégrateur rigoureux</p>
-          <p>Après une reconversion réussie dans le webdesign et l'intégration post-pandémie et ayant un attrait pour la création web et digitale, j'ai pu exprimer, au cours de ces dernières années, ma créativité et mon savoir-faire au travers de différentes expériences en start-up, en agence et en ESN.</p>
-          <p>Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un 360° sur la création web, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des projets réalisés de A à Z.</p>
-          <p>Et tout ceci ne serait pas possible sans mes meilleurs amis : la suite Adobe, Figma ainsi que WordPress !</p>
+          <h1 class="apropos-title" data-fr="Un p'tit mot sur moi" data-en="A few words about me">Un p'tit mot sur moi</h1>
+          <p class="section-subtitle" data-fr="Designer curieux &amp; intégrateur rigoureux" data-en="Curious designer &amp; rigorous integrator">Designer curieux &amp; intégrateur rigoureux</p>
+          <p data-fr="Après une reconversion réussie dans le webdesign et l'intégration post-pandémie et ayant un attrait pour la création web et digitale, j'ai pu exprimer, au cours de ces dernières années, ma créativité et mon savoir-faire au travers de différentes expériences en start-up, en agence et en ESN." data-en="After a successful career change into webdesign and integration post-pandemic, and with a fondness for web and digital creation, I was able to express my creativity and expertise through various experiences in start-ups, agencies and IT service companies.">Après une reconversion réussie dans le webdesign et l'intégration post-pandémie et ayant un attrait pour la création web et digitale, j'ai pu exprimer, au cours de ces dernières années, ma créativité et mon savoir-faire au travers de différentes expériences en start-up, en agence et en ESN.</p>
+          <p data-fr="Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un 360° sur la création web, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des projets réalisés de A à Z." data-en="My skills being now well-established and fully fulfilled in what I do, my current objective is to achieve a 360° in web creation, in order to offer website creation from graphic design through integration, along with all its visual branding, for projects carried out from A to Z.">Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un 360° sur la création web, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des projets réalisés de A à Z.</p>
+          <p data-fr="Et tout ceci ne serait pas possible sans mes meilleurs amis : la suite Adobe, Figma ainsi que WordPress !" data-en="And all of this would not be possible without my best friends: the Adobe suite, Figma and WordPress!">Et tout ceci ne serait pas possible sans mes meilleurs amis : la suite Adobe, Figma ainsi que WordPress !</p>
         </div>
         <div class="apropos-intro-photo">
           <img src="img/photo_profil_a_propos.png" alt="Thomas Druesne" />
@@ -58,32 +63,32 @@
             <div class="apropos-card-picto">
               <img src="img/picto_cv_a_propos.png" alt="Mon CV" />
             </div>
-            <h3>Mon CV</h3>
-            <a href="img/CV_DRUESNE_Thomas.pdf" class="btn btn-secondary-filled" target="_blank" rel="noopener">Consulter mon CV</a>
+            <h3 data-fr="Mon CV" data-en="My Resume">Mon CV</h3>
+            <a href="img/CV_DRUESNE_Thomas.pdf" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Consulter mon CV" data-en="View my Resume">Consulter mon CV</a>
           </div>
 
           <div class="apropos-card">
             <div class="apropos-card-picto">
               <img src="img/picto_cv_ats_a_propos.png" alt="Mon CV ATS Friendly" />
             </div>
-            <h3>Mon CV ATS Friendly</h3>
-            <a href="img/CV_DRUESNE_Thomas_ATS_Friendly.pdf" class="btn btn-secondary-filled" target="_blank" rel="noopener">Consulter mon CV</a>
+            <h3 data-fr="Mon CV ATS Friendly" data-en="My ATS Friendly Resume">Mon CV ATS Friendly</h3>
+            <a href="img/CV_DRUESNE_Thomas_ATS_Friendly.pdf" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Consulter mon CV" data-en="View my Resume">Consulter mon CV</a>
           </div>
 
           <div class="apropos-card">
             <div class="apropos-card-picto">
               <img src="img/picto_book_a_propos.png" alt="Mon Book" />
             </div>
-            <h3>Mon Book</h3>
-            <a href="#" class="btn btn-secondary-filled">Voir mon book</a>
+            <h3 data-fr="Mon Book" data-en="My Portfolio">Mon Book</h3>
+            <a href="#" class="btn btn-secondary-filled" data-fr="Voir mon book" data-en="View my portfolio">Voir mon book</a>
           </div>
 
           <div class="apropos-card">
             <div class="apropos-card-picto">
               <img src="img/picto_linkedin_a_propos.png" alt="LinkedIn" />
             </div>
-            <h3>Mon CV</h3>
-            <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir mon Linkedin</a>
+            <h3 data-fr="Mon CV" data-en="My Resume">Mon CV</h3>
+            <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir mon Linkedin" data-en="View my LinkedIn">Voir mon Linkedin</a>
           </div>
 
         </div>
@@ -99,33 +104,33 @@
     <section class="scolaire">
       <div class="scolaire-inner">
         <div class="section-header">
-          <h2 class="section-title section-title--lines">Mon parcours scolaire</h2>
-          <p class="section-subtitle">Les formations qui ont construit ma vision du web et du design</p>
+          <h2 class="section-title section-title--lines" data-fr="Mon parcours scolaire" data-en="My academic background">Mon parcours scolaire</h2>
+          <p class="section-subtitle" data-fr="Les formations qui ont construit ma vision du web et du design" data-en="The training that built my vision of the web and design">Les formations qui ont construit ma vision du web et du design</p>
         </div>
         <div class="scolaire-list">
 
           <div class="scolaire-item">
             <div class="scolaire-year-box">2024</div>
             <div class="scolaire-connector"></div>
-            <p class="scolaire-desc">Formation complémentaire en développement Low-code No Code effectué chez M2I à Villeneuve-d'Ascq</p>
+            <p class="scolaire-desc" data-fr="Formation complémentaire en développement Low-code No Code effectué chez M2I à Villeneuve-d'Ascq" data-en="Additional training in Low-code No Code development at M2I in Villeneuve-d'Ascq">Formation complémentaire en développement Low-code No Code effectué chez M2I à Villeneuve-d'Ascq</p>
           </div>
 
           <div class="scolaire-item">
             <div class="scolaire-year-box">2022/2023</div>
             <div class="scolaire-connector"></div>
-            <p class="scolaire-desc">Validation de mon diplôme d'alternance concepteur/d'interface chez M2i Formation à Villeneuve-d'Ascq</p>
+            <p class="scolaire-desc" data-fr="Validation de mon diplôme d'alternance concepteur/d'interface chez M2i Formation à Villeneuve-d'Ascq" data-en="Validation of my work-study diploma in interface design at M2i Formation in Villeneuve-d'Ascq">Validation de mon diplôme d'alternance concepteur/d'interface chez M2i Formation à Villeneuve-d'Ascq</p>
           </div>
 
           <div class="scolaire-item">
             <div class="scolaire-year-box">2021</div>
             <div class="scolaire-connector"></div>
-            <p class="scolaire-desc">Formation intensive en Webdesign UX chez POPSchool Valenciennes</p>
+            <p class="scolaire-desc" data-fr="Formation intensive en Webdesign UX chez POPSchool Valenciennes" data-en="Intensive training in UX Webdesign at POPSchool Valenciennes">Formation intensive en Webdesign UX chez POPSchool Valenciennes</p>
           </div>
 
           <div class="scolaire-item">
             <div class="scolaire-year-box">2018</div>
             <div class="scolaire-connector"></div>
-            <p class="scolaire-desc">Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens</p>
+            <p class="scolaire-desc" data-fr="Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens" data-en="Obtaining my Master's degree in Culture, Events &amp; Digital at the UPJV in Amiens">Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens</p>
           </div>
 
         </div>
@@ -136,8 +141,8 @@
     <section class="hobbies">
       <div class="hobbies-inner">
         <div class="section-header">
-          <h2 class="section-title section-title--lines">Mes Hobbies</h2>
-          <p class="section-subtitle">Ce que je fais quand je ne suis pas derrière Figma</p>
+          <h2 class="section-title section-title--lines" data-fr="Mes Hobbies" data-en="My Hobbies">Mes Hobbies</h2>
+          <p class="section-subtitle" data-fr="Ce que je fais quand je ne suis pas derrière Figma" data-en="What I do when I'm not behind Figma">Ce que je fais quand je ne suis pas derrière Figma</p>
         </div>
         <div class="hobbies-grid">
 
@@ -148,7 +153,7 @@
               </div>
               <h3>Magic the Gathering</h3>
             </div>
-            <p class="hobbies-desc">Jeux de cartes réputé pour ça complexité, son sens stratégique et sa tonne de statistiques et de contenu en ligne. Son aspect social, m'a permis de rencontrer des gens merveilleux incroyable.</p>
+            <p class="hobbies-desc" data-fr="Jeux de cartes réputé pour ça complexité, son sens stratégique et sa tonne de statistiques et de contenu en ligne. Son aspect social, m'a permis de rencontrer des gens merveilleux incroyable." data-en="Card game renowned for its complexity, strategic thinking and wealth of statistics and online content. Its social aspect allowed me to meet wonderful, incredible people.">Jeux de cartes réputé pour ça complexité, son sens stratégique et sa tonne de statistiques et de contenu en ligne. Son aspect social, m'a permis de rencontrer des gens merveilleux incroyable.</p>
             <div class="hobbies-img">
               <img src="img/img_hobby_mtg_a_propos.png" alt="Magic the Gathering" />
             </div>
@@ -159,9 +164,9 @@
               <div class="hobbies-picto-box">
                 <img src="img/picto_manette_hobbies.png" alt="Jeux vidéo" />
               </div>
-              <h3>Jeux vidéo</h3>
+              <h3 data-fr="Jeux vidéo" data-en="Video games">Jeux vidéo</h3>
             </div>
-            <p class="hobbies-desc">Collection et pratique de jeu vidéo depuis de nombreuses années (pour m'évader et souffler de temps à autres), c'est une passion qui ne m'a jamais quitté depuis tout petit.</p>
+            <p class="hobbies-desc" data-fr="Collection et pratique de jeu vidéo depuis de nombreuses années (pour m'évader et souffler de temps à autres), c'est une passion qui ne m'a jamais quitté depuis tout petit." data-en="Collecting and playing video games for many years (to escape and unwind from time to time), a passion that has never left me since childhood.">Collection et pratique de jeu vidéo depuis de nombreuses années (pour m'évader et souffler de temps à autres), c'est une passion qui ne m'a jamais quitté depuis tout petit.</p>
             <div class="hobbies-img">
               <img src="img/img_hobby_jv_a_propos.png" alt="Jeux vidéo" />
             </div>
@@ -175,7 +180,7 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">©2026 - Tous droits réservés DRUESNE Thomas</p>
+      <p class="footer-copy" data-fr="©2026 - Tous droits réservés DRUESNE Thomas" data-en="©2026 - All rights reserved DRUESNE Thomas">©2026 - Tous droits réservés DRUESNE Thomas</p>
       <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="footer-linkedin" target="_blank" rel="noopener">
         <img src="img/logo_lkd_footer.png" alt="LinkedIn" />
       </a>
@@ -184,5 +189,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/a-propos.js"></script>
+  <script src="js/lang.js"></script>
 </body>
 </html>

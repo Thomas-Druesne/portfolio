@@ -13,6 +13,11 @@
 </head>
 <body>
 
+  <!-- ===== LANG BUTTON ===== -->
+  <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+    <img src="img/english_flag.png" alt="EN" id="lang-flag" />
+  </button>
+
   <!-- ===== HEADER ===== -->
   <header>
     <div class="header-inner">
@@ -20,11 +25,11 @@
         <img src="img/logo-portfolio-white.png" alt="Logo TO" />
       </a>
       <nav id="main-nav">
-        <a href="projets.html">Mes projets</a>
-        <a href="a-propos.html">À Propos</a>
-        <a href="contact.html">Me contacter</a>
-        <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener">Mon CV</a>
+        <a href="projets.html" data-fr="Mes projets" data-en="My projects">Mes projets</a>
+        <a href="a-propos.html" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="contact.html" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
       </nav>
+      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener" data-fr="Mon CV" data-en="My Resume">Mon CV</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -40,15 +45,15 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <p class="hero-greeting">Salutations 👋 !</p>
+          <p class="hero-greeting" data-fr="Salutations 👋 !" data-en="Greetings 👋 !">Salutations 👋 !</p>
           <h1 class="hero-title" id="hero-main-title">
-            Bienvenue sur mon<br>
+            <span data-fr="Bienvenue sur mon" data-en="Welcome to my">Bienvenue sur mon</span><br>
             <span>portfolio</span>
           </h1>
-          <p class="hero-subtitle">Webdesigner UX &amp; Intégrateur WordPress débordant d'enthousiasme et créateur de sites web et d'interfaces utilisateurs passionnés !</p>
+          <p class="hero-subtitle" data-fr="Webdesigner UX &amp; Intégrateur WordPress débordant d'enthousiasme et créateur de sites web et d'interfaces utilisateurs passionnés !" data-en="UX Webdesigner &amp; enthusiastic WordPress Integrator, passionate creator of websites and user interfaces!">Webdesigner UX &amp; Intégrateur WordPress débordant d'enthousiasme et créateur de sites web et d'interfaces utilisateurs passionnés !</p>
           <div class="hero-buttons">
-            <a href="projets.html" class="btn btn-hero-primary">Voir tous les projets</a>
-            <a href="contact.html" class="btn btn-hero-secondary">Me Contacter</a>
+            <a href="projets.html" class="btn btn-hero-primary" data-fr="Voir tous les projets" data-en="See all projects">Voir tous les projets</a>
+            <a href="contact.html" class="btn btn-hero-secondary" data-fr="Me Contacter" data-en="Contact Me">Me Contacter</a>
           </div>
         </div>
         <div class="hero-photo">
@@ -60,8 +65,8 @@
     <!-- MES PROJETS -->
     <section class="projets">
       <div class="section-header">
-        <h2 class="section-title section-title--lines">Mes projets</h2>
-        <p class="section-subtitle">Quelques réalisations dont je suis particulièrement fier</p>
+        <h2 class="section-title section-title--lines" data-fr="Mes projets" data-en="My projects">Mes projets</h2>
+        <p class="section-subtitle" data-fr="Quelques réalisations dont je suis particulièrement fier" data-en="Some achievements I am particularly proud of">Quelques réalisations dont je suis particulièrement fier</p>
       </div>
       <div class="projets-grid">
 
@@ -74,7 +79,7 @@
           <img src="img/img-projet-inzerty.png" alt="Inzerty" />
           <div class="projet-overlay">
             <h3>Inzerty</h3>
-            <p>Wireframes/maquettage/intégration</p>
+            <p data-fr="Wireframes/maquettage/intégration" data-en="Wireframes/mockup/integration">Wireframes/maquettage/intégration</p>
           </div>
         </div>
 
@@ -86,8 +91,8 @@
              style="cursor: pointer;">
           <img src="img/img-projet-E2C.png" alt="Ecole de la seconde chance" />
           <div class="projet-overlay">
-            <h3>Ecole de la seconde chance</h3>
-            <p>Intégration WordPress</p>
+            <h3 data-fr="Ecole de la seconde chance" data-en="School of the second chance">Ecole de la seconde chance</h3>
+            <p data-fr="Intégration WordPress" data-en="WordPress Integration">Intégration WordPress</p>
           </div>
         </div>
 
@@ -99,15 +104,15 @@
              style="cursor: pointer;">
           <img src="img/img-projet-dinamic.png" alt="Site web Dinamic" />
           <div class="projet-overlay">
-            <h3>Site web Dinamic</h3>
-            <p>Maquettage/Intégration</p>
+            <h3 data-fr="Site web Dinamic" data-en="Dinamic website">Site web Dinamic</h3>
+            <p data-fr="Maquettage/Intégration" data-en="Mockup/Integration">Maquettage/Intégration</p>
           </div>
         </div>
 
       </div>
       <div class="projets-more">
-        <p>Envie d'en voir davantage ?</p>
-        <a href="projets.html" class="btn btn-secondary-filled">Voir tous les projets</a>
+        <p data-fr="Envie d'en voir davantage ?" data-en="Want to see more?">Envie d'en voir davantage ?</p>
+        <a href="projets.html" class="btn btn-secondary-filled" data-fr="Voir tous les projets" data-en="See all projects">Voir tous les projets</a>
       </div>
     </section>
 
@@ -118,12 +123,12 @@
           <img src="img/img_book.png" alt="Mon Book" />
         </div>
         <div class="book-content">
-          <h2 class="section-title">Mon Book graphique</h2>
-          <p class="section-subtitle">Une sélection de créations visuelles, logos et supports print</p>
-          <p>Plus qu'une simple sélection de projets, ce book reflète ma façon d'aborder le design — avec rigueur, intention et attention au détail. Chaque projet présenté ici est l'occasion d'un dialogue entre esthétique et fonctionnalité ; les choix typographiques, la mise en page et l'équilibre visuel sont travaillés avec soin.</p>
-          <p>Je conçois le design comme un dialogue entre esthétique et fonctionnalité. Mes projets naviguent entre le print et le digital, avec une sensibilité graphique constante et le souci de créer des expériences cohérentes et mémorables.</p>
-          <p><strong>Parcourez mes travaux et découvrez une approche du design où chaque détail a son importance.</strong></p>
-          <a href="#" class="btn btn-secondary-filled">Consulter mon Book</a>
+          <h2 class="section-title" data-fr="Mon Book graphique" data-en="My Graphic Portfolio">Mon Book graphique</h2>
+          <p class="section-subtitle" data-fr="Une sélection de créations visuelles, logos et supports print" data-en="A selection of visual creations, logos and print media">Une sélection de créations visuelles, logos et supports print</p>
+          <p data-fr="Plus qu'une simple sélection de projets, ce book reflète ma façon d'aborder le design — avec rigueur, intention et attention au détail. Chaque projet présenté ici est l'occasion d'un dialogue entre esthétique et fonctionnalité ; les choix typographiques, la mise en page et l'équilibre visuel sont travaillés avec soin." data-en="More than a simple selection of projects, this portfolio reflects my approach to design — with rigour, intention and attention to detail. Each project presented here is an opportunity for a dialogue between aesthetics and functionality; typographic choices, layout and visual balance are carefully crafted.">Plus qu'une simple sélection de projets, ce book reflète ma façon d'aborder le design — avec rigueur, intention et attention au détail. Chaque projet présenté ici est l'occasion d'un dialogue entre esthétique et fonctionnalité ; les choix typographiques, la mise en page et l'équilibre visuel sont travaillés avec soin.</p>
+          <p data-fr="Je conçois le design comme un dialogue entre esthétique et fonctionnalité. Mes projets naviguent entre le print et le digital, avec une sensibilité graphique constante et le souci de créer des expériences cohérentes et mémorables." data-en="I see design as a dialogue between aesthetics and functionality. My projects navigate between print and digital, with a consistent graphic sensibility and the concern to create coherent and memorable experiences.">Je conçois le design comme un dialogue entre esthétique et fonctionnalité. Mes projets naviguent entre le print et le digital, avec une sensibilité graphique constante et le souci de créer des expériences cohérentes et mémorables.</p>
+          <p><strong data-fr="Parcourez mes travaux et découvrez une approche du design où chaque détail a son importance." data-en="Browse my work and discover a design approach where every detail matters.">Parcourez mes travaux et découvrez une approche du design où chaque détail a son importance.</strong></p>
+          <a href="#" class="btn btn-secondary-filled" data-fr="Consulter mon Book" data-en="View my Portfolio">Consulter mon Book</a>
         </div>
       </div>
     </section>
@@ -131,37 +136,37 @@
     <!-- MES COMPÉTENCES -->
     <section class="competences">
       <div class="section-header">
-        <h2 class="section-title section-title--lines">Mes compétences</h2>
-        <p class="section-subtitle">Du concept à l'intégration, voici ce que je sais faire</p>
+        <h2 class="section-title section-title--lines" data-fr="Mes compétences" data-en="My skills">Mes compétences</h2>
+        <p class="section-subtitle" data-fr="Du concept à l'intégration, voici ce que je sais faire" data-en="From concept to integration, here's what I can do">Du concept à l'intégration, voici ce que je sais faire</p>
       </div>
       <div class="competences-grid">
         <div class="competence-card">
           <div class="competence-picto">
             <img src="img/picto_graphisme_homepage.png" alt="Graphisme" />
           </div>
-          <h3>Graphisme</h3>
-          <p>Création de logos, prints, et visuels sur la suite Adobe (Photoshop, Illustrator &amp; InDesign)</p>
+          <h3 data-fr="Graphisme" data-en="Graphic Design">Graphisme</h3>
+          <p data-fr="Création de logos, prints, et visuels sur la suite Adobe (Photoshop, Illustrator &amp; InDesign)" data-en="Logo, print and visual creation using the Adobe suite (Photoshop, Illustrator &amp; InDesign)">Création de logos, prints, et visuels sur la suite Adobe (Photoshop, Illustrator &amp; InDesign)</p>
         </div>
         <div class="competence-card">
           <div class="competence-picto">
             <img src="img/picto_figma_homepage.png" alt="UI/UX Design" />
           </div>
-          <h3>UI/UX Design</h3>
-          <p>Conception de wireframes et de maquettes en fonction des besoins et/ou décideurs sur Figma</p>
+          <h3 data-fr="UI/UX Design" data-en="UI/UX Design">UI/UX Design</h3>
+          <p data-fr="Conception de wireframes et de maquettes en fonction des besoins et/ou décideurs sur Figma" data-en="Design of wireframes and mockups based on needs and/or decision-makers using Figma">Conception de wireframes et de maquettes en fonction des besoins et/ou décideurs sur Figma</p>
         </div>
         <div class="competence-card">
           <div class="competence-picto">
-            <img src="img/picto_code_homepage.png" alt="Intégration & responsive" />
+            <img src="img/picto_code_homepage.png" alt="Intégration &amp; responsive" />
           </div>
-          <h3>Intégration &amp; responsive</h3>
-          <p>Pratique de HTML/CSS/JS et du responsive, optimisation du code source des fichiers sur WordPress</p>
+          <h3 data-fr="Intégration &amp; responsive" data-en="Integration &amp; responsive">Intégration &amp; responsive</h3>
+          <p data-fr="Pratique de HTML/CSS/JS et du responsive, optimisation du code source des fichiers sur WordPress" data-en="Practice of HTML/CSS/JS and responsive design, source code optimisation on WordPress">Pratique de HTML/CSS/JS et du responsive, optimisation du code source des fichiers sur WordPress</p>
         </div>
         <div class="competence-card">
           <div class="competence-picto">
             <img src="img/picto_referencement_homepage.png" alt="Référencement" />
           </div>
-          <h3>Référencement</h3>
-          <p>Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)</p>
+          <h3 data-fr="Référencement" data-en="SEO">Référencement</h3>
+          <p data-fr="Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)" data-en="Implementation of page-by-page SEO/GEO on WordPress (Yoast SEO)">Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)</p>
         </div>
       </div>
     </section>
@@ -169,53 +174,53 @@
     <!-- MON PARCOURS PROFESSIONNEL -->
     <section class="parcours">
       <div class="section-header">
-        <h2 class="section-title section-title--lines">Mon parcours professionnel</h2>
-        <p class="section-subtitle">Cinq expériences qui ont forgé mon regard sur le design</p>
+        <h2 class="section-title section-title--lines" data-fr="Mon parcours professionnel" data-en="My professional background">Mon parcours professionnel</h2>
+        <p class="section-subtitle" data-fr="Cinq expériences qui ont forgé mon regard sur le design" data-en="Five experiences that shaped my vision of design">Cinq expériences qui ont forgé mon regard sur le design</p>
       </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>WEBDESIGNER/INTÉGRATEUR</h3>
+            <h3 data-fr="WEBDESIGNER/INTÉGRATEUR" data-en="WEBDESIGNER/INTEGRATOR">WEBDESIGNER/INTÉGRATEUR</h3>
             <span class="timeline-date">2021/2022</span>
-            <p>Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress.</p>
+            <p data-fr="Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress." data-en="Internship at communication agency « Kamélécom » for integration mainly in WordPress.">Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>UI/UX DESIGNER</h3>
+            <h3 data-fr="UI/UX DESIGNER" data-en="UI/UX DESIGNER">UI/UX DESIGNER</h3>
             <span class="timeline-date">2022</span>
-            <p>Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels.</p>
+            <p data-fr="Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels." data-en="Integration of the digital incubator « Eurotechnologie » on Figma in real projects.">Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>WEBDESIGNER UX/INTÉGRATEUR</h3>
+            <h3 data-fr="WEBDESIGNER UX/INTÉGRATEUR" data-en="WEBDESIGNER UX/INTEGRATOR">WEBDESIGNER UX/INTÉGRATEUR</h3>
             <span class="timeline-date">2022/2023</span>
-            <p>Alternance réalisé chez "Jooxter" pour la maintenance/refonte de leur site web &amp; du montage vidéo</p>
+            <p data-fr="Alternance réalisé chez &quot;Jooxter&quot; pour la maintenance/refonte de leur site web &amp; du montage vidéo" data-en="Work-study at &quot;Jooxter&quot; for website maintenance/redesign &amp; video editing">Alternance réalisé chez "Jooxter" pour la maintenance/refonte de leur site web &amp; du montage vidéo</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>GRAPHISTE/WEBDESIGNER</h3>
+            <h3 data-fr="GRAPHISTE/WEBDESIGNER" data-en="GRAPHIC DESIGNER/WEBDESIGNER">GRAPHISTE/WEBDESIGNER</h3>
             <span class="timeline-date">2024</span>
-            <p>Stage chez "About Ressources" création du branding complet + le site web pour une juriste freelance</p>
+            <p data-fr="Stage chez &quot;About Ressources&quot; création du branding complet + le site web pour une juriste freelance" data-en="Internship at &quot;About Ressources&quot; — complete branding + website for a freelance jurist">Stage chez "About Ressources" création du branding complet + le site web pour une juriste freelance</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>WEBDESIGNER UX/INTÉGRATEUR</h3>
+            <h3 data-fr="WEBDESIGNER UX/INTÉGRATEUR" data-en="WEBDESIGNER UX/INTEGRATOR">WEBDESIGNER UX/INTÉGRATEUR</h3>
             <span class="timeline-date">2025/2026</span>
-            <p>Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z</p>
+            <p data-fr="Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z" data-en="First contract signed at (inzerty), to carry out showcase &amp; e-commerce web projects from A to Z">Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z</p>
           </div>
         </div>
       </div>
       <div class="parcours-more">
-        <a href="a-propos.html" class="btn btn-secondary-filled">En savoir plus</a>
+        <a href="a-propos.html" class="btn btn-secondary-filled" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
       </div>
     </section>
 
@@ -223,12 +228,12 @@
     <section class="outils">
       <div class="outils-inner">
         <div class="outils-text">
-          <h2 class="section-title">Mes outils</h2>
-          <p class="section-subtitle">Les technologies et logiciels qui font partie de mon quotidien</p>
-          <p>Je maîtrise un ensemble complet d'outils essentiels au webdesign, allant de la création graphique au développement web.</p>
-          <p>J'utilise notamment Adobe Illustrator et Photoshop pour la création visuelle, ainsi que Figma pour le design d'interfaces modernes et collaboratives. Je travaille également avec InDesign et Premiere pour des supports variés.</p>
-          <p>Côté intégration je développe avec HTML, CSS et JavaScript, et j'utilise WordPress pour la création de sites dynamiques.</p>
-          <p>Enfin, j'intègre des outils d'intelligence artificielle comme ChatGPT et Claude pour optimiser mes processus créatifs et techniques.</p>
+          <h2 class="section-title" data-fr="Mes outils" data-en="My tools">Mes outils</h2>
+          <p class="section-subtitle" data-fr="Les technologies et logiciels qui font partie de mon quotidien" data-en="The technologies and software that are part of my daily life">Les technologies et logiciels qui font partie de mon quotidien</p>
+          <p data-fr="Je maîtrise un ensemble complet d'outils essentiels au webdesign, allant de la création graphique au développement web." data-en="I master a complete set of tools essential to webdesign, from graphic creation to web development.">Je maîtrise un ensemble complet d'outils essentiels au webdesign, allant de la création graphique au développement web.</p>
+          <p data-fr="J'utilise notamment Adobe Illustrator et Photoshop pour la création visuelle, ainsi que Figma pour le design d'interfaces modernes et collaboratives. Je travaille également avec InDesign et Premiere pour des supports variés." data-en="I use Adobe Illustrator and Photoshop for visual creation, as well as Figma for modern and collaborative interface design. I also work with InDesign and Premiere for various media.">J'utilise notamment Adobe Illustrator et Photoshop pour la création visuelle, ainsi que Figma pour le design d'interfaces modernes et collaboratives. Je travaille également avec InDesign et Premiere pour des supports variés.</p>
+          <p data-fr="Côté intégration je développe avec HTML, CSS et JavaScript, et j'utilise WordPress pour la création de sites dynamiques." data-en="On the integration side, I develop with HTML, CSS and JavaScript, and use WordPress for creating dynamic websites.">Côté intégration je développe avec HTML, CSS et JavaScript, et j'utilise WordPress pour la création de sites dynamiques.</p>
+          <p data-fr="Enfin, j'intègre des outils d'intelligence artificielle comme ChatGPT et Claude pour optimiser mes processus créatifs et techniques." data-en="Finally, I integrate artificial intelligence tools such as ChatGPT and Claude to optimise my creative and technical processes.">Enfin, j'intègre des outils d'intelligence artificielle comme ChatGPT et Claude pour optimiser mes processus créatifs et techniques.</p>
         </div>
         <div class="outils-grid">
           <div class="outil-item"><img src="img/picto_adobe_illustrator_homepage.png" alt="Illustrator" /><span>Illustrator</span></div>
@@ -252,7 +257,7 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">©2026 - Tous droits réservés DRUESNE Thomas</p>
+      <p class="footer-copy" data-fr="©2026 - Tous droits réservés DRUESNE Thomas" data-en="©2026 - All rights reserved DRUESNE Thomas">©2026 - Tous droits réservés DRUESNE Thomas</p>
       <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="footer-linkedin" target="_blank" rel="noopener">
         <img src="img/logo_lkd_footer.png" alt="LinkedIn" />
       </a>
@@ -270,28 +275,28 @@
       <div class="modal-inner">
 
         <div class="modal-col-main">
-          <h2 class="modal-title" id="modal-inzerty-title">Refonte complète du site web d'Inzerty</h2>
-          <p class="modal-desc">
+          <h2 class="modal-title" id="modal-inzerty-title" data-fr="Refonte complète du site web d'Inzerty" data-en="Complete redesign of the Inzerty website">Refonte complète du site web d'Inzerty</h2>
+          <p class="modal-desc" data-fr="Refonte de la présence digitale d'Inzerty pour clarifier son offre entre le service recrutement (Régie) et le centre de service (Studio). L'enjeu était de moderniser le design et structurer clairement les deux piliers de l'entreprise pour une meilleure compréhension des utilisateurs." data-en="Redesign of Inzerty's digital presence to clarify its offering between the recruitment service (Régie) and the service centre (Studio). The challenge was to modernise the design and clearly structure the two pillars of the company for better user understanding.">
             Refonte de la présence digitale d'Inzerty pour clarifier son offre entre le service recrutement (Régie) et le centre de service (Studio). L'enjeu était de moderniser le design et structurer clairement les deux piliers de l'entreprise pour une meilleure compréhension des utilisateurs.
           </p>
           <div class="modal-details-grid">
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_technicité_modale.png" alt="" />
-                Technicité
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
               </h3>
               <ul class="modal-list">
-                <li>Maquettage</li>
-                <li>Prototypage</li>
-                <li>Intégration</li>
-                <li>Responsive</li>
-                <li>UI/UX</li>
+                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
+                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
+                <li data-fr="Intégration" data-en="Integration">Intégration</li>
+                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
+                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
               </ul>
             </div>
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_outils.png" alt="" />
-                Outils
+                <span data-fr="Outils" data-en="Tools">Outils</span>
               </h3>
               <div class="modal-tools-row">
                 <img src="img/picto_figma_outils_homepage.png" alt="Figma" title="Figma" />
@@ -306,8 +311,8 @@
           </div>
 
           <div class="modal-btns">
-            <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&t=mxUGkuSDbsskrGGO-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
-            <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+            <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&t=mxUGkuSDbsskrGGO-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+            <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
           </div>
         </div>
 
@@ -333,9 +338,9 @@
 
         <div class="modal-col-main">
 
-          <h2 class="modal-title" id="modal-e2c-title">Refonte complète du site web de l'E2C Grand-Lille</h2>
+          <h2 class="modal-title" id="modal-e2c-title" data-fr="Refonte complète du site web de l'E2C Grand-Lille" data-en="Complete redesign of the E2C Grand-Lille website">Refonte complète du site web de l'E2C Grand-Lille</h2>
 
-          <p class="modal-desc">
+          <p class="modal-desc" data-fr="Modernisation et meilleure valorisation des missions de l'E2C. L'ancienne version manquait de clarté sur l'accompagnement des jeunes et la diversité des parcours. La refonte structure les contenus pour refléter les actions de l'école et renforcer son attractivité." data-en="Modernisation and better promotion of the E2C's missions. The old version lacked clarity on support for young people and the diversity of pathways. The redesign structures the content to reflect the school's actions and strengthen its attractiveness.">
             Modernisation et meilleure valorisation des missions de l'E2C. L'ancienne version manquait de clarté sur l'accompagnement des jeunes et la diversité des parcours. La refonte structure les contenus pour refléter les actions de l'école et renforcer son attractivité.
           </p>
 
@@ -344,19 +349,19 @@
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_technicité_modale.png" alt="" />
-                Technicité
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
               </h3>
               <ul class="modal-list">
-                <li>Intégration</li>
-                <li>Responsive</li>
-                <li>Retouche d'image</li>
+                <li data-fr="Intégration" data-en="Integration">Intégration</li>
+                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
+                <li data-fr="Retouche d'image" data-en="Image editing">Retouche d'image</li>
               </ul>
             </div>
 
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_outils.png" alt="" />
-                Outils
+                <span data-fr="Outils" data-en="Tools">Outils</span>
               </h3>
               <div class="modal-tools-row">
                 <img src="img/picto_wordpress.png" alt="WordPress" title="WordPress" />
@@ -370,8 +375,8 @@
           </div>
 
           <div class="modal-btns">
-            <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&t=zUaQqvaAB9L7t0k9-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
-            <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+            <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&t=zUaQqvaAB9L7t0k9-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+            <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
           </div>
 
         </div>
@@ -398,9 +403,9 @@
 
         <div class="modal-col-main">
 
-          <h2 class="modal-title" id="modal-dinamic-title">Refonte du site web de Dinamic</h2>
+          <h2 class="modal-title" id="modal-dinamic-title" data-fr="Refonte du site web de Dinamic" data-en="Redesign of the Dinamic website">Refonte du site web de Dinamic</h2>
 
-          <p class="modal-desc">
+          <p class="modal-desc" data-fr="Refonte du site Dinamic pour moderniser la présentation de ses services. L'objectif était de structurer les offres, valoriser le savoir-faire de l'entreprise et offrir une interface plus claire et responsive facilitant la compréhension des services." data-en="Redesign of the Dinamic website to modernise the presentation of its services. The objective was to structure the offers, highlight the company's expertise and offer a clearer and more responsive interface facilitating the understanding of services.">
             Refonte du site Dinamic pour moderniser la présentation de ses services. L'objectif était de structurer les offres, valoriser le savoir-faire de l'entreprise et offrir une interface plus claire et responsive facilitant la compréhension des services.
           </p>
 
@@ -409,21 +414,21 @@
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_technicité_modale.png" alt="" />
-                Technicité
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
               </h3>
               <ul class="modal-list">
-                <li>Maquettage</li>
-                <li>Prototypage</li>
-                <li>Intégration</li>
-                <li>Responsive</li>
-                <li>UI/UX</li>
+                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
+                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
+                <li data-fr="Intégration" data-en="Integration">Intégration</li>
+                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
+                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
               </ul>
             </div>
 
             <div class="modal-detail-block">
               <h3 class="modal-detail-title">
                 <img src="img/picto_outils.png" alt="" />
-                Outils
+                <span data-fr="Outils" data-en="Tools">Outils</span>
               </h3>
               <div class="modal-tools-row">
                 <img src="img/picto_figma_outils_homepage.png" alt="Figma"     title="Figma" />
@@ -437,8 +442,8 @@
           </div>
 
           <div class="modal-btns">
-            <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&t=stdYP5JJlu2JZKkR-1" class="btn btn-secondary-filled" target="_blank" rel="noopener">Voir la maquette</a>
-            <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener">Voir le site web</a>
+            <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&t=stdYP5JJlu2JZKkR-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+            <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
           </div>
 
         </div>
@@ -458,5 +463,6 @@
   <script src="js/modal-inzerty.js"></script>
   <script src="js/modal-e2c.js"></script>
   <script src="js/modal-dinamic.js"></script>
+  <script src="js/lang.js"></script>
 </body>
 </html>

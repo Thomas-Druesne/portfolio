@@ -112,7 +112,7 @@
 
 .apropos-cards-track {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -435,6 +435,10 @@
     height: 220px;
   }
 
+  /* Cards tablette : 1 colonne */
+  .apropos-cards-track {
+    grid-template-columns: 1fr;
+  }
 
   /* Scolaire tablette : suppression de l'indentation, layout horizontal conservé */
   .scolaire-item:nth-child(1),
@@ -483,12 +487,20 @@
     padding: 3rem 1rem 2.5rem;
   }
 
+  .apropos-intro-inner {
+    text-align: left;
+  }
+
   .apropos-cards-section {
     padding: 0 1rem 3rem;
   }
 
   .apropos-title {
     font-size: 2rem;
+  }
+
+  .apropos-title::after {
+    left: 0;
   }
 
   .apropos-intro-photo img {

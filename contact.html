@@ -12,17 +12,22 @@
 </head>
 <body>
 
+  <!-- ===== LANG BUTTON ===== -->
+  <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+    <img src="img/english_flag.png" alt="EN" id="lang-flag" />
+  </button>
+
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
         <img src="img/logo-portfolio-white.png" alt="Logo TO" />
       </a>
       <nav id="main-nav">
-        <a href="projets.html">Mes projets</a>
-        <a href="a-propos.html">À Propos</a>
-        <a href="contact.html">Me contacter</a>
+        <a href="projets.html" data-fr="Mes projets" data-en="My projects">Mes projets</a>
+        <a href="a-propos.html" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="contact.html" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
       </nav>
-      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener">Mon CV</a>
+      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener" data-fr="Mon CV" data-en="My Resume">Mon CV</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -39,11 +44,11 @@
           <!-- Partie gauche : Infos de contact -->
           <div class="contact-info">
             <div class="contact-title-block">
-              <h1>Un Avis ? Un recrutement ?</h1>
-              <p class="section-subtitle">Je suis toujours ouvert à une bonne opportunité — ou à un bon retour</p>
+              <h1 data-fr="Un Avis ? Un recrutement ?" data-en="Feedback? A recruitment offer?">Un Avis ? Un recrutement ?</h1>
+              <p class="section-subtitle" data-fr="Je suis toujours ouvert à une bonne opportunité — ou à un bon retour" data-en="I'm always open to a good opportunity — or good feedback">Je suis toujours ouvert à une bonne opportunité — ou à un bon retour</p>
             </div>
 
-            <p class="contact-description">
+            <p class="contact-description" data-fr="Actuellement disponible pour de nouvelles opportunités et collaborations créatives. Donnons vie à vos idées à travers des expériences numériques marquantes. Contactez-moi soit par téléphone, par email ou simplement en remplissant ce formulaire." data-en="Currently available for new opportunities and creative collaborations. Let's bring your ideas to life through memorable digital experiences. Contact me by phone, email or simply by filling in this form.">
               Actuellement disponible pour de nouvelles opportunités et collaborations créatives. Donnons vie à vos idées à travers des expériences numériques marquantes. Contactez-moi soit par téléphone, par email ou simplement en remplissant ce formulaire.
             </p>
 
@@ -55,12 +60,12 @@
 
               <div class="contact-item">
                 <img src="img/picto_time_contact.png" alt="Horaires" class="contact-icon" />
-                <span>Du lundi au vendredi - 9h / 19h</span>
+                <span data-fr="Du lundi au vendredi - 9h / 19h" data-en="Monday to Friday - 9am / 7pm">Du lundi au vendredi - 9h / 19h</span>
               </div>
 
               <div class="contact-item">
                 <img src="img/picto_location_contact.png" alt="Localisation" class="contact-icon" />
-                <span>Disponible sur toute la métropole Lilloise</span>
+                <span data-fr="Disponible sur toute la métropole Lilloise" data-en="Available throughout the Lille metropolitan area">Disponible sur toute la métropole Lilloise</span>
               </div>
             </div>
           </div>
@@ -69,15 +74,15 @@
           <div class="contact-form-wrapper">
             <form id="contact-form" class="contact-form">
               <div class="contact-title-block">
-                <h2>Laissez-moi un petit message !</h2>
-                <p class="section-subtitle">(Réponse garantie sous 24h, promis ✋)</p>
+                <h2 data-fr="Laissez-moi un petit message !" data-en="Leave me a little message!">Laissez-moi un petit message !</h2>
+                <p class="section-subtitle" data-fr="(Réponse garantie sous 24h, promis ✋)" data-en="(Reply guaranteed within 24h, promise ✋)">(Réponse garantie sous 24h, promis ✋)</p>
               </div>
 
               <!-- Champ honeypot (protection anti-bots) - invisible pour l'utilisateur -->
               <input type="text" name="website" style="display: none; position: absolute; left: -9999px;" />
 
               <div class="form-group">
-                <label for="name">Nom</label>
+                <label for="name" data-fr="Nom" data-en="Last name">Nom</label>
                 <input
                   type="text"
                   id="name"
@@ -90,7 +95,7 @@
               </div>
 
               <div class="form-group">
-                <label for="firstname">Prénom</label>
+                <label for="firstname" data-fr="Prénom" data-en="First name">Prénom</label>
                 <input
                   type="text"
                   id="firstname"
@@ -103,7 +108,7 @@
               </div>
 
               <div class="form-group">
-                <label for="email">Mail</label>
+                <label for="email" data-fr="Mail" data-en="Email">Mail</label>
                 <input
                   type="email"
                   id="email"
@@ -116,7 +121,7 @@
               </div>
 
               <div class="form-group">
-                <label for="phone">Téléphone</label>
+                <label for="phone" data-fr="Téléphone" data-en="Phone">Téléphone</label>
                 <input
                   type="tel"
                   id="phone"
@@ -128,7 +133,7 @@
               </div>
 
               <div class="form-group">
-                <label for="subject">Objet</label>
+                <label for="subject" data-fr="Objet" data-en="Subject">Objet</label>
                 <input
                   type="text"
                   id="subject"
@@ -141,7 +146,7 @@
               </div>
 
               <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message" data-fr="Message" data-en="Message">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -153,13 +158,13 @@
                 <span class="error-message" id="message-error"></span>
               </div>
 
-              <button type="submit" class="btn-submit">Envoyer</button>
+              <button type="submit" class="btn-submit" data-fr="Envoyer" data-en="Send">Envoyer</button>
 
               <!-- Messages de feedback -->
-              <div id="form-success" class="form-feedback success hidden">
+              <div id="form-success" class="form-feedback success hidden" data-fr="✓ Merci ! Votre message a été envoyé avec succès. Je vous recontacterai très rapidement." data-en="✓ Thank you! Your message has been sent successfully. I will get back to you very soon.">
                 ✓ Merci ! Votre message a été envoyé avec succès. Je vous recontacterai très rapidement.
               </div>
-              <div id="form-error" class="form-feedback error hidden">
+              <div id="form-error" class="form-feedback error hidden" data-fr="✗ Une erreur s'est produite. Veuillez réessayer ou me contacter directement." data-en="✗ An error occurred. Please try again or contact me directly.">
                 ✗ Une erreur s'est produite. Veuillez réessayer ou me contacter directement.
               </div>
             </form>
@@ -172,7 +177,7 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">©2026 - Tous droits réservés DRUESNE Thomas</p>
+      <p class="footer-copy" data-fr="©2026 - Tous droits réservés DRUESNE Thomas" data-en="©2026 - All rights reserved DRUESNE Thomas">©2026 - Tous droits réservés DRUESNE Thomas</p>
       <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="footer-linkedin" target="_blank" rel="noopener">
         <img src="img/logo_lkd_footer.png" alt="LinkedIn" />
       </a>
@@ -181,5 +186,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/lang.js"></script>
 </body>
 </html>

@@ -119,6 +119,10 @@ header nav a.active::after {
   border-color: var(--primary);
 }
 
+.btn-cv::after {
+  display: none !important;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;

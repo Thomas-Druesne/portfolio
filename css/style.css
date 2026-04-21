@@ -199,3 +199,54 @@ main {
 .back-to-top:hover svg {
   stroke: var(--secondary);
 }
+
+/* ===== Language toggle button ===== */
+[data-fr] {
+  transition: opacity 0.18s ease;
+}
+
+.lang-btn {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  width: 54px;
+  height: 54px;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.lang-btn:hover {
+  border-color: var(--secondary);
+  transform: scale(1.08);
+}
+
+.lang-btn:active {
+  transform: scale(0.91);
+  transition: transform 0.08s ease;
+}
+
+.lang-btn img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.18s ease;
+}
+
+@media (max-width: 900px) {
+  .lang-btn {
+    width: 44px;
+    height: 44px;
+    left: 14px;
+    bottom: 16px;
+    border-radius: 10px;
+  }
+}
