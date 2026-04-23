@@ -15,6 +15,7 @@
 ============================================================ */
 .realisations {
   padding: 5rem 0;
+  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -195,13 +196,14 @@
   border-color: var(--secondary);
   color: var(--secondary);
   background: transparent;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-voir-site:hover {
   background: transparent;
   border-color: var(--primary);
   color: var(--primary);
+  transform: translateY(-4px);
 }
 
 /* ============================================================
@@ -331,6 +333,37 @@
 
   .realisations-cta p {
     font-size: 1.25rem;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS AU SCROLL — page projets uniquement
+============================================================ */
+
+.anim-from-left {
+  opacity: 0;
+  transform: translateX(-420px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.anim-from-right {
+  opacity: 0;
+  transform: translateX(420px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.anim-from-left.is-visible,
+.anim-from-right.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-from-left,
+  .anim-from-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

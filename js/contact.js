@@ -240,3 +240,51 @@ function showError(message) {
   successMessage.classList.add('hidden');
   errorMessage.classList.remove('hidden');
 }
+
+// ============================================================
+// PAGE CONTACT - ANIMATIONS
+// ============================================================
+
+// Helper : reset instantané sans saut visuel
+function initAnim(el, animClass) {
+  if (!el) return;
+  el.style.transition = 'none';
+  el.classList.remove('is-visible');
+  el.classList.add(animClass);
+  void el.offsetHeight; // Forcer le reflow
+  el.style.transition = '';
+}
+
+const contactInfo       = document.querySelector('.contact-info');
+const contactTitleBlock = document.querySelector('.contact-info .contact-title-block');
+const contactDetails    = document.querySelector('.contact-details');
+const contactFormWrapper = document.querySelector('.contact-form-wrapper');
+
+// Appliquer l'état initial immédiatement (invisible + décalé)
+initAnim(contactInfo,        'anim-from-left');
+initAnim(contactTitleBlock,  'anim-from-left');
+initAnim(contactDetails,     'anim-from-bottom');
+initAnim(contactFormWrapper, 'anim-from-right');
+
+if (contactDetails) contactDetails.style.transitionDelay = '0.15s';
+
+// Déclencher les animations d'arrivée
+setTimeout(() => {
+  if (contactInfo)        contactInfo.classList.add('is-visible');
+  if (contactFormWrapper) contactFormWrapper.classList.add('is-visible');
+}, 100);
+
+// Title block et details : observer (ils sont dans le viewport)
+setTimeout(() => {
+  const contactObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        contactObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+
+  if (contactTitleBlock) contactObserver.observe(contactTitleBlock);
+  if (contactDetails)    contactObserver.observe(contactDetails);
+}, 100);

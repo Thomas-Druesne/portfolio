@@ -75,12 +75,13 @@
   color: var(--secondary);
   border: 2px solid var(--secondary);
   border-radius: 4px;
-  transition: color 0.35s ease, border-color 0.35s ease;
+  transition: color 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
 }
 
 .btn-hero-primary:hover {
   color: var(--primary);
   border-color: var(--primary);
+  transform: translateY(-4px);
 }
 
 /* Bouton 2 : outline cyan → outline blanc au hover */
@@ -89,12 +90,13 @@
   color: var(--secondary);
   border: 2px solid var(--secondary);
   border-radius: 4px;
-  transition: color 0.35s ease, border-color 0.35s ease;
+  transition: color 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
 }
 
 .btn-hero-secondary:hover {
   color: var(--primary);
   border-color: var(--primary);
+  transform: translateY(-4px);
 }
 
 .hero-photo {
@@ -568,6 +570,61 @@
   font-weight: 600;
   color: var(--primary);
   text-align: center;
+}
+
+/* ============================================================
+   ANIMATIONS AU SCROLL — page d'accueil uniquement
+============================================================ */
+
+.anim-from-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.anim-from-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.anim-from-bottom {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.anim-from-left.is-visible,
+.anim-from-right.is-visible,
+.anim-from-bottom.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animation dédiée pour la photo hero */
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(420px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-photo--animate {
+  animation: heroSlideIn 1.2s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-from-left,
+  .anim-from-right,
+  .anim-from-bottom {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* ============================================================
