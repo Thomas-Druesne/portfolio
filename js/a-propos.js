@@ -3,14 +3,13 @@
 // ── ANIMATIONS ───────────────────────────────────────────────
 
 // ── PHOTO INTRO ──────────────────────────────────────────────
-// Slide depuis la droite au chargement
+// Fade uniquement (opacity 0 → 1)
 const introPhoto = document.querySelector('.apropos-intro-photo');
 if (introPhoto) {
-  // Reset sans transition pour éviter le saut
   introPhoto.style.transition = 'none';
   introPhoto.classList.remove('is-visible');
-  introPhoto.classList.add('anim-from-right');
-  void introPhoto.offsetHeight; // Forcer le reflow
+  introPhoto.classList.add('anim-fade');
+  void introPhoto.offsetHeight;
   introPhoto.style.transition = '';
   setTimeout(() => introPhoto.classList.add('is-visible'), 100);
 }

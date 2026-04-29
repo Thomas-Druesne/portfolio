@@ -214,7 +214,7 @@ main {
   font-weight: 700;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.3s ease-out;
   margin-top: 1rem;
 }
 
@@ -274,66 +274,6 @@ main {
   }
 }
 
-/* ============================================================
-   ANIMATIONS — page contact uniquement
-============================================================ */
-
-.anim-from-left {
-  opacity: 0;
-  transform: translateX(-420px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.anim-from-right {
-  opacity: 0;
-  transform: translateX(420px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.anim-from-bottom {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.anim-from-left.is-visible,
-.anim-from-right.is-visible,
-.anim-from-bottom.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Contact-title-block : décalage différent pour la séparation visuelle */
-.contact-title-block.anim-from-left {
-  transform: translateX(-300px);
-  transition: opacity 1.25s ease, transform 1.25s ease;
-}
-
-.contact-title-block.anim-from-left.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Contact-details : décalage avec stagger */
-.contact-details.anim-from-bottom {
-  transform: translateY(100px);
-  transition: opacity 1.35s ease, transform 1.35s ease;
-}
-
-.contact-details.anim-from-bottom.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .anim-from-left,
-  .anim-from-right,
-  .anim-from-bottom {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
 
 /* ===== Responsive - Tablette (900px) ===== */
 @media (max-width: 900px) {

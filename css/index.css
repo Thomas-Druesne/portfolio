@@ -75,7 +75,7 @@
   color: var(--secondary);
   border: 2px solid var(--secondary);
   border-radius: 4px;
-  transition: color 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
+  transition: color 0.35s ease, border-color 0.35s ease, transform 0.3s ease-out;
 }
 
 .btn-hero-primary:hover {
@@ -90,7 +90,7 @@
   color: var(--secondary);
   border: 2px solid var(--secondary);
   border-radius: 4px;
-  transition: color 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
+  transition: color 0.35s ease, border-color 0.35s ease, transform 0.3s ease-out;
 }
 
 .btn-hero-secondary:hover {
@@ -159,10 +159,10 @@
   border-radius: 2px;
 }
 
-/* Grid : 2fr 1fr, centrée */
+/* Grid : 3 colonnes égales — les grandes cards couvrent 2 colonnes */
 .projets-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;              /* 24px */
   justify-content: center;
   margin-bottom: 3rem;
@@ -178,14 +178,10 @@
   height: 380px;        /* hauteur uniforme pour toutes les cards */
 }
 
-.projet-card--large  { background: #FFFFFF; }
-.projet-card--small  { background: #F0EAE0; }
-.projet-card--dinamic {
-  grid-column: 1 / -1;
-  width: 832px;
-  margin-left: auto;    /* alignée à droite */
-  background: #FFFFFF;
-}
+.projet-card--large   { background: #FFFFFF; grid-column: span 2; }
+.projet-card--small   { background: #F0EAE0; }
+.projet-card--envie   { background: #FFFFFF; }
+.projet-card--dinamic { background: #FFFFFF; grid-column: span 2; }
 
 .projet-card--dinamic img {
   object-fit: cover;    /* remplit la card sans laisser d'espaces */
@@ -601,20 +597,30 @@
   transform: none;
 }
 
-/* Animation dédiée pour la photo hero */
-@keyframes heroSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(420px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+/* Animation dédiée pour la photo hero — fade uniquement */
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .hero-photo--animate {
-  animation: heroSlideIn 1.2s ease forwards;
+  animation: heroFadeIn 1.2s ease forwards;
+}
+
+/* Tablette & Mobile — aucune animation */
+@media (max-width: 900px) {
+  .anim-from-left,
+  .anim-from-right,
+  .anim-from-bottom {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-photo--animate {
+    animation: none !important;
+    opacity: 1 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -656,13 +662,9 @@
     flex: 0 0 280px;
   }
 
-  /* Projets : passe en ratio 2fr/1fr */
+  /* Projets : garde 3 colonnes à 1200px */
   .projets-grid {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .projet-card--dinamic {
-    width: 66.7%;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -774,6 +776,7 @@
 
   .projet-card--large,
   .projet-card--small,
+  .projet-card--envie,
   .projet-card--dinamic {
     width: 100% !important;
     height: 280px;
@@ -804,6 +807,7 @@
 
   .projet-card--large,
   .projet-card--small,
+  .projet-card--envie,
   .projet-card--dinamic {
     height: 200px;
   }

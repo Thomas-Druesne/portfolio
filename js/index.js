@@ -20,10 +20,8 @@ function setupScrollAnimations() {
   addAnim('.projets .section-header',   'anim-from-bottom');
   addAnim('.projet-card',               'anim-from-bottom', 0.12);
   addAnim('.book-img',                  'anim-from-left');
-  addAnim('.book-content',              'anim-from-right');
   addAnim('.competences .section-header', 'anim-from-bottom');
   addAnim('.competence-card',           'anim-from-bottom', 0.1);
-addAnim('.outils-text',               'anim-from-left');
   addAnim('.outils-grid .outil-item',   'anim-from-bottom', 0.05);
 
   // Observer : déclenche is-visible quand l'élément entre dans le viewport

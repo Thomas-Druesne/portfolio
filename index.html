@@ -90,14 +90,27 @@
              role="button"
              tabindex="0"
              style="cursor: pointer;">
-          <img src="img/img-projet-E2C.png" alt="Ecole de la seconde chance" />
+          <img src="img/img-projet-E2C.png" alt="École de la seconde chance" />
           <div class="projet-overlay">
-            <h3 data-fr="Ecole de la seconde chance" data-en="School of the second chance">Ecole de la seconde chance</h3>
+            <h3 data-fr="École de la seconde chance" data-en="School of the second chance">École de la seconde chance</h3>
             <p data-fr="Intégration WordPress" data-en="WordPress Integration">Intégration WordPress</p>
           </div>
         </div>
 
-        <!-- Card Dinamic (grande, alignée à droite) — ouvre la modale -->
+        <!-- Card Envie Nord (petite) — ouvre la modale -->
+        <div class="projet-card projet-card--envie"
+             id="btn-open-envie"
+             role="button"
+             tabindex="0"
+             style="cursor: pointer;">
+          <img src="img/img-projet-envie.png" alt="Envie Nord" />
+          <div class="projet-overlay">
+            <h3>Envie Nord</h3>
+            <p data-fr="Prototypage/UX Design" data-en="Prototyping/UX Design">Prototypage/UX Design</p>
+          </div>
+        </div>
+
+        <!-- Card Dinamic (grande) — ouvre la modale -->
         <div class="projet-card projet-card--dinamic"
              id="btn-open-dinamic"
              role="button"
@@ -328,6 +341,62 @@
   </div>
 
   <!-- ================================================
+       MODALE — Envie Nord
+  ================================================ -->
+  <div class="modal-overlay" id="modal-envie" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-envie-title">
+    <div class="modal">
+
+      <button class="modal-close" id="btn-close-envie" aria-label="Fermer la modale"></button>
+
+      <div class="modal-inner">
+
+        <div class="modal-col-main">
+          <h2 class="modal-title" id="modal-envie-title" data-fr="Refonte du tunnel de vente du site web d'Envie" data-en="Redesign of the Envie website sales funnel">Refonte du tunnel de vente du site web d'Envie</h2>
+          <p class="modal-desc" data-fr="La refonte du site web d'Envie, réseau associatif dédié au réemploi et à la réparation d'électroménager tout en favorisant l'insertion professionnelle, répond à un besoin de modernisation et d'alignement avec les standards digitaux actuels. L'ancienne version ne reflétait plus pleinement l'image engagée et professionnelle du projet, tant sur le plan visuel que sur l'expérience utilisateur. Dans ce contexte, j'ai mené une refonte UX centrée sur l'optimisation du parcours utilisateur, notamment du tunnel de vente, afin de fluidifier la navigation et d'améliorer la conversion. Le design et la structure existants ne permettaient pas de valoriser pleinement les expertises, l'impact social et les services proposés par Envie." data-en="The redesign of the Envie website, an associative network dedicated to the reuse and repair of household appliances while promoting professional integration, meets a need for modernisation and alignment with current digital standards. The old version no longer fully reflected the committed and professional image of the project, both visually and in terms of user experience. In this context, I led a UX redesign centred on optimising the user journey, particularly the sales funnel, in order to streamline navigation and improve conversion. The existing design and structure did not fully showcase the expertise, social impact and services offered by Envie.">
+            La refonte du site web d'Envie, réseau associatif dédié au réemploi et à la réparation d'électroménager tout en favorisant l'insertion professionnelle, répond à un besoin de modernisation et d'alignement avec les standards digitaux actuels. L'ancienne version ne reflétait plus pleinement l'image engagée et professionnelle du projet, tant sur le plan visuel que sur l'expérience utilisateur. Dans ce contexte, j'ai mené une refonte UX centrée sur l'optimisation du parcours utilisateur, notamment du tunnel de vente, afin de fluidifier la navigation et d'améliorer la conversion. Le design et la structure existants ne permettaient pas de valoriser pleinement les expertises, l'impact social et les services proposés par Envie.
+          </p>
+
+          <div class="modal-details-grid">
+            <div class="modal-detail-block">
+              <h3 class="modal-detail-title">
+                <img src="img/picto_technicité_modale.png" alt="" />
+                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
+              </h3>
+              <ul class="modal-list">
+                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
+                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
+                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
+              </ul>
+            </div>
+
+            <div class="modal-detail-block">
+              <h3 class="modal-detail-title">
+                <img src="img/picto_outils.png" alt="" />
+                <span data-fr="Outils" data-en="Tools">Outils</span>
+              </h3>
+              <div class="modal-tools-row">
+                <img src="img/picto_figma_outils_homepage.png" alt="Figma"   title="Figma" />
+                <img src="img/picto_chatgpt.png"               alt="ChatGPT" title="ChatGPT" />
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-btns">
+            <a href="https://www.figma.com/design/3grlsWN1xAbJuugxTjShvC/Envie---Inzerty---2025?node-id=1-2969&t=utBQAk3Pu9eYQleq-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
+          </div>
+        </div>
+
+        <div class="modal-col-side">
+          <div class="modal-img-wrapper">
+            <img src="img/img-projet-envie.png" alt="Aperçu du site Envie Nord" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
        MODALE — E2C Grand-Lille
   ================================================ -->
   <div class="modal-overlay" id="modal-e2c" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-e2c-title">
@@ -463,6 +532,7 @@
   <script src="js/index.js"></script>
   <script src="js/modal-inzerty.js"></script>
   <script src="js/modal-e2c.js"></script>
+  <script src="js/modal-envie.js"></script>
   <script src="js/modal-dinamic.js"></script>
   <script src="js/lang.js"></script>
 </body>

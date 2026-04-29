@@ -125,7 +125,7 @@
   align-items: center;
   text-align: center;
   gap: 1.25rem;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.5s ease;
 }
 
 .apropos-card:hover {
@@ -178,7 +178,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease-out;
 }
 
 .apropos-nav-btn:hover {
@@ -402,9 +402,16 @@
   transition: opacity 1s ease, transform 1s ease;
 }
 
+/* Fade uniquement — pour la photo intro */
+.anim-fade {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
 .anim-from-left.is-visible,
 .anim-from-right.is-visible,
-.anim-from-bottom.is-visible {
+.anim-from-bottom.is-visible,
+.anim-fade.is-visible {
   opacity: 1;
   transform: none;
 }
@@ -425,6 +432,20 @@
 .hobbies-card.anim-from-right.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Tablette & Mobile — aucune animation */
+@media (max-width: 900px) {
+  .anim-from-left,
+  .anim-from-right,
+  .anim-from-bottom,
+  .anim-fade,
+  .hobbies-card.anim-from-left,
+  .hobbies-card.anim-from-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -558,6 +579,7 @@
 
   .apropos-title::after {
     left: 0;
+    transform: none;
   }
 
   .apropos-intro-photo img {
@@ -608,6 +630,6 @@
   }
 
   .hobbies-img img {
-    height: 150px;
+    height: 100px;
   }
 }
