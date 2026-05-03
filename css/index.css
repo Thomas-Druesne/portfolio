@@ -682,6 +682,12 @@
     padding: 4rem 2rem;
   }
 
+  .book-img img {
+    aspect-ratio: unset;
+    width: 100%;
+    height: 260px;
+  }
+
   .competences {
     padding: 4rem 2rem;
   }
@@ -863,8 +869,9 @@
 
   .book-placeholder,
   .book-img img {
+    aspect-ratio: unset;
     width: 100%;
-    height: 220px;
+    height: 200px;
   }
 
   .parcours {

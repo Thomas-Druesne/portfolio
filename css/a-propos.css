@@ -587,6 +587,14 @@
     height: 180px;
   }
 
+  /* Border radius mobile : 8px */
+  .hobbies-card {
+    border-radius: 8px;
+  }
+
+  .hobbies-img {
+    border-radius: 8px;
+  }
 
   /* Scolaire mobile : empilement vertical */
   .scolaire {
