@@ -1,5 +1,47 @@
 // main.js - JavaScript global (header / footer)
 
+// ===== Injection header / footer =====
+(function () {
+  if (document.getElementById('main-nav')) return;
+
+  const HEADER = `
+  <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+    <img src="img/english_flag.png" alt="EN" id="lang-flag" />
+  </button>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="img/logo-portfolio-white.png" alt="Logo TO" />
+      </a>
+      <nav id="main-nav">
+        <a href="projets.html" data-fr="Mes projets" data-en="My projects">Mes projets</a>
+        <a href="a-propos.html" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="contact.html" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+      </nav>
+      <a href="img/CV_DRUESNE_Thomas.pdf" class="btn-cv" target="_blank" rel="noopener" data-fr="Mon CV" data-en="My Resume">Mon CV</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>`;
+
+  const FOOTER = `
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy" data-fr="©2026 - Tous droits réservés DRUESNE Thomas" data-en="©2026 - All rights reserved DRUESNE Thomas">©2026 - Tous droits réservés DRUESNE Thomas</p>
+      <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="footer-linkedin" target="_blank" rel="noopener">
+        <img src="img/logo_lkd_footer.png" alt="LinkedIn" />
+      </a>
+    </div>
+  </footer>`;
+
+  document.body.insertAdjacentHTML('afterbegin', HEADER);
+  const main = document.querySelector('main');
+  if (main) main.insertAdjacentHTML('afterend', FOOTER);
+}());
+
 // ===== Page Active Indicator =====
 (function () {
   const nav = document.getElementById('main-nav');
