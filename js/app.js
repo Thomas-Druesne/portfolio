@@ -252,6 +252,28 @@
     return pick;
   }
 
+  // Apparition en cascade : les éléments de la réponse arrivent un par un,
+  // dans l'ordre de lecture. Les grilles et listes (cartes, étapes du
+  // parcours, boutons…) sont « ouvertes » pour que chaque élément ait son tour.
+  var CASCADE_STEP = 55;    // ms entre deux éléments
+  var CASCADE_MAX  = 1400;  // délai maximum (longues réponses)
+  var CASCADE_OPEN = '.project-grid, .skill-grid, .tool-grid, .hobby-grid, .timeline, ' +
+                     '.info-list, .answer-actions, .project-details, .next-projects';
+
+  function cascade(body) {
+    var items = [];
+    (function collect(parent) {
+      Array.prototype.forEach.call(parent.children, function (el) {
+        if (el.matches(CASCADE_OPEN)) collect(el);
+        else items.push(el);
+      });
+    }(body));
+    items.forEach(function (el, i) {
+      el.classList.add('cascade');
+      el.style.animationDelay = Math.min(i * CASCADE_STEP, CASCADE_MAX) + 'ms';
+    });
+  }
+
   // `instant` = sans l'animation "Thomas écrit…" (message d'accueil)
   function addBotMessage(topic, instant) {
     var source = answers.querySelector('article[data-topic="' + topic + '"]') ||
@@ -282,6 +304,7 @@
 
       window.Icons.render(body);
       applyLang(body);
+      cascade(body);
       scrollToBottom();
     }
 

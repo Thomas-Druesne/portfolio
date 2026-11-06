@@ -361,13 +361,11 @@ img.avatar { background: none; object-fit: cover; display: block; }
 .msg-bot p { color: var(--primary); }
 .msg-bot strong { color: var(--secondary); font-weight: 700; }
 
-/* Apparition progressive des blocs de la réponse */
-.msg-bot .msg-body > * { animation: msg-in 0.5s var(--ease) both; }
-.msg-bot .msg-body > *:nth-child(2) { animation-delay: 0.08s; }
-.msg-bot .msg-body > *:nth-child(3) { animation-delay: 0.16s; }
-.msg-bot .msg-body > *:nth-child(4) { animation-delay: 0.24s; }
-.msg-bot .msg-body > *:nth-child(5) { animation-delay: 0.32s; }
-.msg-bot .msg-body > *:nth-child(n+6) { animation-delay: 0.4s; }
+/* Apparition en cascade du contenu de la réponse : chaque bloc, carte,
+   étape ou bouton reçoit la classe .cascade et un délai croissant (app.js).
+   `backwards` : l'animation ne bloque pas les effets de survol ensuite. */
+.msg-bot .msg-body > .typing { animation: msg-in 0.3s var(--ease) both; }
+.cascade { animation: msg-in 0.4s var(--ease) backwards; }
 
 @keyframes msg-in {
   from { opacity: 0; transform: translateY(10px); }
