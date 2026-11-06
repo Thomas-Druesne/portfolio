@@ -405,6 +405,8 @@
           <ul class="detail-list detail-list--tools">
             <li><img src="img/picto_figma_outils_homepage.png" alt="" />Figma</li>
             <li><img src="img/picto_wordpress.png" alt="" />WordPress</li>
+            <li><img src="img/picto_html.png" alt="" />HTML5</li>
+            <li><img src="img/picto_css.png" alt="" />CSS3</li>
             <li><img src="img/picto_claude.png" alt="" />Claude</li>
           </ul>
         </div>
