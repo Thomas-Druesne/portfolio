@@ -114,7 +114,14 @@
       else delete document.documentElement.dataset.theme;
       localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
       updateThemeLabel();
+      syncAvatars();
     });
+  }
+
+  // Photo du chatbot : cercle bleu ciel en sombre, bleu foncé en clair
+  function avatarSrc() { return isLight() ? 'img/PP_chatbot_light.png' : 'img/PP_chatbot.png'; }
+  function syncAvatars() {
+    document.querySelectorAll('img.avatar').forEach(function (img) { img.src = avatarSrc(); });
   }
 
   // ==========================================================
@@ -187,6 +194,20 @@
     requestAnimationFrame(function () { scroller.scrollTop = scroller.scrollHeight; });
   }
 
+  // Position (dans la zone de scroll) du haut d'un message, sous la barre du haut
+  var CHAPTER_GAP = 72;
+  function topOf(el) {
+    return scroller.scrollTop + el.getBoundingClientRect().top -
+           scroller.getBoundingClientRect().top - CHAPTER_GAP;
+  }
+
+  // Amène la question en haut de l'écran : on lit la réponse depuis son début
+  function scrollToChapter(userRow) {
+    requestAnimationFrame(function () {
+      scroller.scrollTop = Math.max(0, topOf(userRow));
+    });
+  }
+
   function addUserMessage(text, topicEl) {
     var row = document.createElement('div');
     row.className = 'msg msg-user';
@@ -212,18 +233,50 @@
     { topic: 'projet-lien',    name: 'Le Lien Services' }
   ];
 
-  // Boutons vers les autres projets, en commençant par le suivant
+  // Boutons vers les projets pas encore ouverts dans cette conversation,
+  // en commençant par le suivant : ils disparaissent au fil de la lecture.
   function nextProjects(current) {
-    var start = 0;
+    var start = 0, chips = '', first = true;
     PROJECTS.forEach(function (p, i) { if (p.topic === current) start = i; });
-    var chips = '';
     for (var k = 1; k < PROJECTS.length; k++) {
       var p = PROJECTS[(start + k) % PROJECTS.length];
-      chips += '<button type="button" class="chip' + (k === 1 ? ' chip--next' : '') + '" data-topic="' + p.topic + '">' +
+      if (thread.querySelector('.msg-bot[data-topic="' + p.topic + '"]')) continue; // déjà lu
+      chips += '<button type="button" class="chip' + (first ? ' chip--next' : '') + '" data-topic="' + p.topic + '">' +
                '<span class="ico" data-icon="folder"></span><span>' + p.name + '</span></button>';
+      first = false;
     }
+    if (!chips) return '';
     return '<div class="next-projects">' +
              '<p data-fr="Envie de découvrir un autre projet ?" data-en="Want to discover another project?">Envie de découvrir un autre projet ?</p>' +
+             '<div class="answer-actions">' + chips + '</div>' +
+           '</div>';
+  }
+
+  // Fin de chaque sujet : « Voulez-vous savoir autre chose ? » + les autres thèmes
+  var THEMES = [
+    { topic: 'projets',     icon: 'folder', fr: 'Mes projets',                en: 'My projects' },
+    { topic: 'competences', icon: 'pen',    fr: 'Mes compétences',            en: 'My skills' },
+    { topic: 'parcours',    icon: 'route',  fr: 'Mon parcours professionnel', en: 'My professional background' },
+    { topic: 'outils',      icon: 'wrench', fr: 'Mes outils',                 en: 'My tools' },
+    { topic: 'book',        icon: 'book',   fr: 'Mon book graphique',         en: 'My graphic portfolio' },
+    { topic: 'apropos',     icon: 'user',   fr: 'À propos de moi',            en: 'About me' },
+    { topic: 'cv',          icon: 'cv',     fr: 'Mon CV',                     en: 'My resume' },
+    { topic: 'contact',     icon: 'mail',   fr: 'Me contacter',               en: 'Contact me' }
+  ];
+  var NO_FOLLOW_UP = ['intro', 'hello', 'fallback']; // ont déjà leurs propres suggestions
+
+  function followUp(current) {
+    if (NO_FOLLOW_UP.indexOf(current) !== -1) return '';
+    var isProject = current.indexOf('projet-') === 0;
+    var chips = THEMES.filter(function (t) {
+      return t.topic !== current && !(isProject && t.topic === 'projets');
+    }).map(function (t) {
+      return '<button type="button" class="chip" data-topic="' + t.topic + '">' +
+             '<span class="ico" data-icon="' + t.icon + '"></span>' +
+             '<span data-fr="' + t.fr + '" data-en="' + t.en + '">' + t.fr + '</span></button>';
+    }).join('');
+    return '<div class="next-projects follow-up">' +
+             '<p data-fr="Voulez-vous savoir autre chose ?" data-en="Would you like to know anything else?">Voulez-vous savoir autre chose ?</p>' +
              '<div class="answer-actions">' + chips + '</div>' +
            '</div>';
   }
@@ -281,8 +334,11 @@
 
     var row = document.createElement('div');
     row.className = 'msg msg-bot';
-    row.innerHTML = '<img class="avatar" src="img/PP_chatbot.png" alt="" aria-hidden="true" />' +
+    row.dataset.topic = topic;
+    row.innerHTML = '<img class="avatar" src="' + avatarSrc() + '" alt="" aria-hidden="true" />' +
                     '<div class="msg-body"><span class="typing" aria-label="…"><i></i><i></i><i></i></span></div>';
+    var userRow = thread.lastElementChild && thread.lastElementChild.classList.contains('msg-user')
+                  ? thread.lastElementChild : null;
     thread.appendChild(row);
     scrollToBottom();
 
@@ -301,16 +357,56 @@
 
       // Détail d'un projet : on propose d'enchaîner sur les autres
       if (topic.indexOf('projet-') === 0) body.insertAdjacentHTML('beforeend', nextProjects(topic));
+      // Puis les autres thèmes
+      body.insertAdjacentHTML('beforeend', followUp(topic));
 
       window.Icons.render(body);
       applyLang(body);
       cascade(body);
-      scrollToBottom();
+      // On reste en haut du sujet demandé (pas en bas de la réponse)
+      if (userRow) scrollToChapter(userRow);
+      else scrollToBottom();
     }
 
     if (instant) fill();
     else setTimeout(fill, 650);
   }
+
+  // Bouton « Revenir en haut » : centré au-dessus de la barre de saisie,
+  // il ramène au début du sujet en cours de lecture.
+  var topBtn = document.createElement('button');
+  topBtn.type = 'button';
+  topBtn.className = 'back-top';
+  topBtn.innerHTML = '<span class="ico" data-icon="send"></span>' +
+                     '<span data-fr="Revenir en haut" data-en="Back to top">Revenir en haut</span>';
+  form.closest('.composer-wrap').appendChild(topBtn);
+  window.Icons.render(topBtn);
+  applyLang(topBtn);
+
+  function currentChapter() {
+    var found = null;
+    thread.querySelectorAll('.msg-user').forEach(function (row) {
+      if (topOf(row) <= scroller.scrollTop + 4) found = row;
+    });
+    return found;
+  }
+
+  var topTick = false;
+  function updateTopBtn() {
+    topTick = false;
+    var ch = currentChapter();
+    var show = !!ch && scroller.scrollTop - topOf(ch) > Math.max(400, scroller.clientHeight * 0.6);
+    topBtn.classList.toggle('is-visible', show);
+    topBtn.tabIndex = show ? 0 : -1;
+  }
+  scroller.addEventListener('scroll', function () {
+    if (!topTick) { topTick = true; requestAnimationFrame(updateTopBtn); }
+  }, { passive: true });
+
+  topBtn.addEventListener('click', function () {
+    var ch = currentChapter();
+    if (ch) scroller.scrollTop = Math.max(0, topOf(ch));
+  });
 
   function startConversation() {
     chat.classList.add('is-chatting', 'has-asked');

@@ -55,7 +55,7 @@
         <li><button class="side-item" type="button" id="lang-btn"><span class="ico ico-flag flag-en" data-icon="flag-en"></span><span class="ico ico-flag flag-fr" data-icon="flag-fr"></span><span data-fr="English" data-en="Français">English</span></button></li>
       </ul>
       <div class="side-profile">
-        <img class="avatar" src="img/PP_chatbot.png" alt="" aria-hidden="true" />
+        <img class="avatar" src="${document.documentElement.dataset.theme === 'light' ? 'img/PP_chatbot_light.png' : 'img/PP_chatbot.png'}" alt="" aria-hidden="true" />
         <span class="side-profile-txt">
           <strong>Thomas Druesne</strong>
           <small data-fr="Webdesigner UX &amp; Intégrateur" data-en="UX Webdesigner &amp; Integrator">Webdesigner UX &amp; Intégrateur</small>

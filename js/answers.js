@@ -42,10 +42,6 @@
         </button>
       </div>
       <p data-fr="Envie d'en voir davantage ? Mon book graphique regroupe aussi mes créations print et identités visuelles." data-en="Want to see more? My graphic portfolio also gathers my print work and visual identities.">Envie d'en voir davantage ? Mon book graphique regroupe aussi mes créations print et identités visuelles.</p>
-      <div class="answer-actions">
-        <button type="button" class="chip" data-topic="book"><span class="ico" data-icon="book"></span><span data-fr="Voir mon book" data-en="See my portfolio">Voir mon book</span></button>
-        <button type="button" class="chip" data-topic="competences"><span class="ico" data-icon="pen"></span><span data-fr="Mes compétences" data-en="My skills">Mes compétences</span></button>
-      </div>
     </article>
 
     <!-- MON BOOK GRAPHIQUE -->
@@ -141,10 +137,6 @@
           <p data-fr="Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens." data-en="Master's degree in Culture, Events &amp; Digital at the UPJV in Amiens.">Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens.</p>
         </li>
       </ol>
-      <div class="answer-actions">
-        <button type="button" class="chip" data-topic="apropos"><span class="ico" data-icon="user"></span><span data-fr="En savoir plus sur moi" data-en="More about me">En savoir plus sur moi</span></button>
-        <button type="button" class="chip" data-topic="cv"><span class="ico" data-icon="cv"></span><span data-fr="Voir mon CV" data-en="See my resume">Voir mon CV</span></button>
-      </div>
     </article>
 
     <!-- MES OUTILS -->
