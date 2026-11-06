@@ -45,6 +45,12 @@
     root.querySelectorAll('.bubble[data-q-fr]').forEach(function (el) {
       el.textContent = el.dataset[l === 'fr' ? 'qFr' : 'qEn'];
     });
+    // Infobulles de la barre latérale (utiles quand elle est repliée en icônes)
+    if (root === document) {
+      document.querySelectorAll('.sidebar .side-item, .sidebar .side-new').forEach(function (el) {
+        el.title = el.textContent.trim();
+      });
+    }
   }
 
   // Changement de langue au clic : les textes s'estompent, changent,
@@ -130,7 +136,11 @@
     animateToggle();
   }
   document.getElementById('sidebar-open').addEventListener('click', function () { toggleSidebar(true); });
-  document.getElementById('sidebar-close').addEventListener('click', function () { toggleSidebar(false); });
+  // Bouton de la barre : sur mobile il ferme le tiroir ; sur ordinateur il
+  // replie la barre en colonne d'icônes, ou la redéploie si elle est repliée
+  document.getElementById('sidebar-close').addEventListener('click', function () {
+    toggleSidebar(!mqMobile.matches && app.classList.contains('is-collapsed'));
+  });
   document.getElementById('sidebar-scrim').addEventListener('click', function () { toggleSidebar(false); });
 
   function setActive(topic) {
@@ -153,7 +163,7 @@
     ['contact',     /(contact|joindre|\bmail\b|e-?mail|écrire|ecrire|appeler|téléphone|telephone|recrut|embauch|\bhire\b|disponib|freelance|devis)/],
     ['book',        /(\bbook\b|graphi|\bprint|\blogo|affiche|branding|illustration)/],
     ['projets',     /(projet|project|réalisation|realisation|\bsites?\b|website|travaux|\bworks?\b|portfolio)/],
-    ['competences', /(compétence|competence|skill|sais[- ]tu faire|\bux\b|\bui\b|\bseo\b|référencement|referencement|design|intégration|integration|responsive)/],
+    ['competences', /(compétence|competence|skill|\bia\b|\bai\b|intelligence artificielle|\bagents?\b|automatisation|automation|sais[- ]tu faire|\bux\b|\bui\b|\bseo\b|référencement|referencement|design|intégration|integration|responsive)/],
     ['parcours',    /(parcours|expérience|experience|carrière|carriere|career|stage|alternance|\bjobs?\b|emploi|background|formation|diplôme|diplome|études|etudes|école|ecole|master)/],
     ['outils',      /(outil|tool|logiciel|software|figma|adobe|photoshop|illustrator|indesign|premiere|wordpress|html|css|javascript|\bjs\b|chatgpt|claude|stitch)/],
     ['apropos',     /(qui es[- ]tu|who are you|\btoi\b|yourself|\babout\b|à propos|a propos|hobby|hobbies|passion|loisir|magic|jeux? vidéo|jeux? video|video games?)/],

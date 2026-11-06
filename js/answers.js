@@ -80,6 +80,11 @@
           <h3 data-fr="Référencement" data-en="SEO">Référencement</h3>
           <p data-fr="Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)" data-en="Implementation of page-by-page SEO/GEO on WordPress (Yoast SEO)">Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)</p>
         </div>
+        <div class="skill-card">
+          <span class="ico skill-ico" data-icon="sparkle"></span>
+          <h3 data-fr="IA &amp; automatisation" data-en="AI &amp; automation">IA &amp; automatisation</h3>
+          <p data-fr="Claude et ChatGPT au quotidien : création de skills, d'agents et automatisation des tâches" data-en="Claude and ChatGPT every day: building skills, agents and task automation">Claude et ChatGPT au quotidien : création de skills, d'agents et automatisation des tâches</p>
+        </div>
       </div>
     </article>
 
