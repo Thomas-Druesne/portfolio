@@ -735,9 +735,9 @@ html.lang-out textarea::placeholder { opacity: 0; }
 /* ============================================================
    BOUTON DARK / LIGHT (en haut à droite)
 ============================================================ */
-/* Bouton de langue : drapeau de la langue proposée (même que le libellé) */
-html:not([lang="en"]) #lang-btn .flag-fr,
-html[lang="en"] #lang-btn .flag-en { display: none; }
+/* Bouton de langue : drapeau de la langue actuelle du site */
+html:not([lang="en"]) #lang-btn .flag-en,
+html[lang="en"] #lang-btn .flag-fr { display: none; }
 
 .theme-btn .ico-moon { display: none; }
 [data-theme="light"] .theme-btn .ico-sun { display: none; }
