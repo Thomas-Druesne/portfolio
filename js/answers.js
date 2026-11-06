@@ -38,7 +38,7 @@
         </button>
         <button type="button" class="project-card" data-topic="projet-lien">
           <span class="project-logo"><img src="img/logo_le_lien_service_blanc.png" alt="Logo Le Lien Services" /></span>
-          <span class="project-meta"><strong data-fr="Refonte du site Le Lien Services" data-en="Le Lien Services website redesign">Refonte du site Le Lien Services</strong><small data-fr="Wireframes/Maquettage" data-en="Wireframes/Mockup">Wireframes/Maquettage</small></span>
+          <span class="project-meta"><strong data-fr="Refonte du site Le Lien Services" data-en="Le Lien Services website redesign">Refonte du site Le Lien Services</strong><small data-fr="Wireframes/Intégration" data-en="Wireframes/Integration">Wireframes/Intégration</small></span>
         </button>
       </div>
       <p data-fr="Envie d'en voir davantage ? Mon book graphique regroupe aussi mes créations print et identités visuelles." data-en="Want to see more? My graphic portfolio also gathers my print work and visual identities.">Envie d'en voir davantage ? Mon book graphique regroupe aussi mes créations print et identités visuelles.</p>
@@ -378,29 +378,32 @@
       <h2 class="project-title" data-fr="Refonte du site web de Le Lien Services" data-en="Redesign of the Le Lien Services website">Refonte du site web de Le Lien Services</h2>
       <figure class="project-shot project-shot--fit"><img src="img/logo_le_lien_service.png" alt="Logo Le Lien Services" /></figure>
       <p class="project-desc" data-fr-html="<strong>Le Lien Services</strong> est une <strong>structure d'insertion</strong> ardennaise du <strong>Groupe Vitamine T</strong>, basée à Vireux-Molhain, qui <strong>vend et aménage des conteneurs</strong>, jusqu'à des <strong>piscines conteneurs</strong>, tout en accompagnant des personnes vers l'<strong>emploi</strong>." data-en-html="<strong>Le Lien Services</strong> is an <strong>integration company</strong> from the Ardennes, part of the <strong>Vitamine T Group</strong> and based in Vireux-Molhain, that <strong>sells and fits out containers</strong>, right up to <strong>container swimming pools</strong>, while helping people back into <strong>employment</strong>."><strong>Le Lien Services</strong> est une <strong>structure d'insertion</strong> ardennaise du <strong>Groupe Vitamine T</strong>, basée à Vireux-Molhain, qui <strong>vend et aménage des conteneurs</strong>, jusqu'à des <strong>piscines conteneurs</strong>, tout en accompagnant des personnes vers l'<strong>emploi</strong>.</p>
-      <p class="project-desc" data-fr-html="Son site web était <strong>très ancien</strong> et n'était <strong>plus à jour</strong>, ni visuellement, ni dans ses contenus. J'en ai mené la <strong>refonte complète</strong>, des <strong>wireframes</strong> à la <strong>maquette</strong>, pour <strong>moderniser son image</strong>, <strong>clarifier son offre de conteneurs aménagés</strong> et faciliter les <strong>demandes de devis</strong>, sur mobile comme sur ordinateur." data-en-html="Its website was <strong>very old</strong> and <strong>no longer up to date</strong>, neither visually nor in its content. I led its <strong>complete redesign</strong>, from <strong>wireframes</strong> to <strong>mockup</strong>, to <strong>modernise its image</strong>, <strong>clarify its fitted-container offer</strong> and make <strong>quote requests</strong> easier, on mobile and desktop alike.">Son site web était <strong>très ancien</strong> et n'était <strong>plus à jour</strong>, ni visuellement, ni dans ses contenus. J'en ai mené la <strong>refonte complète</strong>, des <strong>wireframes</strong> à la <strong>maquette</strong>, pour <strong>moderniser son image</strong>, <strong>clarifier son offre de conteneurs aménagés</strong> et faciliter les <strong>demandes de devis</strong>, sur mobile comme sur ordinateur.</p>
+      <p class="project-desc" data-fr-html="Son site web était <strong>très ancien</strong> et n'était <strong>plus à jour</strong>, ni visuellement, ni dans ses contenus. J'en ai mené la <strong>refonte complète</strong>, des <strong>wireframes</strong> à l'<strong>intégration</strong>, pour <strong>moderniser son image</strong> et <strong>clarifier son offre de conteneurs aménagés</strong>, sur mobile comme sur ordinateur." data-en-html="Its website was <strong>very old</strong> and <strong>no longer up to date</strong>, neither visually nor in its content. I led its <strong>complete redesign</strong>, from <strong>wireframes</strong> to <strong>integration</strong>, to <strong>modernise its image</strong> and <strong>clarify its fitted-container offer</strong>, on mobile and desktop alike.">Son site web était <strong>très ancien</strong> et n'était <strong>plus à jour</strong>, ni visuellement, ni dans ses contenus. J'en ai mené la <strong>refonte complète</strong>, des <strong>wireframes</strong> à l'<strong>intégration</strong>, pour <strong>moderniser son image</strong> et <strong>clarifier son offre de conteneurs aménagés</strong>, sur mobile comme sur ordinateur.</p>
+      <p class="project-desc project-highlight" data-fr-html="J'ai également <strong>codé moi-même un configurateur</strong> qui permet d'<strong>aménager son conteneur comme on le souhaite</strong>. L'utilisateur se fait ainsi une <strong>idée concrète de ce qu'il est possible de réaliser</strong> et de ce qu'il veut vraiment, puis il est invité à <strong>prendre contact avec la personne en charge</strong> pour concrétiser son projet." data-en-html="I also <strong>coded a configurator myself</strong> that lets users <strong>fit out their container however they like</strong>. They get a <strong>concrete idea of what is possible</strong> and of what they really want, and are then invited to <strong>get in touch with the person in charge</strong> to bring their project to life.">J'ai également <strong>codé moi-même un configurateur</strong> qui permet d'<strong>aménager son conteneur comme on le souhaite</strong>. L'utilisateur se fait ainsi une <strong>idée concrète de ce qu'il est possible de réaliser</strong> et de ce qu'il veut vraiment, puis il est invité à <strong>prendre contact avec la personne en charge</strong> pour concrétiser son projet.</p>
       <div class="project-details">
         <div>
           <h3><span class="ico" data-icon="gear"></span><span data-fr="Technicité" data-en="Technical skills">Technicité</span></h3>
           <ul class="detail-list">
             <li>Wireframes</li>
-            <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
             <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
             <li>Responsive</li>
             <li>UI/UX</li>
+            <li data-fr="Intégration" data-en="Integration">Intégration</li>
           </ul>
         </div>
         <div>
           <h3><span class="ico" data-icon="wrench"></span><span data-fr="Outils" data-en="Tools">Outils</span></h3>
           <ul class="detail-list detail-list--tools">
             <li><img src="img/picto_figma_outils_homepage.png" alt="" />Figma</li>
+            <li><img src="img/picto_wordpress.png" alt="" />WordPress</li>
+            <li><img src="img/picto_claude.png" alt="" />Claude</li>
           </ul>
         </div>
       </div>
       <div class="answer-actions">
         <a href="https://www.figma.com/design/JTWkitmKE3S8bMRYZ1uNMS/Le-lien-Services---Inzerty---2026?node-id=3-3&amp;t=DQzmuDPJRISbVsbD-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="phone"></span><span data-fr="Voir la maquette mobile" data-en="View the mobile mockup">Voir la maquette mobile</span></a>
         <a href="https://www.figma.com/design/JTWkitmKE3S8bMRYZ1uNMS/Le-lien-Services---Inzerty---2026?node-id=3-4&amp;t=DQzmuDPJRISbVsbD-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="monitor"></span><span data-fr="Voir la maquette desktop" data-en="View the desktop mockup">Voir la maquette desktop</span></a>
-        <!-- TODO : bouton "Voir le site web" à ajouter quand le lien sera fourni -->
+        <a href="https://lelien-containers.com/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="external"></span><span data-fr="Voir le site web" data-en="View the website">Voir le site web</span></a>
       </div>
     </article>
     <!-- PROJET — Envie Nord -->

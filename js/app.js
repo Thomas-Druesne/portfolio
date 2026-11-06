@@ -162,7 +162,7 @@
     ['projet-inzerty', /(inzerty|simulateur|simulator|\biae\b|éligibilité|eligibilit)/],
     ['projet-e2c',     /(e2c|seconde chance|second chance)/],
     ['projet-amap',    /(amap|moreuil|panier|producteur|amapien)/],
-    ['projet-lien',    /(lien services?|le lien|conteneur|container|vitamine)/],
+    ['projet-lien',    /(lien services?|le lien|conteneur|container|configurat|vitamine)/],
     ['projet-envie',   /envie nord/],
     ['cv',          /\b(cv|resume|résumé|curriculum)\b/],
     ['contact',     /(contact|joindre|\bmail\b|e-?mail|écrire|ecrire|appeler|téléphone|telephone|recrut|embauch|\bhire\b|disponib|freelance|devis)/],
