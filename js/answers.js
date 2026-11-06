@@ -33,8 +33,7 @@
           <span class="project-meta"><strong>Envie Nord</strong><small data-fr="Prototypage/UX Design" data-en="Prototyping/UX Design">Prototypage/UX Design</small></span>
         </button>
         <button type="button" class="project-card" data-topic="projet-amap">
-          <!-- Logo provisoire en texte : remplacer par <img src="img/logo_amap_white.png" alt="Logo AMAP de Moreuil" /> -->
-          <span class="project-logo project-logo--text" aria-label="AMAP de Moreuil"><b>AMAP</b><small>de Moreuil</small></span>
+          <span class="project-logo"><img src="img/logo_amap_moreuil_blanc.png" alt="Logo AMAP de Moreuil" /></span>
           <span class="project-meta"><strong data-fr="Site web de l'AMAP de Moreuil" data-en="AMAP de Moreuil website">Site web de l'AMAP de Moreuil</strong><small data-fr="Maquettage/Intégration" data-en="Mockup/Integration">Maquettage/Intégration</small></span>
         </button>
       </div>
@@ -151,7 +150,7 @@
         <div class="tool-card"><img src="img/picto_adobe_illustrator_homepage.png" alt="" /><span>Illustrator</span></div>
         <div class="tool-card"><img src="img/picto_indesign_homepage.png" alt="" /><span>InDesign</span></div>
         <div class="tool-card"><img src="img/picto_premiere_homepage.png" alt="" /><span>Premiere</span></div>
-        <div class="tool-card"><img src="img/picto_stitch_homepage.png" alt="" /><span>Stitch</span></div>
+        <div class="tool-card"><img src="img/picto_google_stitch_homepage.png" alt="" /><span>Stitch</span></div>
         <div class="tool-card"><img src="img/picto_figma_outils_homepage.png" alt="" /><span>Figma</span></div>
         <div class="tool-card"><img src="img/picto_adobe_photoshop_homepage.png" alt="" /><span>Photoshop</span></div>
         <div class="tool-card"><img src="img/picto_wordpress.png" alt="" /><span>WordPress</span></div>
@@ -282,7 +281,7 @@
           <ul class="detail-list detail-list--tools">
             <li><img src="img/picto_figma_outils_homepage.png" alt="" />Figma</li>
             <li><img src="img/picto_wordpress.png" alt="" />WordPress</li>
-            <li><img src="img/picto_stitch_homepage.png" alt="" />Stitch</li>
+            <li><img src="img/picto_google_stitch_homepage.png" alt="" />Stitch</li>
             <li><img src="img/picto_js.png" alt="" />JavaScript</li>
             <li><img src="img/picto_html.png" alt="" />HTML5</li>
             <li><img src="img/picto_css.png" alt="" />CSS3</li>
@@ -332,8 +331,7 @@
     <!-- PROJET — AMAP de Moreuil -->
     <article data-topic="projet-amap" data-q-fr="Parle-moi du projet de l'AMAP" data-q-en="Tell me about the AMAP project">
       <h2 class="project-title" data-fr="Création du site web de l'AMAP de Moreuil" data-en="Creation of the AMAP de Moreuil website">Création du site web de l'AMAP de Moreuil</h2>
-      <!-- Aperçu provisoire : remplacer par <figure class="project-shot"><img src="img/logo_amap.png" alt="Aperçu du projet AMAP de Moreuil" /></figure> -->
-      <figure class="project-shot project-shot--text" aria-label="AMAP de Moreuil"><b>AMAP</b><small>de Moreuil</small></figure>
+      <figure class="project-shot project-shot--fit"><img src="img/logo_amap_moreuil.png" alt="Logo de l'AMAP de Moreuil" /></figure>
       <p class="project-desc" data-fr-html="Création du site web de l'<strong>AMAP de Moreuil</strong> (Somme), une <strong>association</strong> pour le maintien d'une agriculture paysanne qui relie ses adhérents, les <strong>amapiens</strong>, à <strong>8 producteurs locaux</strong>, pour la plupart en <strong>agriculture biologique</strong>, dans un <strong>partenariat solidaire et en circuit court</strong>." data-en-html="Creation of the website of the <strong>AMAP de Moreuil</strong> (Somme, France), an <strong>association</strong> supporting small-scale farming that connects its members, the <strong>amapiens</strong>, with <strong>8 local producers</strong>, most of them <strong>certified organic</strong>, through a <strong>solidarity-based, short-supply-chain partnership</strong>.">Création du site web de l'<strong>AMAP de Moreuil</strong> (Somme), une <strong>association</strong> pour le maintien d'une agriculture paysanne qui relie ses adhérents, les <strong>amapiens</strong>, à <strong>8 producteurs locaux</strong>, pour la plupart en <strong>agriculture biologique</strong>, dans un <strong>partenariat solidaire et en circuit court</strong>.</p>
       <p class="project-desc" data-fr-html="L'association avait besoin de <strong>mettre en avant sur le web</strong> son <strong>système de panier hebdomadaire</strong> (légumes, pain, œufs, fromages, fruits, miel, viande… distribués <strong>chaque jeudi</strong>) ainsi que <strong>ses producteurs</strong>. Le site présente donc clairement le <strong>fonctionnement des contrats</strong> et les <strong>producteurs partenaires</strong>, et invite les visiteurs à <strong>devenir amapien</strong>." data-en-html="The association needed to <strong>showcase online</strong> its <strong>weekly basket system</strong> (vegetables, bread, eggs, cheese, fruit, honey, meat… distributed <strong>every Thursday</strong>) as well as <strong>its producers</strong>. The site therefore clearly presents <strong>how the contracts work</strong> and the <strong>partner producers</strong>, and invites visitors to <strong>become an amapien</strong>.">L'association avait besoin de <strong>mettre en avant sur le web</strong> son <strong>système de panier hebdomadaire</strong> (légumes, pain, œufs, fromages, fruits, miel, viande… distribués <strong>chaque jeudi</strong>) ainsi que <strong>ses producteurs</strong>. Le site présente donc clairement le <strong>fonctionnement des contrats</strong> et les <strong>producteurs partenaires</strong>, et invite les visiteurs à <strong>devenir amapien</strong>.</p>
       <div class="project-details">

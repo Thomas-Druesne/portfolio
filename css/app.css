@@ -925,14 +925,6 @@ html.lang-out textarea::placeholder { opacity: 0; }
   .app.is-collapsed .side-copy { display: none; }
 }
 
-/* Logo provisoire en texte (AMAP de Moreuil, en attendant le fichier du logo) */
-.project-logo--text,
-.project-shot--text {
-  flex-direction: column;
-  font-family: 'Raleway', sans-serif;
-  line-height: 1;
-}
-.project-logo--text b { font-size: calc(2.4rem - 1px); font-weight: 800; letter-spacing: 0.04em; color: var(--primary); }
-.project-logo--text small { font-size: calc(0.95rem - 1px); font-weight: 600; color: var(--text-muted); margin-top: 0.35rem; }
-.project-shot--text b { font-size: calc(4rem - 1px); font-weight: 800; letter-spacing: 0.05em; color: #3A7D2C; }
-.project-shot--text small { font-size: calc(1.4rem - 1px); font-weight: 600; color: #1F1F1F; margin-top: 0.5rem; }
+/* Aperçu dont le logo n'a pas de marge (ex. AMAP) : affiché entier, sans zoom */
+.project-shot--fit { padding: 1.5rem; }
+.project-shot--fit img { transform: none; }
