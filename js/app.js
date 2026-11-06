@@ -145,10 +145,14 @@
 
   // Mots-clés → sujet (pour les questions tapées librement)
   var KEYWORDS = [
+    ['projet-inzerty', /inzerty/],
+    ['projet-e2c',     /(e2c|seconde chance|second chance)/],
+    ['projet-dinamic', /dinamic/],
+    ['projet-envie',   /envie nord/],
     ['cv',          /\b(cv|resume|résumé|curriculum)\b/],
     ['contact',     /(contact|joindre|\bmail\b|e-?mail|écrire|ecrire|appeler|téléphone|telephone|recrut|embauch|\bhire\b|disponib|freelance|devis)/],
     ['book',        /(\bbook\b|graphi|\bprint|\blogo|affiche|branding|illustration)/],
-    ['projets',     /(projet|project|réalisation|realisation|\bsites?\b|website|inzerty|e2c|dinamic|envie nord|travaux|\bworks?\b|portfolio)/],
+    ['projets',     /(projet|project|réalisation|realisation|\bsites?\b|website|travaux|\bworks?\b|portfolio)/],
     ['competences', /(compétence|competence|skill|sais[- ]tu faire|\bux\b|\bui\b|\bseo\b|référencement|referencement|design|intégration|integration|responsive)/],
     ['parcours',    /(parcours|expérience|experience|carrière|carriere|career|stage|alternance|\bjobs?\b|emploi|background|formation|diplôme|diplome|études|etudes|école|ecole|master)/],
     ['outils',      /(outil|tool|logiciel|software|figma|adobe|photoshop|illustrator|indesign|premiere|wordpress|html|css|javascript|\bjs\b|chatgpt|claude|stitch)/],
@@ -288,14 +292,9 @@
       return;
     }
 
-    var chip = e.target.closest('.chip[data-topic]');
-    if (chip) {
-      openTopic(chip.dataset.topic, false);
-      return;
-    }
-
-    var card = e.target.closest('[data-modal]');
-    if (card) openModal(card.dataset.modal, card);
+    // Puces de suggestion et cartes projets : la réponse s'ajoute à la suite du chat
+    var chip = e.target.closest('.chip[data-topic], .project-card[data-topic]');
+    if (chip) openTopic(chip.dataset.topic, false);
   });
 
   // Saisie
@@ -321,16 +320,21 @@
 
   // ==========================================================
   // 3 bis. FORMULAIRE DE CONTACT (réponse "contact")
-  // Envoi via FormSubmit, comme l'ancienne page contact.
+  // Envoi via FormSubmit, même formulaire (même identifiant) que
+  // l'ancienne page contact → les messages arrivent dans la même
+  // boîte mail. On passe par l'adresse "/ajax/" de FormSubmit, prévue
+  // pour un envoi en JavaScript : elle répond en JSON et autorise
+  // l'appel depuis le site (l'adresse classique est pensée pour un
+  // formulaire HTML et peut être bloquée par le navigateur en fetch).
   // ==========================================================
-  var FORM_ENDPOINT = 'https://formsubmit.co/7ec45ce06ef8a4f0a1b44f422af43ff4';
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/7ec45ce06ef8a4f0a1b44f422af43ff4';
   var RATE_KEY = 'portfolio-contact-last';
   var MSG = {
-    fr: { missing: 'Merci de remplir les trois champs.', email: 'Cette adresse e-mail ne semble pas valide.',
+    fr: { missing: 'Merci de remplir les quatre champs.', email: 'Cette adresse e-mail ne semble pas valide.',
           wait: 'Un message vient déjà d’être envoyé, merci de patienter une minute.', sending: 'Envoi en cours…',
           ok: 'Merci ! Votre message a bien été envoyé, je vous recontacte très vite.',
           fail: 'Oups, l’envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.' },
-    en: { missing: 'Please fill in all three fields.', email: 'This e-mail address doesn’t look valid.',
+    en: { missing: 'Please fill in all four fields.', email: 'This e-mail address doesn’t look valid.',
           wait: 'A message was just sent, please wait a minute.', sending: 'Sending…',
           ok: 'Thank you! Your message has been sent, I’ll get back to you very soon.',
           fail: 'Oops, sending failed. Please try again or e-mail me directly.' }
@@ -348,8 +352,8 @@
 
     function val(n) { return f.querySelector('[name="' + n + '"]').value.trim(); }
     if (val('website')) return; // champ piège rempli = robot
-    var name = val('name'), email = val('email'), message = val('message');
-    if (!name || !email || !message) return say(t.missing, 'error');
+    var name = val('name'), email = val('email'), subject = val('subject'), message = val('message');
+    if (!name || !email || !subject || !message) return say(t.missing, 'error');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return say(t.email, 'error');
     var last = +localStorage.getItem(RATE_KEY) || 0;
     if (Date.now() - last < 60000) return say(t.wait, 'error');
@@ -357,16 +361,19 @@
     var data = new FormData();
     data.append('name', name);
     data.append('email', email);
+    data.append('subject', subject);
     data.append('message', message);
-    data.append('_subject', 'Nouveau message de ' + name + ' (portfolio)');
+    data.append('_subject', 'Portfolio — ' + subject + ' (' + name + ')');
+    data.append('_replyto', email);
     data.append('_captcha', 'false');
     data.append('_template', 'table');
 
     btn.disabled = true;
     say(t.sending);
-    fetch(FORM_ENDPOINT, { method: 'POST', body: data })
-      .then(function (r) {
-        if (!r.ok) throw new Error(r.status);
+    fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (String(res.success) !== 'true') throw new Error(res.message || 'FormSubmit');
         localStorage.setItem(RATE_KEY, String(Date.now()));
         f.reset();
         say(t.ok, 'success');
@@ -375,38 +382,9 @@
       .then(function () { btn.disabled = false; });
   });
 
-  // ==========================================================
-  // 4. MODALES
-  // ==========================================================
-  var lastTrigger = null;
-
-  function openModal(id, trigger) {
-    var overlay = document.getElementById(id);
-    if (!overlay) return;
-    lastTrigger = trigger;
-    overlay.classList.add('is-open');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-    overlay.querySelector('.modal-close').focus();
-  }
-
-  function closeModal(overlay) {
-    overlay.classList.remove('is-open');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-    if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus();
-  }
-
-  document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
-    overlay.querySelector('.modal-close').addEventListener('click', function () { closeModal(overlay); });
-    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(overlay); });
-  });
-
+  // Échap ferme le menu latéral sur mobile
   document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Escape') return;
-    var open = document.querySelector('.modal-overlay.is-open');
-    if (open) closeModal(open);
-    else if (app.classList.contains('is-drawer-open')) toggleSidebar(false);
+    if (e.key === 'Escape' && app.classList.contains('is-drawer-open')) toggleSidebar(false);
   });
 
   // ==========================================================
