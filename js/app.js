@@ -160,6 +160,29 @@
     });
   }
 
+  // Sujets déjà consultés : petite pastille dans la barre latérale et
+  // coche sur les boutons « Voulez-vous savoir autre chose ? ».
+  // Gardés dans le navigateur, comme des liens déjà visités.
+  var SEEN_KEY = 'portfolio-seen';
+  function seenList() {
+    try { return JSON.parse(localStorage.getItem(SEEN_KEY)) || []; } catch (e) { return []; }
+  }
+  function paintSeen() {
+    var seen = seenList();
+    document.querySelectorAll('.side-item[data-topic], .follow-up .chip[data-topic]').forEach(function (el) {
+      el.classList.toggle('is-seen', seen.indexOf(el.dataset.topic) !== -1);
+    });
+  }
+  function markSeen(topic) {
+    var seen = seenList();
+    if (seen.indexOf(topic) === -1) {
+      seen.push(topic);
+      try { localStorage.setItem(SEEN_KEY, JSON.stringify(seen)); } catch (e) {}
+    }
+    paintSeen();
+  }
+  paintSeen();
+
   // ==========================================================
   // 3. CONVERSATION
   // ==========================================================
@@ -363,6 +386,9 @@
       window.Icons.render(body);
       applyLang(body);
       cascade(body);
+      // Sujet consulté (hors projets en détail, accueil et blagues)
+      if (THEMES.some(function (th) { return th.topic === topic; })) markSeen(topic);
+      else paintSeen();
       // On reste en haut du sujet demandé (pas en bas de la réponse)
       if (userRow) scrollToChapter(userRow);
       else scrollToBottom();
