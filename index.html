@@ -4,503 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Thomas Druesne</title>
+  <meta name="description" content="Thomas Druesne — Webdesigner UX &amp; Intégrateur WordPress. Projets, book graphique, compétences, parcours et outils." />
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/header-footer.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&amp;display=swap" />
+  <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" href="css/modal-inzerty.css" />
 </head>
-<body>
+<body data-page="home">
 
+  <div class="app" id="app">
 
-  <!-- ===== MAIN ===== -->
-  <main>
+    <!-- =====================================================
+         ZONE PRINCIPALE — interface de chat
+    ====================================================== -->
+    <main class="chat" id="chat">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <p class="hero-greeting" data-fr="Salutations 👋 !" data-en="Greetings 👋 !">Salutations 👋 !</p>
-          <h1 class="hero-title" id="hero-main-title">
-            <span data-fr="Bienvenue sur mon" data-en="Welcome to my">Bienvenue sur mon</span><br>
-            <span>portfolio</span>
-          </h1>
-          <p class="hero-subtitle" data-fr="Webdesigner UX &amp; Intégrateur WordPress débordant d'enthousiasme et créateur de sites web et d'interfaces utilisateurs passionnés !" data-en="UX Webdesigner &amp; enthusiastic WordPress Integrator, passionate creator of websites and user interfaces!">Webdesigner UX &amp; Intégrateur WordPress débordant d'enthousiasme et créateur de sites web et d'interfaces utilisateurs passionnés !</p>
-          <div class="hero-buttons">
-            <a href="projets.html" class="btn btn-hero-primary" data-fr="Voir tous les projets" data-en="See all projects">Voir tous les projets</a>
-            <a href="contact.html" class="btn btn-hero-secondary" data-fr="Me Contacter" data-en="Contact Me">Me Contacter</a>
-          </div>
-        </div>
-        <div class="hero-photo">
-          <img src="img/photo_hero_section_homepage.png" alt="Thomas Druesne" />
-        </div>
-      </div>
-    </section>
+      <header class="chat-top">
+        <button class="icon-btn" id="sidebar-open" type="button" aria-label="Ouvrir le menu" data-fr-aria="Ouvrir le menu" data-en-aria="Open menu">
+          <span class="ico" data-icon="sidebar"></span>
+        </button>
+        <span class="chat-spacer"></span>
+        <a href="chat.html" class="icon-btn" id="chat-new" data-action="new" aria-label="Nouvelle conversation" data-fr-aria="Nouvelle conversation" data-en-aria="New chat">
+          <span class="ico" data-icon="newchat"></span>
+        </a>
+      </header>
 
-    <!-- MES PROJETS -->
-    <section class="projets">
-      <div class="section-header">
-        <h2 class="section-title section-title--lines" data-fr="Mes projets" data-en="My projects">Mes projets</h2>
-        <p class="section-subtitle" data-fr="Quelques réalisations dont je suis particulièrement fier" data-en="Some achievements I am particularly proud of">Quelques réalisations dont je suis particulièrement fier</p>
-      </div>
-      <div class="projets-grid">
+      <div class="chat-scroll" id="chat-scroll">
+        <div class="chat-col">
 
-        <!-- Card Inzerty (grande) — ouvre la modale -->
-        <div class="projet-card projet-card--large"
-             id="btn-open-inzerty"
-             role="button"
-             tabindex="0"
-             style="cursor: pointer;">
-          <img src="img/img-projet-inzerty.png" alt="Inzerty" />
-          <div class="projet-overlay">
-            <h3>Inzerty</h3>
-            <p data-fr="Wireframes/maquettage/intégration" data-en="Wireframes/mockup/integration">Wireframes/maquettage/intégration</p>
-          </div>
-        </div>
-
-        <!-- Card E2C (petite) — ouvre la modale -->
-        <div class="projet-card projet-card--small"
-             id="btn-open-e2c"
-             role="button"
-             tabindex="0"
-             style="cursor: pointer;">
-          <img src="img/img-projet-E2C.png" alt="École de la seconde chance" />
-          <div class="projet-overlay">
-            <h3 data-fr="École de la seconde chance" data-en="School of the second chance">École de la seconde chance</h3>
-            <p data-fr="Intégration WordPress" data-en="WordPress Integration">Intégration WordPress</p>
-          </div>
-        </div>
-
-        <!-- Card Envie Nord (petite) — ouvre la modale -->
-        <div class="projet-card projet-card--envie"
-             id="btn-open-envie"
-             role="button"
-             tabindex="0"
-             style="cursor: pointer;">
-          <img src="img/img-projet-envie.png" alt="Envie Nord" />
-          <div class="projet-overlay">
-            <h3>Envie Nord</h3>
-            <p data-fr="Prototypage/UX Design" data-en="Prototyping/UX Design">Prototypage/UX Design</p>
-          </div>
-        </div>
-
-        <!-- Card Dinamic (grande) — ouvre la modale -->
-        <div class="projet-card projet-card--dinamic"
-             id="btn-open-dinamic"
-             role="button"
-             tabindex="0"
-             style="cursor: pointer;">
-          <img src="img/img-projet-dinamic.png" alt="Site web Dinamic" />
-          <div class="projet-overlay">
-            <h3 data-fr="Site web Dinamic" data-en="Dinamic website">Site web Dinamic</h3>
-            <p data-fr="Maquettage/Intégration" data-en="Mockup/Integration">Maquettage/Intégration</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="projets-more">
-        <p data-fr="Envie d'en voir davantage ?" data-en="Want to see more?">Envie d'en voir davantage ?</p>
-        <a href="projets.html" class="btn btn-secondary-filled" data-fr="Voir tous les projets" data-en="See all projects">Voir tous les projets</a>
-      </div>
-    </section>
-
-    <!-- MON BOOK GRAPHIQUE -->
-    <section class="book">
-      <div class="book-inner">
-        <div class="book-img">
-          <img src="img/img_book.png" alt="Mon Book" />
-        </div>
-        <div class="book-content">
-          <h2 class="section-title" data-fr="Mon Book graphique" data-en="My Graphic Portfolio">Mon Book graphique</h2>
-          <p class="section-subtitle" data-fr="Une sélection de créations visuelles, logos et supports print" data-en="A selection of visual creations, logos and print media">Une sélection de créations visuelles, logos et supports print</p>
-          <p data-fr="Plus qu'une simple sélection de projets, ce book reflète ma façon d'aborder le design — avec rigueur, intention et attention au détail. Chaque projet présenté ici est l'occasion d'un dialogue entre esthétique et fonctionnalité ; les choix typographiques, la mise en page et l'équilibre visuel sont travaillés avec soin." data-en="More than a simple selection of projects, this portfolio reflects my approach to design — with rigour, intention and attention to detail. Each project presented here is an opportunity for a dialogue between aesthetics and functionality; typographic choices, layout and visual balance are carefully crafted.">Plus qu'une simple sélection de projets, ce book reflète ma façon d'aborder le design — avec rigueur, intention et attention au détail. Chaque projet présenté ici est l'occasion d'un dialogue entre esthétique et fonctionnalité ; les choix typographiques, la mise en page et l'équilibre visuel sont travaillés avec soin.</p>
-          <p data-fr="Je conçois le design comme un dialogue entre esthétique et fonctionnalité. Mes projets naviguent entre le print et le digital, avec une sensibilité graphique constante et le souci de créer des expériences cohérentes et mémorables." data-en="I see design as a dialogue between aesthetics and functionality. My projects navigate between print and digital, with a consistent graphic sensibility and the concern to create coherent and memorable experiences.">Je conçois le design comme un dialogue entre esthétique et fonctionnalité. Mes projets naviguent entre le print et le digital, avec une sensibilité graphique constante et le souci de créer des expériences cohérentes et mémorables.</p>
-          <p><strong data-fr="Parcourez mes travaux et découvrez une approche du design où chaque détail a son importance." data-en="Browse my work and discover a design approach where every detail matters.">Parcourez mes travaux et découvrez une approche du design où chaque détail a son importance.</strong></p>
-          <a href="img/book_graphique_druesne_thomas.pdf" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Consulter mon book" data-en="View my portfolio">Consulter mon book</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- MES COMPÉTENCES -->
-    <section class="competences">
-      <div class="section-header">
-        <h2 class="section-title section-title--lines" data-fr="Mes compétences" data-en="My skills">Mes compétences</h2>
-        <p class="section-subtitle" data-fr="Du concept à l'intégration, voici ce que je sais faire" data-en="From concept to integration, here's what I can do">Du concept à l'intégration, voici ce que je sais faire</p>
-      </div>
-      <div class="competences-grid">
-        <div class="competence-card">
-          <div class="competence-picto">
-            <img src="img/picto_graphisme_homepage.png" alt="Graphisme" />
-          </div>
-          <h3 data-fr="Graphisme" data-en="Graphic Design">Graphisme</h3>
-          <p data-fr="Création de logos, prints, et visuels sur la suite Adobe (Photoshop, Illustrator &amp; InDesign)" data-en="Logo, print and visual creation using the Adobe suite (Photoshop, Illustrator &amp; InDesign)">Création de logos, prints, et visuels sur la suite Adobe (Photoshop, Illustrator &amp; InDesign)</p>
-        </div>
-        <div class="competence-card">
-          <div class="competence-picto">
-            <img src="img/picto_figma_homepage.png" alt="UI/UX Design" />
-          </div>
-          <h3 data-fr="UI/UX Design" data-en="UI/UX Design">UI/UX Design</h3>
-          <p data-fr="Conception de wireframes et de maquettes en fonction des besoins et/ou décideurs sur Figma" data-en="Design of wireframes and mockups based on needs and/or decision-makers using Figma">Conception de wireframes et de maquettes en fonction des besoins et/ou décideurs sur Figma</p>
-        </div>
-        <div class="competence-card">
-          <div class="competence-picto">
-            <img src="img/picto_code_homepage.png" alt="Intégration &amp; responsive" />
-          </div>
-          <h3 data-fr="Intégration &amp; responsive" data-en="Integration &amp; responsive">Intégration &amp; responsive</h3>
-          <p data-fr="Pratique de HTML/CSS/JS et du responsive, optimisation du code source des fichiers sur WordPress" data-en="Practice of HTML/CSS/JS and responsive design, source code optimisation on WordPress">Pratique de HTML/CSS/JS et du responsive, optimisation du code source des fichiers sur WordPress</p>
-        </div>
-        <div class="competence-card">
-          <div class="competence-picto">
-            <img src="img/picto_referencement_homepage.png" alt="Référencement" />
-          </div>
-          <h3 data-fr="Référencement" data-en="SEO">Référencement</h3>
-          <p data-fr="Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)" data-en="Implementation of page-by-page SEO/GEO on WordPress (Yoast SEO)">Mise en place du référencement page par page SEO/GEO sur WordPress (Yoast SEO)</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MON PARCOURS PROFESSIONNEL -->
-    <section class="parcours">
-      <div class="section-header">
-        <h2 class="section-title section-title--lines" data-fr="Mon parcours professionnel" data-en="My professional background">Mon parcours professionnel</h2>
-        <p class="section-subtitle" data-fr="Cinq expériences qui ont forgé mon regard sur le design" data-en="Five experiences that shaped my vision of design">Cinq expériences qui ont forgé mon regard sur le design</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 data-fr="WEBDESIGNER/INTÉGRATEUR" data-en="WEBDESIGNER/INTEGRATOR">WEBDESIGNER/INTÉGRATEUR</h3>
-            <span class="timeline-date">2021/2022</span>
-            <p data-fr="Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress." data-en="Internship at communication agency « Kamélécom » for integration mainly in WordPress.">Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 data-fr="UI/UX DESIGNER" data-en="UI/UX DESIGNER">UI/UX DESIGNER</h3>
-            <span class="timeline-date">2022</span>
-            <p data-fr="Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels." data-en="Integration of the digital incubator « Eurotechnologie » on Figma in real projects.">Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 data-fr="WEBDESIGNER UX/INTÉGRATEUR" data-en="WEBDESIGNER UX/INTEGRATOR">WEBDESIGNER UX/INTÉGRATEUR</h3>
-            <span class="timeline-date">2022/2023</span>
-            <p data-fr="Alternance réalisé chez &quot;Jooxter&quot; pour la maintenance/refonte de leur site web &amp; du montage vidéo" data-en="Work-study at &quot;Jooxter&quot; for website maintenance/redesign &amp; video editing">Alternance réalisé chez "Jooxter" pour la maintenance/refonte de leur site web &amp; du montage vidéo</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 data-fr="GRAPHISTE/WEBDESIGNER" data-en="GRAPHIC DESIGNER/WEBDESIGNER">GRAPHISTE/WEBDESIGNER</h3>
-            <span class="timeline-date">2024</span>
-            <p data-fr="Stage chez &quot;About Ressources&quot; création du branding complet + le site web pour une juriste freelance" data-en="Internship at &quot;About Ressources&quot; — complete branding + website for a freelance jurist">Stage chez "About Ressources" création du branding complet + le site web pour une juriste freelance</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 data-fr="WEBDESIGNER UX/INTÉGRATEUR" data-en="WEBDESIGNER UX/INTEGRATOR">WEBDESIGNER UX/INTÉGRATEUR</h3>
-            <span class="timeline-date">2025/2026</span>
-            <p data-fr="Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z" data-en="First contract signed at (inzerty), to carry out showcase &amp; e-commerce web projects from A to Z">Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z</p>
-          </div>
-        </div>
-      </div>
-      <div class="parcours-more">
-        <a href="a-propos.html" class="btn btn-secondary-filled" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-      </div>
-    </section>
-
-    <!-- MES OUTILS -->
-    <section class="outils">
-      <div class="outils-inner">
-        <div class="outils-text">
-          <h2 class="section-title" data-fr="Mes outils" data-en="My tools">Mes outils</h2>
-          <p class="section-subtitle" data-fr="Les technologies et logiciels qui font partie de mon quotidien" data-en="The technologies and software that are part of my daily life">Les technologies et logiciels qui font partie de mon quotidien</p>
-          <p data-fr="Je maîtrise un ensemble complet d'outils essentiels au webdesign, allant de la création graphique au développement web." data-en="I master a complete set of tools essential to webdesign, from graphic creation to web development.">Je maîtrise un ensemble complet d'outils essentiels au webdesign, allant de la création graphique au développement web.</p>
-          <p data-fr="J'utilise notamment Adobe Illustrator et Photoshop pour la création visuelle, ainsi que Figma pour le design d'interfaces modernes et collaboratives. Je travaille également avec InDesign et Premiere pour des supports variés." data-en="I use Adobe Illustrator and Photoshop for visual creation, as well as Figma for modern and collaborative interface design. I also work with InDesign and Premiere for various media.">J'utilise notamment Adobe Illustrator et Photoshop pour la création visuelle, ainsi que Figma pour le design d'interfaces modernes et collaboratives. Je travaille également avec InDesign et Premiere pour des supports variés.</p>
-          <p data-fr="Côté intégration je développe avec HTML, CSS et JavaScript, et j'utilise WordPress pour la création de sites dynamiques." data-en="On the integration side, I develop with HTML, CSS and JavaScript, and use WordPress for creating dynamic websites.">Côté intégration je développe avec HTML, CSS et JavaScript, et j'utilise WordPress pour la création de sites dynamiques.</p>
-          <p data-fr="Enfin, j'intègre des outils d'intelligence artificielle comme ChatGPT et Claude pour optimiser mes processus créatifs et techniques." data-en="Finally, I integrate artificial intelligence tools such as ChatGPT and Claude to optimise my creative and technical processes.">Enfin, j'intègre des outils d'intelligence artificielle comme ChatGPT et Claude pour optimiser mes processus créatifs et techniques.</p>
-        </div>
-        <div class="outils-grid">
-          <div class="outil-item"><img src="img/picto_adobe_illustrator_homepage.png" alt="Illustrator" /><span>Illustrator</span></div>
-          <div class="outil-item"><img src="img/picto_indesign_homepage.png" alt="InDesign" /><span>InDesign</span></div>
-          <div class="outil-item"><img src="img/picto_premiere_homepage.png" alt="Premiere" /><span>Premiere</span></div>
-          <div class="outil-item"><img src="img/picto_stitch_homepage.png" alt="Stitch" /><span>Stitch</span></div>
-          <div class="outil-item"><img src="img/picto_figma_outils_homepage.png" alt="Figma" /><span>Figma</span></div>
-          <div class="outil-item"><img src="img/picto_adobe_photoshop_homepage.png" alt="Photoshop" /><span>Photoshop</span></div>
-          <div class="outil-item"><img src="img/picto_wordpress.png" alt="WordPress" /><span>WordPress</span></div>
-          <div class="outil-item"><img src="img/picto_html.png" alt="HTML" /><span>HTML</span></div>
-          <div class="outil-item"><img src="img/picto_css.png" alt="CSS" /><span>CSS</span></div>
-          <div class="outil-item"><img src="img/picto_js.png" alt="Javascript" /><span>Javascript</span></div>
-          <div class="outil-item"><img src="img/picto_claude.png" alt="Claude" /><span>Claude</span></div>
-          <div class="outil-item"><img src="img/picto_chatgpt.png" alt="ChatGPT" /><span>ChatGPT</span></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- ================================================
-       MODALE — Inzerty (partagée avec projets.html)
-  ================================================ -->
-  <div class="modal-overlay" id="modal-inzerty" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-inzerty-title">
-    <div class="modal">
-
-      <button class="modal-close" id="btn-close-inzerty" aria-label="Fermer la modale"></button>
-
-      <div class="modal-inner">
-
-        <div class="modal-col-main">
-          <h2 class="modal-title" id="modal-inzerty-title" data-fr="Refonte complète du site web d'Inzerty" data-en="Complete redesign of the Inzerty website">Refonte complète du site web d'Inzerty</h2>
-          <p class="modal-desc" data-fr="Refonte de la présence digitale d'Inzerty pour clarifier son offre entre le service recrutement (Régie) et le centre de service (Studio). L'enjeu était de moderniser le design et structurer clairement les deux piliers de l'entreprise pour une meilleure compréhension des utilisateurs." data-en="Redesign of Inzerty's digital presence to clarify its offering between the recruitment service (Régie) and the service centre (Studio). The challenge was to modernise the design and clearly structure the two pillars of the company for better user understanding.">
-            Refonte de la présence digitale d'Inzerty pour clarifier son offre entre le service recrutement (Régie) et le centre de service (Studio). L'enjeu était de moderniser le design et structurer clairement les deux piliers de l'entreprise pour une meilleure compréhension des utilisateurs.
-          </p>
-          <div class="modal-details-grid">
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_technicité_modale.png" alt="" />
-                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
-              </h3>
-              <ul class="modal-list">
-                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
-                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
-                <li data-fr="Intégration" data-en="Integration">Intégration</li>
-                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
-                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
-              </ul>
+          <!-- Accueil -->
+          <section class="welcome" id="welcome">
+            <div class="photo-particles" id="photo-particles">
+              <img class="photo-static" id="photo-static" src="img/photo_hero_section_homepage.png" alt="Thomas Druesne" />
+              <canvas id="photo-canvas" aria-hidden="true"></canvas>
             </div>
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_outils.png" alt="" />
-                <span data-fr="Outils" data-en="Tools">Outils</span>
-              </h3>
-              <div class="modal-tools-row">
-                <img src="img/picto_figma_outils_homepage.png" alt="Figma" title="Figma" />
-                <img src="img/picto_wordpress.png"             alt="WordPress" title="WordPress" />
-                <img src="img/picto_stitch_homepage.png"       alt="Claude" title="Claude" />
-                <img src="img/picto_js.png"                    alt="JavaScript" title="JavaScript" />
-                <img src="img/picto_html.png"                  alt="HTML5" title="HTML5" />
-                <img src="img/picto_css.png"                   alt="CSS3" title="CSS3" />
-                <img src="img/picto_chatgpt.png"               alt="ChatGPT" title="ChatGPT" />
-              </div>
-            </div>
-          </div>
+            <h1 class="welcome-title">
+              <span data-fr="Bonjour, je suis Thomas," data-en="Hello, I'm Thomas,">Bonjour, je suis Thomas,</span>
+              <span class="accent" data-fr="que puis-je pour vous aujourd'hui ?" data-en="how can I help you today?">que puis-je pour vous aujourd'hui ?</span>
+            </h1>
+          </section>
 
-          <div class="modal-btns">
-            <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&t=mxUGkuSDbsskrGGO-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
-            <a href="https://inzerty.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
-          </div>
+          <!-- Fil de la conversation (rempli par js/app.js) -->
+          <div class="thread" id="thread" aria-live="polite"></div>
+
         </div>
-
-        <div class="modal-col-side">
-          <div class="modal-img-wrapper">
-            <img src="img/img-projet-inzerty.png" alt="Aperçu du site Inzerty" />
-          </div>
-        </div>
-
       </div>
-    </div>
+
+      <!-- Barre de saisie -->
+      <div class="composer-wrap">
+        <div class="chat-col">
+          <form class="composer" id="composer" autocomplete="off">
+            <label for="prompt" class="sr-only" data-fr="Votre question" data-en="Your question">Votre question</label>
+            <textarea id="prompt" rows="1"
+              placeholder="Posez-moi une question sur mes projets, mon parcours…"
+              data-fr-placeholder="Posez-moi une question sur mes projets, mon parcours…"
+              data-en-placeholder="Ask me about my projects, my background…"></textarea>
+            <button class="send-btn" type="submit" aria-label="Envoyer" data-fr-aria="Envoyer" data-en-aria="Send" disabled>
+              <span class="ico" data-icon="send"></span>
+            </button>
+          </form>
+
+          <div class="suggestions" id="suggestions">
+            <button type="button" class="chip" data-topic="projets"><span class="ico" data-icon="folder"></span><span data-fr="Voir mes projets" data-en="See my projects">Voir mes projets</span></button>
+            <button type="button" class="chip" data-topic="competences"><span class="ico" data-icon="pen"></span><span data-fr="Mes compétences" data-en="My skills">Mes compétences</span></button>
+            <button type="button" class="chip" data-topic="parcours"><span class="ico" data-icon="route"></span><span data-fr="Mon parcours" data-en="My background">Mon parcours</span></button>
+            <button type="button" class="chip" data-topic="book"><span class="ico" data-icon="book"></span><span data-fr="Mon book" data-en="My portfolio">Mon book</span></button>
+            <button type="button" class="chip" data-topic="contact"><span class="ico" data-icon="mail"></span><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></button>
+          </div>
+
+          <p class="composer-note" data-fr="Les réponses sont écrites par Thomas lui-même, aucune IA n'a été maltraitée." data-en="Answers are written by Thomas himself, no AI was harmed.">Les réponses sont écrites par Thomas lui-même, aucune IA n'a été maltraitée.</p>
+        </div>
+      </div>
+
+    </main>
   </div>
 
-  <!-- ================================================
-       MODALE — Envie Nord
-  ================================================ -->
-  <div class="modal-overlay" id="modal-envie" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-envie-title">
-    <div class="modal">
 
-      <button class="modal-close" id="btn-close-envie" aria-label="Fermer la modale"></button>
-
-      <div class="modal-inner">
-
-        <div class="modal-col-main">
-          <h2 class="modal-title" id="modal-envie-title" data-fr="Refonte du tunnel de vente du site web d'Envie" data-en="Redesign of the Envie website sales funnel">Refonte du tunnel de vente du site web d'Envie</h2>
-          <p class="modal-desc" data-fr="La refonte du site web d'Envie, réseau associatif dédié au réemploi et à la réparation d'électroménager tout en favorisant l'insertion professionnelle, répond à un besoin de modernisation et d'alignement avec les standards digitaux actuels. L'ancienne version ne reflétait plus pleinement l'image engagée et professionnelle du projet, tant sur le plan visuel que sur l'expérience utilisateur. Dans ce contexte, j'ai mené une refonte UX centrée sur l'optimisation du parcours utilisateur, notamment du tunnel de vente, afin de fluidifier la navigation et d'améliorer la conversion. Le design et la structure existants ne permettaient pas de valoriser pleinement les expertises, l'impact social et les services proposés par Envie." data-en="The redesign of the Envie website, an associative network dedicated to the reuse and repair of household appliances while promoting professional integration, meets a need for modernisation and alignment with current digital standards. The old version no longer fully reflected the committed and professional image of the project, both visually and in terms of user experience. In this context, I led a UX redesign centred on optimising the user journey, particularly the sales funnel, in order to streamline navigation and improve conversion. The existing design and structure did not fully showcase the expertise, social impact and services offered by Envie.">
-            La refonte du site web d'Envie, réseau associatif dédié au réemploi et à la réparation d'électroménager tout en favorisant l'insertion professionnelle, répond à un besoin de modernisation et d'alignement avec les standards digitaux actuels. L'ancienne version ne reflétait plus pleinement l'image engagée et professionnelle du projet, tant sur le plan visuel que sur l'expérience utilisateur. Dans ce contexte, j'ai mené une refonte UX centrée sur l'optimisation du parcours utilisateur, notamment du tunnel de vente, afin de fluidifier la navigation et d'améliorer la conversion. Le design et la structure existants ne permettaient pas de valoriser pleinement les expertises, l'impact social et les services proposés par Envie.
-          </p>
-
-          <div class="modal-details-grid">
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_technicité_modale.png" alt="" />
-                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
-              </h3>
-              <ul class="modal-list">
-                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
-                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
-                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
-              </ul>
-            </div>
-
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_outils.png" alt="" />
-                <span data-fr="Outils" data-en="Tools">Outils</span>
-              </h3>
-              <div class="modal-tools-row">
-                <img src="img/picto_figma_outils_homepage.png" alt="Figma"   title="Figma" />
-                <img src="img/picto_chatgpt.png"               alt="ChatGPT" title="ChatGPT" />
-              </div>
-            </div>
-          </div>
-
-          <div class="modal-btns">
-            <a href="https://www.figma.com/design/3grlsWN1xAbJuugxTjShvC/Envie---Inzerty---2025?node-id=1-2969&t=utBQAk3Pu9eYQleq-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
-          </div>
-        </div>
-
-        <div class="modal-col-side">
-          <div class="modal-img-wrapper">
-            <img src="img/img-projet-envie.png" alt="Aperçu du site Envie Nord" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ================================================
-       MODALE — E2C Grand-Lille
-  ================================================ -->
-  <div class="modal-overlay" id="modal-e2c" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-e2c-title">
-    <div class="modal">
-
-      <button class="modal-close" id="btn-close-e2c" aria-label="Fermer la modale"></button>
-
-      <div class="modal-inner">
-
-        <div class="modal-col-main">
-
-          <h2 class="modal-title" id="modal-e2c-title" data-fr="Refonte complète du site web de l'E2C Grand-Lille" data-en="Complete redesign of the E2C Grand-Lille website">Refonte complète du site web de l'E2C Grand-Lille</h2>
-
-          <p class="modal-desc" data-fr="Modernisation et meilleure valorisation des missions de l'E2C. L'ancienne version manquait de clarté sur l'accompagnement des jeunes et la diversité des parcours. La refonte structure les contenus pour refléter les actions de l'école et renforcer son attractivité." data-en="Modernisation and better promotion of the E2C's missions. The old version lacked clarity on support for young people and the diversity of pathways. The redesign structures the content to reflect the school's actions and strengthen its attractiveness.">
-            Modernisation et meilleure valorisation des missions de l'E2C. L'ancienne version manquait de clarté sur l'accompagnement des jeunes et la diversité des parcours. La refonte structure les contenus pour refléter les actions de l'école et renforcer son attractivité.
-          </p>
-
-          <div class="modal-details-grid">
-
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_technicité_modale.png" alt="" />
-                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
-              </h3>
-              <ul class="modal-list">
-                <li data-fr="Intégration" data-en="Integration">Intégration</li>
-                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
-                <li data-fr="Retouche d'image" data-en="Image editing">Retouche d'image</li>
-              </ul>
-            </div>
-
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_outils.png" alt="" />
-                <span data-fr="Outils" data-en="Tools">Outils</span>
-              </h3>
-              <div class="modal-tools-row">
-                <img src="img/picto_wordpress.png" alt="WordPress" title="WordPress" />
-                <img src="img/picto_html.png"      alt="HTML5"     title="HTML5" />
-                <img src="img/picto_css.png"       alt="CSS3"      title="CSS3" />
-                <img src="img/picto_js.png"        alt="JavaScript" title="JavaScript" />
-                <img src="img/picto_chatgpt.png"   alt="ChatGPT"   title="ChatGPT" />
-              </div>
-            </div>
-
-          </div>
-
-          <div class="modal-btns">
-            <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&t=zUaQqvaAB9L7t0k9-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
-            <a href="https://e2c-grandlille.fr/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
-          </div>
-
-        </div>
-
-        <div class="modal-col-side">
-          <div class="modal-img-wrapper modal-img-wrapper--beige">
-            <img src="img/img_modale_e2C.png" alt="Aperçu du site E2C Grand-Lille" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ================================================
-       MODALE — Dinamic
-  ================================================ -->
-  <div class="modal-overlay" id="modal-dinamic" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-dinamic-title">
-    <div class="modal">
-
-      <button class="modal-close" id="btn-close-dinamic" aria-label="Fermer la modale"></button>
-
-      <div class="modal-inner">
-
-        <div class="modal-col-main">
-
-          <h2 class="modal-title" id="modal-dinamic-title" data-fr="Refonte du site web de Dinamic" data-en="Redesign of the Dinamic website">Refonte du site web de Dinamic</h2>
-
-          <p class="modal-desc" data-fr="Refonte du site Dinamic pour moderniser la présentation de ses services. L'objectif était de structurer les offres, valoriser le savoir-faire de l'entreprise et offrir une interface plus claire et responsive facilitant la compréhension des services." data-en="Redesign of the Dinamic website to modernise the presentation of its services. The objective was to structure the offers, highlight the company's expertise and offer a clearer and more responsive interface facilitating the understanding of services.">
-            Refonte du site Dinamic pour moderniser la présentation de ses services. L'objectif était de structurer les offres, valoriser le savoir-faire de l'entreprise et offrir une interface plus claire et responsive facilitant la compréhension des services.
-          </p>
-
-          <div class="modal-details-grid">
-
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_technicité_modale.png" alt="" />
-                <span data-fr="Technicité" data-en="Technical skills">Technicité</span>
-              </h3>
-              <ul class="modal-list">
-                <li data-fr="Maquettage" data-en="Mockup">Maquettage</li>
-                <li data-fr="Prototypage" data-en="Prototyping">Prototypage</li>
-                <li data-fr="Intégration" data-en="Integration">Intégration</li>
-                <li data-fr="Responsive" data-en="Responsive">Responsive</li>
-                <li data-fr="UI/UX" data-en="UI/UX">UI/UX</li>
-              </ul>
-            </div>
-
-            <div class="modal-detail-block">
-              <h3 class="modal-detail-title">
-                <img src="img/picto_outils.png" alt="" />
-                <span data-fr="Outils" data-en="Tools">Outils</span>
-              </h3>
-              <div class="modal-tools-row">
-                <img src="img/picto_figma_outils_homepage.png" alt="Figma"     title="Figma" />
-                <img src="img/picto_wordpress.png"             alt="WordPress" title="WordPress" />
-                <img src="img/picto_html.png"                  alt="HTML5"     title="HTML5" />
-                <img src="img/picto_css.png"                   alt="CSS3"      title="CSS3" />
-                <img src="img/picto_chatgpt.png"               alt="ChatGPT"   title="ChatGPT" />
-              </div>
-            </div>
-
-          </div>
-
-          <div class="modal-btns">
-            <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&t=stdYP5JJlu2JZKkR-1" class="btn btn-secondary-filled" target="_blank" rel="noopener" data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</a>
-            <a href="https://dinamic-services.com/" class="btn btn-voir-site" target="_blank" rel="noopener" data-fr="Voir le site web" data-en="View the website">Voir le site web</a>
-          </div>
-
-        </div>
-
-        <div class="modal-col-side">
-          <div class="modal-img-wrapper">
-            <img src="img/img_modale_dinamic.png" alt="Aperçu du site Dinamic" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/modal-inzerty.js"></script>
-  <script src="js/modal-e2c.js"></script>
-  <script src="js/modal-envie.js"></script>
-  <script src="js/modal-dinamic.js"></script>
-  <script src="js/lang.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/answers.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
