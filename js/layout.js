@@ -33,13 +33,16 @@
     </a>
 
     <nav class="side-scroll">
-      <p class="side-label" data-fr="Récents" data-en="Recent">Récents</p>
+      <p class="side-label" data-fr="Épinglé" data-en="Pinned">Épinglé</p>
       <ul class="side-list">
         ${topic('projets', 'folder', 'Mes projets', 'My projects')}
-        ${topic('book', 'book', 'Mon book graphique', 'My graphic portfolio')}
         ${topic('competences', 'pen', 'Mes compétences', 'My skills')}
         ${topic('parcours', 'route', 'Mon parcours professionnel', 'My professional background')}
         ${topic('outils', 'wrench', 'Mes outils', 'My tools')}
+      </ul>
+      <p class="side-label" data-fr="Récents" data-en="Recent">Récents</p>
+      <ul class="side-list">
+        ${topic('book', 'book', 'Mon book graphique', 'My graphic portfolio')}
         ${topic('apropos', 'user', 'À propos de moi', 'About me')}
         ${topic('contact', 'mail', 'Me contacter', 'Contact me')}
       </ul>

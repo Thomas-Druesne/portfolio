@@ -227,7 +227,7 @@ img.avatar { background: none; object-fit: cover; display: block; }
 .sidebar-scrim { display: none; }
 
 /* Écrans peu hauts : on resserre encore pour éviter le scroll */
-@media (max-height: 720px) {
+@media (max-height: 780px) {
   .sidebar { padding: 0.6rem 0.75rem; gap: 0.4rem; }
   .side-new { padding: 0.6rem 0.9rem; }
   .side-label { padding: 0.75rem 0.9rem 0.3rem; }
@@ -237,7 +237,7 @@ img.avatar { background: none; object-fit: cover; display: block; }
 }
 
 /* Très peu de hauteur (petit portable + barre de favoris) : version la plus compacte */
-@media (max-height: 620px) {
+@media (max-height: 690px) {
   .sidebar-top { padding-bottom: 0; }
   .side-label { padding: 0.5rem 0.9rem 0.2rem; }
   .side-item { padding: 0.35rem 0.9rem; font-size: calc(0.88rem - 1px); }
@@ -412,7 +412,7 @@ img.avatar { background: none; object-fit: cover; display: block; }
   box-shadow: 0 10px 30px -10px var(--accent-glow);
 }
 
-.answer-figure img { border-radius: var(--radius); max-height: 360px; width: auto; }
+.answer-figure img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
 
 .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 /* Nombre impair de cartes : la dernière prend toute la largeur */
@@ -718,6 +718,7 @@ html.lang-out textarea::placeholder { opacity: 0; }
 /* Accessibilité : animations réduites */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .cascade { animation-delay: 0s !important; }
 }
 
 /* ============================================================
@@ -911,6 +912,9 @@ html[lang="en"] #lang-btn .flag-en { display: none; }
   .app.is-collapsed .side-new > span:last-child,
   .app.is-collapsed .side-item > span:last-child,
   .app.is-collapsed .side-profile-txt { display: none; }
+
+  /* Rail replié : un trait sépare les liens épinglés des récents */
+  .app.is-collapsed .side-scroll .side-list ~ .side-list { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
 
   .app.is-collapsed .sidebar-top { justify-content: center; padding-left: 0; }
   .app.is-collapsed .side-new,
