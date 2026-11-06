@@ -162,6 +162,7 @@
     ['projet-inzerty', /(inzerty|simulateur|simulator|\biae\b|éligibilité|eligibilit)/],
     ['projet-e2c',     /(e2c|seconde chance|second chance)/],
     ['projet-amap',    /(amap|moreuil|panier|producteur|amapien)/],
+    ['projet-lien',    /(lien services?|le lien|conteneur|container|vitamine)/],
     ['projet-envie',   /envie nord/],
     ['cv',          /\b(cv|resume|résumé|curriculum)\b/],
     ['contact',     /(contact|joindre|\bmail\b|e-?mail|écrire|ecrire|appeler|téléphone|telephone|recrut|embauch|\bhire\b|disponib|freelance|devis)/],
@@ -207,7 +208,8 @@
     { topic: 'projet-inzerty', name: 'Inzerty' },
     { topic: 'projet-e2c',     name: 'E2C Grand-Lille' },
     { topic: 'projet-envie',   name: 'Envie Nord' },
-    { topic: 'projet-amap',    name: 'AMAP de Moreuil' }
+    { topic: 'projet-amap',    name: 'AMAP de Moreuil' },
+    { topic: 'projet-lien',    name: 'Le Lien Services' }
   ];
 
   // Boutons vers les autres projets, en commençant par le suivant
@@ -233,7 +235,7 @@
 
     var row = document.createElement('div');
     row.className = 'msg msg-bot';
-    row.innerHTML = '<span class="avatar" aria-hidden="true">TD</span>' +
+    row.innerHTML = '<img class="avatar" src="img/PP_chatbot.png" alt="" aria-hidden="true" />' +
                     '<div class="msg-body"><span class="typing" aria-label="…"><i></i><i></i><i></i></span></div>';
     thread.appendChild(row);
     scrollToBottom();

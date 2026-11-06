@@ -52,7 +52,7 @@
         <li><button class="side-item" type="button" id="lang-btn"><span class="ico" data-icon="languages"></span><span data-fr="English" data-en="Français">English</span></button></li>
       </ul>
       <div class="side-profile">
-        <span class="avatar" aria-hidden="true">TD</span>
+        <img class="avatar" src="img/PP_chatbot.png" alt="" aria-hidden="true" />
         <span class="side-profile-txt">
           <strong>Thomas Druesne</strong>
           <small data-fr="Webdesigner UX &amp; Intégrateur" data-en="UX Webdesigner &amp; Integrator">Webdesigner UX &amp; Intégrateur</small>

@@ -218,6 +218,8 @@ a { color: inherit; }
   font-weight: 800; font-size: calc(0.85rem - 1px);
   flex-shrink: 0;
 }
+/* Photo de profil (cercle bleu ciel intégré à l'image) */
+img.avatar { background: none; object-fit: cover; display: block; }
 .side-profile-txt { display: flex; flex-direction: column; line-height: 1.35; gap: 0.1rem; min-width: 0; }
 .side-profile-txt strong { font-size: calc(0.9rem - 1px); }
 .side-profile-txt small { font-size: calc(0.75rem - 1px); color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
