@@ -58,6 +58,7 @@
           <small data-fr="Webdesigner UX &amp; Intégrateur" data-en="UX Webdesigner &amp; Integrator">Webdesigner UX &amp; Intégrateur</small>
         </span>
       </div>
+      <p class="side-copy" data-fr="© 2026-2027 Thomas Druesne · Tous droits réservés" data-en="© 2026-2027 Thomas Druesne · All rights reserved">© 2026-2027 Thomas Druesne · Tous droits réservés</p>
     </div>
   </aside>
 

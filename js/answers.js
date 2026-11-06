@@ -291,7 +291,8 @@
         </div>
       </div>
       <div class="answer-actions">
-        <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&amp;t=mxUGkuSDbsskrGGO-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="figma"></span><span data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</span></a>
+        <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-5&amp;t=DBKbCyilrqZNFsIc-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="phone"></span><span data-fr="Voir la maquette mobile" data-en="View the mobile mockup">Voir la maquette mobile</span></a>
+        <a href="https://www.figma.com/design/BOqRUurAwAMBnz0ixZ8Tz3/Site-Web-Inzerty---Inzerty---2026?node-id=1-4&amp;t=mxUGkuSDbsskrGGO-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="monitor"></span><span data-fr="Voir la maquette desktop" data-en="View the desktop mockup">Voir la maquette desktop</span></a>
         <a href="https://inzerty.com/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="external"></span><span data-fr="Voir le site web" data-en="View the website">Voir le site web</span></a>
       </div>
     </article>
@@ -322,7 +323,7 @@
         </div>
       </div>
       <div class="answer-actions">
-        <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&amp;t=zUaQqvaAB9L7t0k9-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="figma"></span><span data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</span></a>
+        <a href="https://www.figma.com/design/yTkIbEnbkU8diclHIQ7Rxg/E2C---Inzerty---2025?node-id=1-2&amp;t=Ik2rDIu8nUYYJBaj-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="phone"></span><span data-fr="Voir la maquette mobile" data-en="View the mobile mockup">Voir la maquette mobile</span></a>
         <a href="https://e2c-grandlille.fr/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="external"></span><span data-fr="Voir le site web" data-en="View the website">Voir le site web</span></a>
       </div>
     </article>
@@ -355,7 +356,8 @@
         </div>
       </div>
       <div class="answer-actions">
-        <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&amp;t=stdYP5JJlu2JZKkR-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="figma"></span><span data-fr="Voir la maquette" data-en="View the mockup">Voir la maquette</span></a>
+        <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=0-1&amp;t=stdYP5JJlu2JZKkR-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="phone"></span><span data-fr="Voir la maquette mobile" data-en="View the mobile mockup">Voir la maquette mobile</span></a>
+        <a href="https://www.figma.com/design/5CVgi5uChSBvwV6PsREVFN/Dinamic---Inzerty---2025?node-id=1-2&amp;t=1FqAzu4kC1s6QwQn-1" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="monitor"></span><span data-fr="Voir la maquette desktop" data-en="View the desktop mockup">Voir la maquette desktop</span></a>
         <a href="https://dinamic-services.com/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="external"></span><span data-fr="Voir le site web" data-en="View the website">Voir le site web</span></a>
       </div>
     </article>
