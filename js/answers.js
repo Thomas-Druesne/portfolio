@@ -88,19 +88,9 @@
       <p data-fr="Cinq expériences ont forgé mon regard sur le design :" data-en="Five experiences shaped my vision of design:">Cinq expériences ont forgé mon regard sur le design :</p>
       <ol class="timeline">
         <li>
-          <span class="timeline-date">2021/2022</span>
-          <h3 data-fr="Webdesigner/Intégrateur" data-en="Webdesigner/Integrator">Webdesigner/Intégrateur</h3>
-          <p data-fr="Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress." data-en="Internship at communication agency « Kamélécom » for integration mainly in WordPress.">Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress.</p>
-        </li>
-        <li>
-          <span class="timeline-date">2022</span>
-          <h3>UI/UX Designer</h3>
-          <p data-fr="Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels." data-en="Integration of the digital incubator « Eurotechnologie » on Figma in real projects.">Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels.</p>
-        </li>
-        <li>
-          <span class="timeline-date">2022/2023</span>
+          <span class="timeline-date">2025/2026</span>
           <h3 data-fr="Webdesigner UX/Intégrateur" data-en="UX Webdesigner/Integrator">Webdesigner UX/Intégrateur</h3>
-          <p data-fr="Alternance réalisée chez « Jooxter » pour la maintenance/refonte de leur site web &amp; du montage vidéo." data-en="Work-study at « Jooxter » for website maintenance/redesign &amp; video editing.">Alternance réalisée chez « Jooxter » pour la maintenance/refonte de leur site web &amp; du montage vidéo.</p>
+          <p data-fr="Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z." data-en="First contract signed at (inzerty), to carry out showcase &amp; e-commerce web projects from A to Z.">Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z.</p>
         </li>
         <li>
           <span class="timeline-date">2024</span>
@@ -108,9 +98,19 @@
           <p data-fr="Stage chez « About Ressources » : création du branding complet + le site web pour une juriste freelance." data-en="Internship at « About Ressources »: complete branding + website for a freelance jurist.">Stage chez « About Ressources » : création du branding complet + le site web pour une juriste freelance.</p>
         </li>
         <li>
-          <span class="timeline-date">2025/2026</span>
+          <span class="timeline-date">2022/2023</span>
           <h3 data-fr="Webdesigner UX/Intégrateur" data-en="UX Webdesigner/Integrator">Webdesigner UX/Intégrateur</h3>
-          <p data-fr="Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z." data-en="First contract signed at (inzerty), to carry out showcase &amp; e-commerce web projects from A to Z.">Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z.</p>
+          <p data-fr="Alternance réalisée chez « Jooxter » pour la maintenance/refonte de leur site web &amp; du montage vidéo." data-en="Work-study at « Jooxter » for website maintenance/redesign &amp; video editing.">Alternance réalisée chez « Jooxter » pour la maintenance/refonte de leur site web &amp; du montage vidéo.</p>
+        </li>
+        <li>
+          <span class="timeline-date">2022</span>
+          <h3>UI/UX Designer</h3>
+          <p data-fr="Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels." data-en="Integration of the digital incubator « Eurotechnologie » on Figma in real projects.">Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels.</p>
+        </li>
+        <li>
+          <span class="timeline-date">2021/2022</span>
+          <h3 data-fr="Webdesigner/Intégrateur" data-en="Webdesigner/Integrator">Webdesigner/Intégrateur</h3>
+          <p data-fr="Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress." data-en="Internship at communication agency « Kamélécom » for integration mainly in WordPress.">Stage en agence de communication chez « Kamélécom » pour de l'intégration principalement en WordPress.</p>
         </li>
       </ol>
       <p data-fr="Et côté formation :" data-en="And on the training side:">Et côté formation :</p>

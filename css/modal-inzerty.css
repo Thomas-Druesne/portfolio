@@ -89,7 +89,7 @@
 
 /* ----- Titre — surlignage aligné à gauche ===== */
 .modal-title {
-  font-size: 2rem;
+  font-size: calc(2rem - 1px);
   font-weight: 800;
   color: var(--primary);
   line-height: 2rem;
@@ -111,7 +111,7 @@
 
 /* ----- Paragraphes ----- */
 .modal-desc {
-  font-size: 1rem;
+  font-size: calc(1rem - 1px);
   color: var(--primary);
   line-height: 1.3rem;
   margin-bottom: 0.75rem;
@@ -130,7 +130,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.25rem;
+  font-size: calc(1.25rem - 1px);
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 1rem;
@@ -154,7 +154,7 @@
 }
 
 .modal-list li {
-  font-size: 1rem;
+  font-size: calc(1rem - 1px);
   color: var(--primary);
   padding-left: 1.25rem;
   position: relative;
@@ -166,7 +166,7 @@
   position: absolute;
   left: 0.25rem;
   color: var(--secondary);
-  font-size: 1.25rem;
+  font-size: calc(1.25rem - 1px);
   line-height: 1.3rem;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .modal-date-value {
-  font-size: 1rem;
+  font-size: calc(1rem - 1px);
   color: var(--primary);
   line-height: 1.3rem;
   padding-left: calc(25px + 0.75rem);
@@ -263,7 +263,7 @@
 
   .modal-img-wrapper { width: 300px; height: 300px; }
 
-  .modal-title { font-size: 1.75rem; }
+  .modal-title { font-size: calc(1.75rem - 1px); }
 }
 
 /* ============================================================
@@ -291,7 +291,7 @@
 
   .modal-close { top: 1.5rem; right: 1.5rem; }
 
-  .modal-title { font-size: 1.5rem; line-height: 1.6rem; }
+  .modal-title { font-size: calc(1.5rem - 1px); line-height: 1.6rem; }
 
   .modal-details-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 

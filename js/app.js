@@ -47,10 +47,36 @@
     });
   }
 
+  // Changement de langue au clic : les textes s'estompent, changent,
+  // puis réapparaissent. Uniquement au clic (pas au chargement des pages).
+  var LANG_FADE = 220;
+  var langBusy = false;
+  var html = document.documentElement;
+
   document.getElementById('lang-btn').addEventListener('click', function () {
+    if (langBusy) return;
+    langBusy = true;
     localStorage.setItem(LANG_KEY, lang() === 'fr' ? 'en' : 'fr');
-    applyLang(document);
-    updateThemeLabel();
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      applyLang(document);
+      updateThemeLabel();
+      langBusy = false;
+      return;
+    }
+
+    html.classList.add('lang-anim', 'lang-out');
+    setTimeout(function () {
+      applyLang(document);
+      updateThemeLabel();
+      requestAnimationFrame(function () {
+        html.classList.remove('lang-out');
+        setTimeout(function () {
+          html.classList.remove('lang-anim');
+          langBusy = false;
+        }, LANG_FADE + 60);
+      });
+    }, LANG_FADE);
   });
 
   // ==========================================================
@@ -84,12 +110,24 @@
   // ==========================================================
   // 2. BARRE LATÉRALE
   // ==========================================================
+  var sideBtns = [document.getElementById('sidebar-open'), document.getElementById('sidebar-close')];
+
+  // Relance l'animation du bouton (rebond + flèche qui pivote)
+  function animateToggle() {
+    sideBtns.forEach(function (btn) {
+      btn.classList.remove('is-flipping');
+      void btn.offsetWidth; // force le redémarrage de l'animation CSS
+      btn.classList.add('is-flipping');
+    });
+  }
+
   function toggleSidebar(open) {
     if (mqMobile.matches) {
       app.classList.toggle('is-drawer-open', open);
     } else {
       app.classList.toggle('is-collapsed', !open);
     }
+    animateToggle();
   }
   document.getElementById('sidebar-open').addEventListener('click', function () { toggleSidebar(true); });
   document.getElementById('sidebar-close').addEventListener('click', function () { toggleSidebar(false); });

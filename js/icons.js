@@ -12,7 +12,7 @@
   // ---------- Pictos d'interface ----------
   var UI = {
     menu:     '<path d="M4 6h16M4 12h16M4 18h16"/>',
-    sidebar:  '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18"/><path d="M14 9.5l2.5 2.5-2.5 2.5"/>',
+    sidebar:  '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18"/><path class="ico-chev" d="M14 9.5l2.5 2.5-2.5 2.5"/>',
     newchat:  '<path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>' +
               '<path d="M18.4 2.6a2.1 2.1 0 0 1 3 3l-9 9a2 2 0 0 1-.85.5l-2.9.85a.5.5 0 0 1-.62-.62l.85-2.9a2 2 0 0 1 .5-.85z"/>',
     send:     '<path d="M12 19V5M5 12l7-7 7 7"/>',
