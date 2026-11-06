@@ -222,7 +222,7 @@
           </div>
         </div>
         <div class="hobby-card hobby-card--wide">
-          <img src="img/img_hobby_riftbound.png" alt="Riftbound, le jeu de cartes League of Legends" />
+          <img src="img/img_hobby_riftbound.jpg" alt="Riftbound, le jeu de cartes League of Legends" />
           <div class="hobby-body">
             <h3><span class="ico" data-icon="cards"></span>Riftbound</h3>
             <p data-fr="Depuis quelque temps, je joue au nouveau TCG Riftbound, le jeu de cartes à collectionner de l'univers League of Legends. Il me permet de voir les jeux de stratégie et les jeux de cartes sous un nouvel angle." data-en="For a while now, I've been playing the new TCG Riftbound, the trading card game set in the League of Legends universe. It lets me see strategy games and card games from a new angle.">Depuis quelque temps, je joue au nouveau TCG Riftbound, le jeu de cartes à collectionner de l'univers League of Legends. Il me permet de voir les jeux de stratégie et les jeux de cartes sous un nouvel angle.</p>
