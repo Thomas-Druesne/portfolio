@@ -3,9 +3,10 @@
 //
 // Au repos : la vraie photo (<img>) est affichée, nette.
 // Au survol : on bascule en fondu sur un canvas où la photo est
-// découpée en milliers de grains (chacun garde sa couleur). Les
-// grains s'écartent autour du curseur puis reviennent en place
-// avec un effet ressort. Au clic : petite explosion.
+// découpée en milliers de petits carreaux, chacun gardant le détail
+// net de la photo en pleine résolution. Seuls les carreaux poussés
+// par le curseur bougent (le reste de la photo reste net), puis ils
+// reviennent en place avec un effet ressort. Au clic : explosion.
 // Une fois tous les grains revenus, on refond vers la photo nette.
 //
 // Source : img/photo_hero_section_homepage.png
@@ -29,8 +30,8 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- Réglages de l'effet ----------
-  var GRAIN    = 2;      // espacement entre les grains (px écran) — plus petit = plus fin
-  var DOT      = 0.9;    // taille d'un grain (proportion de l'espacement)
+  var GRAIN    = 2;      // taille d'un carreau (px écran) — plus petit = plus fin
+  var SHIFT    = 0.5;    // déplacement (px) à partir duquel un carreau quitte sa place
   var RADIUS   = 0.15;   // rayon d'influence du curseur (proportion de la largeur)
   var PUSH     = 5;      // force de répulsion
   var SPRING   = 0.06;   // force de rappel vers la position d'origine
@@ -38,9 +39,10 @@
 
   var source = null;            // image dont on lit les pixels
   var count = 0;                // nombre de grains
-  var hx, hy, px, py, vx, vy, col;
-  var W = 0, H = 0, dpr = 1, dotPx = 1;
-  var buffer = null, pixels32 = null;
+  var hx, hy, px, py, vx, vy;
+  var tx, ty, tw, th, moved;    // carreau d'origine de chaque grain (px du canvas)
+  var W = 0, H = 0, dpr = 1;
+  var buffer = null, pixels32 = null, base32 = null;
   var mouse = { x: 0, y: 0, active: false };
   var running = false;
   var triedFallback = false;
@@ -121,7 +123,7 @@
     if (triedFallback) return;
     triedFallback = true;
     var s = document.createElement('script');
-    s.src = 'js/photo-data.js?v=23';
+    s.src = 'js/photo-data.js?v=24';
     s.onload = function () {
       if (!window.PHOTO_FALLBACK) return;
       var img = new Image();
@@ -155,7 +157,17 @@
     canvas.height = Math.round(H * dpr);
     buffer = ctx.createImageData(canvas.width, canvas.height);
     pixels32 = new Uint32Array(buffer.data.buffer);
-    dotPx = Math.max(1, Math.round(GRAIN * DOT * dpr));
+
+    // Photo nette à la résolution du canvas : les carreaux y prennent leurs pixels
+    var full;
+    try {
+      full = readPixels(source, canvas.width, canvas.height);
+    } catch (err) {
+      useFallback();
+      return;
+    }
+    if (isLight()) recolor(full);
+    base32 = new Uint32Array(full.buffer);
 
     var keep = [];
     for (var i = 0, n = cols * rows; i < n; i++) {
@@ -165,9 +177,10 @@
     hx = new Float32Array(count); hy = new Float32Array(count);
     px = new Float32Array(count); py = new Float32Array(count);
     vx = new Float32Array(count); vy = new Float32Array(count);
-    col = new Uint32Array(count);
+    tx = new Int32Array(count); ty = new Int32Array(count);
+    tw = new Uint8Array(count); th = new Uint8Array(count);
+    moved = new Int32Array(count);
 
-    var little = new Uint8Array(new Uint32Array([1]).buffer)[0] === 1;
     var sx = W / cols, sy = H / rows;
     var intro = withIntro && !reduceMotion;
 
@@ -177,10 +190,10 @@
       var y = Math.floor(idx / cols) * sy;
       hx[k] = x; hy[k] = y;
 
-      var o = idx * 4;
-      var r = data[o], g = data[o + 1], b = data[o + 2], a = data[o + 3];
-      col[k] = little ? ((a << 24) | (b << 16) | (g << 8) | r) >>> 0
-                      : ((r << 24) | (g << 16) | (b << 8) | a) >>> 0;
+      tx[k] = Math.floor(x * dpr);
+      ty[k] = Math.floor(y * dpr);
+      tw[k] = Math.max(1, Math.floor((x + sx) * dpr) - tx[k]);
+      th[k] = Math.max(1, Math.floor((y + sy) * dpr) - ty[k]);
 
       if (intro) {
         // Les grains arrivent depuis un nuage dispersé
@@ -229,16 +242,35 @@
     return moving;
   }
 
+  // On part de la photo nette, on vide la place des carreaux déplacés,
+  // puis on recopie chacun d'eux (avec ses pixels nets) à sa position.
   function draw() {
-    pixels32.fill(0);
-    var cw = canvas.width, ch = canvas.height, s = dotPx;
-    for (var i = 0; i < count; i++) {
-      var x0 = (px[i] * dpr) | 0, y0 = (py[i] * dpr) | 0;
-      if (x0 < 0 || y0 < 0 || x0 + s > cw || y0 + s > ch) continue;
-      var c = col[i];
-      for (var yy = 0; yy < s; yy++) {
-        var row = (y0 + yy) * cw + x0;
-        for (var xx = 0; xx < s; xx++) pixels32[row + xx] = c;
+    pixels32.set(base32);
+    var cw = canvas.width, ch = canvas.height, n = 0, i, j, xx, yy, w, h, row, src, c;
+
+    for (i = 0; i < count; i++) {
+      if (Math.abs(px[i] - hx[i]) + Math.abs(py[i] - hy[i]) <= SHIFT) continue;
+      moved[n++] = i;
+      w = tw[i]; h = th[i];
+      for (yy = 0; yy < h; yy++) {
+        row = (ty[i] + yy) * cw + tx[i];
+        for (xx = 0; xx < w; xx++) pixels32[row + xx] = 0;
+      }
+    }
+
+    for (j = 0; j < n; j++) {
+      i = moved[j];
+      w = tw[i]; h = th[i];
+      var x0 = tx[i] + Math.round((px[i] - hx[i]) * dpr);
+      var y0 = ty[i] + Math.round((py[i] - hy[i]) * dpr);
+      if (x0 < 0 || y0 < 0 || x0 + w > cw || y0 + h > ch) continue;
+      for (yy = 0; yy < h; yy++) {
+        src = (ty[i] + yy) * cw + tx[i];
+        row = (y0 + yy) * cw + x0;
+        for (xx = 0; xx < w; xx++) {
+          c = base32[src + xx];
+          if (c) pixels32[row + xx] = c;
+        }
       }
     }
     ctx.putImageData(buffer, 0, 0);
