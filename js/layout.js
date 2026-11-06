@@ -49,7 +49,7 @@
       <ul class="side-list side-list--compact">
         <li><a href="img/CV_DRUESNE_Thomas.pdf" class="side-item" target="_blank" rel="noopener"><span class="ico" data-icon="cv"></span><span data-fr="Mon CV" data-en="My resume">Mon CV</span></a></li>
         <li><a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="side-item" target="_blank" rel="noopener"><span class="ico" data-icon="linkedin"></span><span>LinkedIn</span></a></li>
-        <li><button class="side-item" type="button" id="lang-btn"><span class="ico" data-icon="languages"></span><span data-fr="English" data-en="Français">English</span></button></li>
+        <li><button class="side-item" type="button" id="lang-btn"><span class="ico ico-flag flag-en" data-icon="flag-en"></span><span class="ico ico-flag flag-fr" data-icon="flag-fr"></span><span data-fr="English" data-en="Français">English</span></button></li>
       </ul>
       <div class="side-profile">
         <img class="avatar" src="img/PP_chatbot.png" alt="" aria-hidden="true" />

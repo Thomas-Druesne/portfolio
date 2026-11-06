@@ -91,8 +91,28 @@ phone:    '<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"
     stitch:      '<path d="M14 2v6a2 2 0 0 0 .25.96l5.5 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.75-2.96l5.5-10.08A2 2 0 0 0 10 8V2"/><path d="M6.5 15h11M8.5 2h7"/>'
   };
 
+  // ---------- Drapeaux (bouton de langue) — en couleur, exception aux pictos au trait ----------
+  var FLAG_BOX = 'x="2" y="5" width="20" height="14" rx="2.5"';
+  function flag(id, inner) {
+    return '<defs><clipPath id="' + id + '"><rect ' + FLAG_BOX + '/></clipPath></defs>' +
+      '<g clip-path="url(#' + id + ')" stroke="none">' + inner + '</g>' +
+      '<rect ' + FLAG_BOX + ' fill="none" stroke="currentColor" stroke-width="1" opacity=".3"/>';
+  }
+  var FLAGS = {
+    'flag-fr': flag('clip-flag-fr',
+      '<rect x="2" y="5" width="6.7" height="14" fill="#002395"/>' +
+      '<rect x="8.6" y="5" width="6.8" height="14" fill="#FFFFFF"/>' +
+      '<rect x="15.3" y="5" width="6.7" height="14" fill="#ED2939"/>'),
+    'flag-en': flag('clip-flag-en',
+      '<rect x="2" y="5" width="20" height="14" fill="#012169"/>' +
+      '<path d="M2 5l20 14M22 5L2 19" stroke="#FFFFFF" stroke-width="2.8"/>' +
+      '<path d="M2 5l20 14M22 5L2 19" stroke="#C8102E" stroke-width="1"/>' +
+      '<path d="M12 5v14M2 12h20" stroke="#FFFFFF" stroke-width="4"/>' +
+      '<path d="M12 5v14M2 12h20" stroke="#C8102E" stroke-width="2.2"/>')
+  };
+
   function svg(name) {
-    var body = UI[name] || TOOLS[name];
+    var body = UI[name] || TOOLS[name] || FLAGS[name];
     if (!body) return '';
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" ' +
       'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +

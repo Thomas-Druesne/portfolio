@@ -258,11 +258,19 @@ img.avatar { background: none; object-fit: cover; display: block; }
     var(--bg);
 }
 
+/* Barre du haut posée par-dessus la conversation (pas de bande qui la coupe) :
+   seuls les boutons restent cliquables, le texte défile jusqu'en haut. */
 .chat-top {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 5;
   display: flex; align-items: center; gap: 0.5rem;
   padding: 1rem 1.25rem;
   min-height: 64px;
+  pointer-events: none;
 }
+.chat-top > * { pointer-events: auto; }
+/* Petit fond rond derrière chaque bouton pour rester lisible si le texte passe dessous */
+.chat-top .icon-btn:not(:hover) { background: var(--bg); }
+.chat.is-chatting .chat-scroll { padding-top: 64px; }
 .chat-spacer { flex: 1; }
 
 /* Boutons de la barre du haut visibles uniquement si la sidebar est cachée */
@@ -500,7 +508,6 @@ img.avatar { background: none; object-fit: cover; display: block; }
 
 .chat:not(.is-chatting) .chat-scroll { flex: 0 1 auto; }
 .chat:not(.is-chatting) { justify-content: center; }
-.chat:not(.is-chatting) .chat-top { position: absolute; top: 0; left: 0; right: 0; }
 
 .composer {
   display: flex; align-items: flex-end; gap: 0.5rem;
@@ -728,6 +735,10 @@ html.lang-out textarea::placeholder { opacity: 0; }
 /* ============================================================
    BOUTON DARK / LIGHT (en haut à droite)
 ============================================================ */
+/* Bouton de langue : drapeau de la langue proposée (même que le libellé) */
+html:not([lang="en"]) #lang-btn .flag-fr,
+html[lang="en"] #lang-btn .flag-en { display: none; }
+
 .theme-btn .ico-moon { display: none; }
 [data-theme="light"] .theme-btn .ico-sun { display: none; }
 [data-theme="light"] .theme-btn .ico-moon { display: inline-flex; }

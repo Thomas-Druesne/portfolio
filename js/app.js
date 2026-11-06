@@ -228,6 +228,30 @@
            '</div>';
   }
 
+  // Blagues "hors sujet" : on les mélange comme un paquet de cartes et on
+  // les pioche une par une ; aucune ne revient avant que toutes soient sorties.
+  // Le paquet est gardé le temps de la visite (même en changeant de page).
+  var JOKE_KEY = 'portfolio-joke-bag';
+  function nextJoke(total) {
+    var bag = [], last = -1;
+    try { bag = JSON.parse(sessionStorage.getItem(JOKE_KEY)) || []; } catch (e) { bag = []; }
+    bag = bag.filter(function (n) { return n >= 0 && n < total; });
+    if (!bag.length) {
+      try { last = +sessionStorage.getItem(JOKE_KEY + '-last'); } catch (e) {}
+      for (var i = 0; i < total; i++) bag.push(i);
+      for (var k = bag.length - 1; k > 0; k--) {
+        var r = Math.floor(Math.random() * (k + 1)), t = bag[k]; bag[k] = bag[r]; bag[r] = t;
+      }
+      if (bag[bag.length - 1] === last) bag.unshift(bag.pop()); // pas deux fois la même à la suite
+    }
+    var pick = bag.pop();
+    try {
+      sessionStorage.setItem(JOKE_KEY, JSON.stringify(bag));
+      sessionStorage.setItem(JOKE_KEY + '-last', pick);
+    } catch (e) {}
+    return pick;
+  }
+
   // `instant` = sans l'animation "Thomas écrit…" (message d'accueil)
   function addBotMessage(topic, instant) {
     var source = answers.querySelector('article[data-topic="' + topic + '"]') ||
@@ -246,10 +270,10 @@
       if (!row.isConnected) return; // conversation effacée entre-temps
       body.innerHTML = source.innerHTML;
 
-      // Hors sujet : on garde une seule blague, tirée au hasard
+      // Hors sujet : on garde une seule blague, tirée sans répétition
       var jokes = body.querySelectorAll('.joke');
       if (jokes.length > 1) {
-        var keep = Math.floor(Math.random() * jokes.length);
+        var keep = nextJoke(jokes.length);
         jokes.forEach(function (j, i) { if (i !== keep) j.remove(); });
       }
 
