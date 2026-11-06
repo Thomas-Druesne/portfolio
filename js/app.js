@@ -198,6 +198,30 @@
     thread.appendChild(row);
   }
 
+  // Projets détaillés, dans l'ordre de présentation
+  var PROJECTS = [
+    { topic: 'projet-inzerty', name: 'Inzerty' },
+    { topic: 'projet-e2c',     name: 'E2C Grand-Lille' },
+    { topic: 'projet-envie',   name: 'Envie Nord' },
+    { topic: 'projet-dinamic', name: 'Dinamic' }
+  ];
+
+  // Boutons vers les autres projets, en commençant par le suivant
+  function nextProjects(current) {
+    var start = 0;
+    PROJECTS.forEach(function (p, i) { if (p.topic === current) start = i; });
+    var chips = '';
+    for (var k = 1; k < PROJECTS.length; k++) {
+      var p = PROJECTS[(start + k) % PROJECTS.length];
+      chips += '<button type="button" class="chip' + (k === 1 ? ' chip--next' : '') + '" data-topic="' + p.topic + '">' +
+               '<span class="ico" data-icon="folder"></span><span>' + p.name + '</span></button>';
+    }
+    return '<div class="next-projects">' +
+             '<p data-fr="Envie de découvrir un autre projet ?" data-en="Want to discover another project?">Envie de découvrir un autre projet ?</p>' +
+             '<div class="answer-actions">' + chips + '</div>' +
+           '</div>';
+  }
+
   // `instant` = sans l'animation "Thomas écrit…" (message d'accueil)
   function addBotMessage(topic, instant) {
     var source = answers.querySelector('article[data-topic="' + topic + '"]') ||
@@ -222,6 +246,9 @@
         var keep = Math.floor(Math.random() * jokes.length);
         jokes.forEach(function (j, i) { if (i !== keep) j.remove(); });
       }
+
+      // Détail d'un projet : on propose d'enchaîner sur les autres
+      if (topic.indexOf('projet-') === 0) body.insertAdjacentHTML('beforeend', nextProjects(topic));
 
       window.Icons.render(body);
       applyLang(body);
