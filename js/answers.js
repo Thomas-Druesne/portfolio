@@ -221,7 +221,7 @@
             <p data-fr="Collection et pratique de jeu vidéo depuis de nombreuses années (pour étancher ma soif de découverte et d'exploration !), c'est une passion qui ne m'a jamais quitté depuis tout petit." data-en="Collecting and playing video games for many years (to quench my thirst for discovery and exploration!), a passion that has never left me since childhood.">Collection et pratique de jeu vidéo depuis de nombreuses années (pour étancher ma soif de découverte et d'exploration !), c'est une passion qui ne m'a jamais quitté depuis tout petit.</p>
           </div>
         </div>
-        <div class="hobby-card hobby-card--wide">
+        <div class="hobby-card">
           <img src="img/img_hobby_riftbound.jpg" alt="Riftbound, le jeu de cartes League of Legends" />
           <div class="hobby-body">
             <h3><span class="ico" data-icon="cards"></span>Riftbound</h3>

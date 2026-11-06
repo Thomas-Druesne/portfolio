@@ -740,7 +740,8 @@ html.lang-out textarea::placeholder { opacity: 0; }
   border: 3px solid var(--secondary);
 }
 
-.hobby-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+/* Hobbies : une carte par ligne, toutes sur toute la largeur */
+.hobby-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
 .hobby-card {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -932,5 +933,3 @@ html.lang-out textarea::placeholder { opacity: 0; }
 /* AMAP : fond crème derrière le logo coloré */
 .project-shot--amap { background: #F6EDD5; }
 
-/* Hobbies : la 3e carte (Riftbound) prend toute la largeur, sous les deux autres */
-.hobby-card--wide { grid-column: 1 / -1; }
