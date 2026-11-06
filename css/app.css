@@ -741,16 +741,28 @@ html.lang-out textarea::placeholder { opacity: 0; }
   border: 3px solid var(--secondary);
 }
 
-/* Hobbies : une carte par ligne, toutes sur toute la largeur */
+/* Hobbies : une carte par ligne ; dans chaque carte, image à gauche,
+   picto + titre + texte à droite */
 .hobby-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
 .hobby-card {
+  display: grid;
+  grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
 }
-.hobby-card img { width: 100%; height: auto; aspect-ratio: 564 / 212; object-fit: contain; }  /* image entière, sans recadrage */
-.hobby-body { padding: 1.1rem 1.25rem 1.25rem; }
+/* Image entière (sans recadrage) ; même arrondi pour les trois images,
+   plus grand que celui déjà intégré dans les deux premières */
+.hobby-card img {
+  width: 100%; height: auto;
+  aspect-ratio: 564 / 212;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.hobby-body { padding: 0; }
 .hobby-body h3 { display: flex; align-items: center; gap: 0.5rem; font-size: calc(1.02rem - 1px); margin-bottom: 0.4rem; line-height: 1.4; }
 .hobby-body h3 .ico { color: var(--secondary); }
 .hobby-body p { font-size: calc(0.92rem - 1px); color: var(--text-muted) !important; }
@@ -789,7 +801,9 @@ html.lang-out textarea::placeholder { opacity: 0; }
 .contact-status[data-kind="error"] { color: #E5484D; }
 
 @media (max-width: 600px) {
-  .hobby-grid, .contact-row { grid-template-columns: 1fr; }
+  .contact-row { grid-template-columns: 1fr; }
+  /* Mobile : la carte hobby repasse en vertical (image au-dessus du texte) */
+  .hobby-card { grid-template-columns: 1fr; gap: 0.9rem; }
   .answer-portrait img { width: 140px; height: 140px; }
 }
 
