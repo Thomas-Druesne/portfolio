@@ -294,6 +294,7 @@
             <li>Responsive</li>
             <li>UI/UX</li>
             <li data-fr="Simulateur d'éligibilité IAE" data-en="IAE eligibility simulator">Simulateur d'éligibilité IAE</li>
+            <li data-fr="Référencement (SEO, GEO)" data-en="Search optimisation (SEO, GEO)">Référencement (SEO, GEO)</li>
           </ul>
         </div>
         <div>
@@ -329,6 +330,7 @@
             <li data-fr="Intégration" data-en="Integration">Intégration</li>
             <li>Responsive</li>
             <li data-fr="Retouche d'image" data-en="Image editing">Retouche d'image</li>
+            <li data-fr="Référencement (SEO, GEO)" data-en="Search optimisation (SEO, GEO)">Référencement (SEO, GEO)</li>
           </ul>
         </div>
         <div>
@@ -363,6 +365,7 @@
             <li data-fr="Intégration" data-en="Integration">Intégration</li>
             <li>Responsive</li>
             <li>UI/UX</li>
+            <li data-fr="Référencement (SEO, GEO)" data-en="Search optimisation (SEO, GEO)">Référencement (SEO, GEO)</li>
           </ul>
         </div>
         <div>
@@ -398,6 +401,7 @@
             <li>Responsive</li>
             <li>UI/UX</li>
             <li data-fr="Intégration" data-en="Integration">Intégration</li>
+            <li data-fr="Référencement (SEO, GEO)" data-en="Search optimisation (SEO, GEO)">Référencement (SEO, GEO)</li>
           </ul>
         </div>
         <div>
