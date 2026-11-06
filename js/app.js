@@ -170,7 +170,7 @@
     ['competences', /(compétence|competence|skill|\bia\b|\bai\b|intelligence artificielle|\bagents?\b|automatisation|automation|sais[- ]tu faire|\bux\b|\bui\b|\bseo\b|référencement|referencement|design|intégration|integration|responsive)/],
     ['parcours',    /(parcours|expérience|experience|carrière|carriere|career|stage|alternance|\bjobs?\b|emploi|background|formation|diplôme|diplome|études|etudes|école|ecole|master)/],
     ['outils',      /(outil|tool|logiciel|software|figma|adobe|photoshop|illustrator|indesign|premiere|wordpress|html|css|javascript|\bjs\b|chatgpt|claude|stitch)/],
-    ['apropos',     /(qui es[- ]tu|who are you|\btoi\b|yourself|\babout\b|à propos|a propos|hobby|hobbies|passion|loisir|magic|jeux? vidéo|jeux? video|video games?)/],
+    ['apropos',     /(qui es[- ]tu|who are you|\btoi\b|yourself|\babout\b|à propos|a propos|hobby|hobbies|passion|loisir|magic|riftbound|tcg|jeux? vidéo|jeux? video|video games?)/],
     ['hello',       /^(bonjour|salut|hello|hi|hey|coucou|yo)\b/]
   ];
 

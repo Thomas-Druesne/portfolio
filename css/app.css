@@ -928,3 +928,9 @@ html.lang-out textarea::placeholder { opacity: 0; }
 /* Aperçu dont le logo n'a pas de marge (ex. AMAP) : affiché entier, sans zoom */
 .project-shot--fit { padding: 1.5rem; }
 .project-shot--fit img { transform: none; }
+
+/* AMAP : fond crème derrière le logo coloré */
+.project-shot--amap { background: #F6EDD5; }
+
+/* Hobbies : la 3e carte (Riftbound) prend toute la largeur, sous les deux autres */
+.hobby-card--wide { grid-column: 1 / -1; }
