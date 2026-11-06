@@ -693,11 +693,13 @@ body[data-page="home"] .chat:not(.is-chatting) .composer-note               { an
    (classes posées sur <html> par js/app.js, au clic seulement)
 ============================================================ */
 html.lang-anim [data-fr],
+html.lang-anim [data-fr-html],
 html.lang-anim .bubble[data-q-fr],
 html.lang-anim textarea::placeholder {
   transition: opacity 0.22s ease, filter 0.22s ease, transform 0.22s ease !important;
 }
 html.lang-out [data-fr],
+html.lang-out [data-fr-html],
 html.lang-out .bubble[data-q-fr] {
   opacity: 0 !important;
   filter: blur(4px);
@@ -899,3 +901,14 @@ html.lang-out textarea::placeholder { opacity: 0; }
 }
 .next-projects p { color: var(--text-muted); }
 .chip--next { border-color: var(--secondary); color: var(--primary); }
+
+/* Descriptions de projets : mots-clés en gras (sans couleur, pour rester lisible) */
+.msg-bot .project-desc strong { color: var(--primary); font-weight: 700; }
+
+/* Point fort mis en avant (ex. simulateur IAE d'Inzerty) */
+.project-highlight {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 12px 12px 0;
+  padding: 0.85rem 1.1rem;
+}

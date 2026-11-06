@@ -35,6 +35,10 @@
     root.querySelectorAll('[data-fr]').forEach(function (el) {
       el.textContent = el.dataset[l];
     });
+    // Textes avec mise en forme (mots-clés en gras) : data-fr-html / data-en-html
+    root.querySelectorAll('[data-fr-html]').forEach(function (el) {
+      el.innerHTML = el.dataset[l + 'Html'];
+    });
     root.querySelectorAll('[data-fr-placeholder]').forEach(function (el) {
       el.placeholder = el.dataset[l + 'Placeholder'];
     });
@@ -155,7 +159,7 @@
 
   // Mots-clés → sujet (pour les questions tapées librement)
   var KEYWORDS = [
-    ['projet-inzerty', /inzerty/],
+    ['projet-inzerty', /(inzerty|simulateur|simulator|\biae\b|éligibilité|eligibilit)/],
     ['projet-e2c',     /(e2c|seconde chance|second chance)/],
     ['projet-dinamic', /dinamic/],
     ['projet-envie',   /envie nord/],
