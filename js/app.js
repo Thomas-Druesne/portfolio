@@ -161,7 +161,7 @@
   var KEYWORDS = [
     ['projet-inzerty', /(inzerty|simulateur|simulator|\biae\b|éligibilité|eligibilit)/],
     ['projet-e2c',     /(e2c|seconde chance|second chance)/],
-    ['projet-dinamic', /dinamic/],
+    ['projet-amap',    /(amap|moreuil|panier|producteur|amapien)/],
     ['projet-envie',   /envie nord/],
     ['cv',          /\b(cv|resume|résumé|curriculum)\b/],
     ['contact',     /(contact|joindre|\bmail\b|e-?mail|écrire|ecrire|appeler|téléphone|telephone|recrut|embauch|\bhire\b|disponib|freelance|devis)/],
@@ -207,7 +207,7 @@
     { topic: 'projet-inzerty', name: 'Inzerty' },
     { topic: 'projet-e2c',     name: 'E2C Grand-Lille' },
     { topic: 'projet-envie',   name: 'Envie Nord' },
-    { topic: 'projet-dinamic', name: 'Dinamic' }
+    { topic: 'projet-amap',    name: 'AMAP de Moreuil' }
   ];
 
   // Boutons vers les autres projets, en commençant par le suivant
