@@ -638,6 +638,36 @@ body.modal-open { overflow: hidden; }
   .btn { padding: 0.65rem 1rem; font-size: 0.9rem; }
 }
 
+/* ============================================================
+   ARRIVÉE SUR L'ACCUEIL — tout le contenu glisse vers le haut
+   (la barre latérale ne bouge pas). Remplissage "backwards" :
+   l'animation ne bloque pas les effets de survol ensuite.
+============================================================ */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: none; }
+}
+body[data-page="home"] .chat:not(.is-chatting) .photo-particles,
+body[data-page="home"] .chat:not(.is-chatting) .welcome-title span,
+body[data-page="home"] .chat:not(.is-chatting) .composer,
+body[data-page="home"] .chat:not(.is-chatting) .suggestions .chip,
+body[data-page="home"] .chat:not(.is-chatting) .composer-note {
+  animation: rise-in 0.9s var(--ease) backwards;
+}
+body[data-page="home"] .chat:not(.is-chatting) .photo-particles             { animation-delay: 0s; }
+body[data-page="home"] .chat:not(.is-chatting) .welcome-title span:first-child { animation-delay: 0.12s; }
+body[data-page="home"] .chat:not(.is-chatting) .welcome-title span.accent   { animation-delay: 0.2s; }
+body[data-page="home"] .chat:not(.is-chatting) .composer                    { animation-delay: 0.3s; }
+body[data-page="home"] .chat:not(.is-chatting) .suggestions .chip:nth-child(1) { animation-delay: 0.4s; }
+body[data-page="home"] .chat:not(.is-chatting) .suggestions .chip:nth-child(2) { animation-delay: 0.46s; }
+body[data-page="home"] .chat:not(.is-chatting) .suggestions .chip:nth-child(3) { animation-delay: 0.52s; }
+body[data-page="home"] .chat:not(.is-chatting) .suggestions .chip:nth-child(4) { animation-delay: 0.58s; }
+body[data-page="home"] .chat:not(.is-chatting) .suggestions .chip:nth-child(5) { animation-delay: 0.64s; }
+body[data-page="home"] .chat:not(.is-chatting) .composer-note               { animation-delay: 0.75s; }
+
+/* Light mode : la photo nette attend sa version au halo bleu (js/particles.js) */
+[data-theme="light"] .photo-particles .photo-static:not(.is-recolored) { opacity: 0; }
+
 /* Accessibilité : animations réduites */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

@@ -12,6 +12,11 @@
 // En local (file://), le navigateur interdit de lire les pixels
 // d'un PNG : on charge alors à la demande js/photo-data.js
 // (copie encodée de la même photo).
+//
+// Light mode : le halo cyan de la photo est recoloré pixel par
+// pixel dans le bleu du thème clair (--secondary), la personne
+// (en noir et blanc) n'est pas modifiée. Vaut pour la photo nette
+// comme pour les grains.
 // ============================================================
 
 (function () {
@@ -51,12 +56,72 @@
     return octx.getImageData(0, 0, cols, rows).data; // lève SecurityError en file://
   }
 
+  // ---------- Light mode : halo cyan → bleu du thème ----------
+  var ORIGINAL_SRC = photo.getAttribute('src');
+  var lightURL = null, lightFrom = null, lightColor = '';
+
+  function isLight() { return document.documentElement.dataset.theme === 'light'; }
+
+  // Couleur d'accent du thème courant (#RRGGBB lu dans le CSS)
+  function accentRGB() {
+    var hex = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim().replace('#', '');
+    if (hex.length === 3) hex = hex.replace(/./g, '$&$&');
+    var n = parseInt(hex, 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+
+  // Le halo est du cyan pur (0,255,255) : la part de cyan d'un pixel
+  // vaut (min(V,B) − R). On la remplace par le bleu ; le gris est intact.
+  function recolor(d) {
+    var to = accentRGB();
+    var dr = to[0], dg = to[1] - 255, db = to[2] - 255;
+    for (var i = 0; i < d.length; i += 4) {
+      var k = (Math.min(d[i + 1], d[i + 2]) - d[i]) / 255;
+      if (k <= 0.02) continue;
+      if (k > 1) k = 1;
+      d[i]     = d[i]     + k * dr;
+      d[i + 1] = d[i + 1] + k * dg;
+      d[i + 2] = d[i + 2] + k * db;
+    }
+  }
+
+  // Met la photo nette dans la bonne version (originale ou halo bleu)
+  function refreshPhoto() {
+    if (!isLight()) {
+      if (photo.getAttribute('src') !== ORIGINAL_SRC) photo.src = ORIGINAL_SRC;
+      photo.classList.remove('is-recolored');
+      return;
+    }
+    if (!source) return;
+    var color = accentRGB().join(',');
+    if (lightFrom !== source || lightColor !== color) {
+      try {
+        var c = document.createElement('canvas');
+        c.width = source.naturalWidth;
+        c.height = source.naturalHeight;
+        var cx = c.getContext('2d');
+        cx.drawImage(source, 0, 0);
+        var img = cx.getImageData(0, 0, c.width, c.height);
+        recolor(img.data);
+        cx.putImageData(img, 0, 0);
+        lightURL = c.toDataURL('image/png');
+        lightFrom = source;
+        lightColor = color;
+      } catch (err) {
+        useFallback();
+        return;
+      }
+    }
+    photo.src = lightURL;
+    photo.classList.add('is-recolored');
+  }
+
   // Ouverture en local : on charge la copie encodée de la photo
   function useFallback() {
     if (triedFallback) return;
     triedFallback = true;
     var s = document.createElement('script');
-    s.src = 'js/photo-data.js?v=4';
+    s.src = 'js/photo-data.js?v=5';
     s.onload = function () {
       if (!window.PHOTO_FALLBACK) return;
       var img = new Image();
@@ -80,6 +145,8 @@
       useFallback();
       return;
     }
+    if (isLight()) recolor(data);
+    refreshPhoto();
 
     W = rect.width;
     H = rect.height;
@@ -246,7 +313,14 @@
     }).observe(wrap);
   }
 
-  function init() { source = photo; build(true); }
-  if (photo.complete && photo.naturalWidth) init();
-  else photo.addEventListener('load', init);
+  // Image source séparée de la photo affichée (dont le src change en light mode)
+  var base = new Image();
+  base.onload = function () { source = base; build(true); };
+  base.src = ORIGINAL_SRC;
+
+  // Changement de thème : nouvelle photo nette + grains recolorés
+  new MutationObserver(function () {
+    refreshPhoto();
+    if (source && W) build(false);
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 }());
