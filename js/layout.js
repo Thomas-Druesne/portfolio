@@ -40,22 +40,17 @@
         ${topic('competences', 'pen', 'Mes compétences', 'My skills')}
         ${topic('parcours', 'route', 'Mon parcours professionnel', 'My professional background')}
         ${topic('outils', 'wrench', 'Mes outils', 'My tools')}
-      </ul>
-
-      <p class="side-label" data-fr="Pages" data-en="Pages">Pages</p>
-      <ul class="side-list">
-        <li><a href="projets.html" class="side-item"><span class="ico" data-icon="layout"></span><span data-fr="Tous les projets" data-en="All projects">Tous les projets</span></a></li>
-        <li><a href="a-propos.html" class="side-item"><span class="ico" data-icon="user"></span><span data-fr="À propos" data-en="About">À propos</span></a></li>
-        <li><a href="contact.html" class="side-item"><span class="ico" data-icon="mail"></span><span data-fr="Me contacter" data-en="Contact me">Me contacter</span></a></li>
+        ${topic('apropos', 'user', 'À propos de moi', 'About me')}
+        ${topic('contact', 'mail', 'Me contacter', 'Contact me')}
       </ul>
     </nav>
 
     <div class="sidebar-bottom">
-      <div class="side-actions">
-        <a href="img/CV_DRUESNE_Thomas.pdf" class="side-action" target="_blank" rel="noopener"><span class="ico" data-icon="cv"></span><span data-fr="Mon CV" data-en="Resume">Mon CV</span></a>
-        <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="side-action" target="_blank" rel="noopener"><span class="ico" data-icon="linkedin"></span><span>LinkedIn</span></a>
-        <button class="side-action" type="button" id="lang-btn"><span class="ico" data-icon="globe"></span><span data-fr="English" data-en="Français">English</span></button>
-      </div>
+      <ul class="side-list side-list--compact">
+        <li><a href="img/CV_DRUESNE_Thomas.pdf" class="side-item" target="_blank" rel="noopener"><span class="ico" data-icon="cv"></span><span data-fr="Mon CV" data-en="My resume">Mon CV</span></a></li>
+        <li><a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="side-item" target="_blank" rel="noopener"><span class="ico" data-icon="linkedin"></span><span>LinkedIn</span></a></li>
+        <li><button class="side-item" type="button" id="lang-btn"><span class="ico" data-icon="languages"></span><span data-fr="English" data-en="Français">English</span></button></li>
+      </ul>
       <div class="side-profile">
         <span class="avatar" aria-hidden="true">TD</span>
         <span class="side-profile-txt">

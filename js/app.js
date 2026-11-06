@@ -50,7 +50,36 @@
   document.getElementById('lang-btn').addEventListener('click', function () {
     localStorage.setItem(LANG_KEY, lang() === 'fr' ? 'en' : 'fr');
     applyLang(document);
+    updateThemeLabel();
   });
+
+  // ==========================================================
+  // 1 bis. THÈME — dark par défaut, light au clic
+  // (le thème enregistré est appliqué dès le <head> de chaque page)
+  // ==========================================================
+  var THEME_KEY = 'portfolio-theme';
+  var themeBtn = document.getElementById('theme-btn');
+
+  function isLight() { return document.documentElement.dataset.theme === 'light'; }
+
+  function updateThemeLabel() {
+    if (!themeBtn) return;
+    var fr = lang() === 'fr';
+    themeBtn.setAttribute('aria-label', isLight()
+      ? (fr ? 'Passer en mode sombre' : 'Switch to dark mode')
+      : (fr ? 'Passer en mode clair' : 'Switch to light mode'));
+    themeBtn.title = themeBtn.getAttribute('aria-label');
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var light = !isLight();
+      if (light) document.documentElement.dataset.theme = 'light';
+      else delete document.documentElement.dataset.theme;
+      localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
+      updateThemeLabel();
+    });
+  }
 
   // ==========================================================
   // 2. BARRE LATÉRALE
@@ -83,9 +112,9 @@
     ['book',        /(\bbook\b|graphi|\bprint|\blogo|affiche|branding|illustration)/],
     ['projets',     /(projet|project|réalisation|realisation|\bsites?\b|website|inzerty|e2c|dinamic|envie nord|travaux|\bworks?\b|portfolio)/],
     ['competences', /(compétence|competence|skill|sais[- ]tu faire|\bux\b|\bui\b|\bseo\b|référencement|referencement|design|intégration|integration|responsive)/],
-    ['parcours',    /(parcours|expérience|experience|carrière|carriere|career|stage|alternance|\bjobs?\b|emploi|background|formation|diplôme|diplome)/],
+    ['parcours',    /(parcours|expérience|experience|carrière|carriere|career|stage|alternance|\bjobs?\b|emploi|background|formation|diplôme|diplome|études|etudes|école|ecole|master)/],
     ['outils',      /(outil|tool|logiciel|software|figma|adobe|photoshop|illustrator|indesign|premiere|wordpress|html|css|javascript|\bjs\b|chatgpt|claude|stitch)/],
-    ['apropos',     /(qui es[- ]tu|who are you|\btoi\b|yourself|\babout\b|à propos|a propos|hobby|hobbies|passion|loisir)/],
+    ['apropos',     /(qui es[- ]tu|who are you|\btoi\b|yourself|\babout\b|à propos|a propos|hobby|hobbies|passion|loisir|magic|jeux? vidéo|jeux? video|video games?)/],
     ['hello',       /^(bonjour|salut|hello|hi|hey|coucou|yo)\b/]
   ];
 
@@ -253,6 +282,62 @@
   });
 
   // ==========================================================
+  // 3 bis. FORMULAIRE DE CONTACT (réponse "contact")
+  // Envoi via FormSubmit, comme l'ancienne page contact.
+  // ==========================================================
+  var FORM_ENDPOINT = 'https://formsubmit.co/7ec45ce06ef8a4f0a1b44f422af43ff4';
+  var RATE_KEY = 'portfolio-contact-last';
+  var MSG = {
+    fr: { missing: 'Merci de remplir les trois champs.', email: 'Cette adresse e-mail ne semble pas valide.',
+          wait: 'Un message vient déjà d’être envoyé, merci de patienter une minute.', sending: 'Envoi en cours…',
+          ok: 'Merci ! Votre message a bien été envoyé, je vous recontacte très vite.',
+          fail: 'Oups, l’envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.' },
+    en: { missing: 'Please fill in all three fields.', email: 'This e-mail address doesn’t look valid.',
+          wait: 'A message was just sent, please wait a minute.', sending: 'Sending…',
+          ok: 'Thank you! Your message has been sent, I’ll get back to you very soon.',
+          fail: 'Oops, sending failed. Please try again or e-mail me directly.' }
+  };
+
+  document.addEventListener('submit', function (e) {
+    var f = e.target.closest('.contact-form');
+    if (!f) return;
+    e.preventDefault();
+
+    var t = MSG[lang()];
+    var status = f.querySelector('.contact-status');
+    var btn = f.querySelector('button[type="submit"]');
+    function say(text, kind) { status.textContent = text; status.dataset.kind = kind || ''; }
+
+    function val(n) { return f.querySelector('[name="' + n + '"]').value.trim(); }
+    if (val('website')) return; // champ piège rempli = robot
+    var name = val('name'), email = val('email'), message = val('message');
+    if (!name || !email || !message) return say(t.missing, 'error');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return say(t.email, 'error');
+    var last = +localStorage.getItem(RATE_KEY) || 0;
+    if (Date.now() - last < 60000) return say(t.wait, 'error');
+
+    var data = new FormData();
+    data.append('name', name);
+    data.append('email', email);
+    data.append('message', message);
+    data.append('_subject', 'Nouveau message de ' + name + ' (portfolio)');
+    data.append('_captcha', 'false');
+    data.append('_template', 'table');
+
+    btn.disabled = true;
+    say(t.sending);
+    fetch(FORM_ENDPOINT, { method: 'POST', body: data })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        localStorage.setItem(RATE_KEY, String(Date.now()));
+        f.reset();
+        say(t.ok, 'success');
+      })
+      .catch(function () { say(t.fail, 'error'); })
+      .then(function () { btn.disabled = false; });
+  });
+
+  // ==========================================================
   // 4. MODALES
   // ==========================================================
   var lastTrigger = null;
@@ -290,6 +375,7 @@
   // DÉMARRAGE
   // ==========================================================
   applyLang(document);
+  updateThemeLabel();
   if (page === 'home') route();
   else resetChat();
 }());

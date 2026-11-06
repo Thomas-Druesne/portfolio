@@ -37,8 +37,10 @@
           <span class="project-meta"><strong data-fr="Site web Dinamic" data-en="Dinamic website">Site web Dinamic</strong><small data-fr="Maquettage/Intégration" data-en="Mockup/Integration">Maquettage/Intégration</small></span>
         </button>
       </div>
+      <p data-fr="Envie d'en voir davantage ? Mon book graphique regroupe aussi mes créations print et identités visuelles." data-en="Want to see more? My graphic portfolio also gathers my print work and visual identities.">Envie d'en voir davantage ? Mon book graphique regroupe aussi mes créations print et identités visuelles.</p>
       <div class="answer-actions">
-        <a href="projets.html" class="btn btn-accent"><span class="ico" data-icon="layout"></span><span data-fr="Voir tous les projets" data-en="See all projects">Voir tous les projets</span></a>
+        <button type="button" class="chip" data-topic="book"><span class="ico" data-icon="book"></span><span data-fr="Voir mon book" data-en="See my portfolio">Voir mon book</span></button>
+        <button type="button" class="chip" data-topic="competences"><span class="ico" data-icon="pen"></span><span data-fr="Mes compétences" data-en="My skills">Mes compétences</span></button>
       </div>
     </article>
 
@@ -111,8 +113,28 @@
           <p data-fr="Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z." data-en="First contract signed at (inzerty), to carry out showcase &amp; e-commerce web projects from A to Z.">Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z.</p>
         </li>
       </ol>
+      <p data-fr="Et côté formation :" data-en="And on the training side:">Et côté formation :</p>
+      <ol class="timeline">
+        <li>
+          <span class="timeline-date">2024</span>
+          <p data-fr="Formation complémentaire en développement Low-code No Code effectuée chez M2I à Villeneuve-d'Ascq." data-en="Additional training in Low-code No Code development at M2I in Villeneuve-d'Ascq.">Formation complémentaire en développement Low-code No Code effectuée chez M2I à Villeneuve-d'Ascq.</p>
+        </li>
+        <li>
+          <span class="timeline-date">2022/2023</span>
+          <p data-fr="Validation de mon diplôme d'alternance concepteur d'interface chez M2i Formation à Villeneuve-d'Ascq." data-en="Validation of my work-study diploma in interface design at M2i Formation in Villeneuve-d'Ascq.">Validation de mon diplôme d'alternance concepteur d'interface chez M2i Formation à Villeneuve-d'Ascq.</p>
+        </li>
+        <li>
+          <span class="timeline-date">2021</span>
+          <p data-fr="Formation intensive en Webdesign UX chez POPSchool Valenciennes." data-en="Intensive training in UX Webdesign at POPSchool Valenciennes.">Formation intensive en Webdesign UX chez POPSchool Valenciennes.</p>
+        </li>
+        <li>
+          <span class="timeline-date">2018</span>
+          <p data-fr="Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens." data-en="Master's degree in Culture, Events &amp; Digital at the UPJV in Amiens.">Obtention de mon Master en Culture, événementiel &amp; Numérique à l'UPJV d'Amiens.</p>
+        </li>
+      </ol>
       <div class="answer-actions">
-        <a href="a-propos.html" class="btn btn-accent"><span class="ico" data-icon="user"></span><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span></a>
+        <button type="button" class="chip" data-topic="apropos"><span class="ico" data-icon="user"></span><span data-fr="En savoir plus sur moi" data-en="More about me">En savoir plus sur moi</span></button>
+        <button type="button" class="chip" data-topic="cv"><span class="ico" data-icon="cv"></span><span data-fr="Voir mon CV" data-en="See my resume">Voir mon CV</span></button>
       </div>
     </article>
 
@@ -140,15 +162,25 @@
 
     <!-- CONTACT -->
     <article data-topic="contact" data-q-fr="Comment puis-je te contacter ?" data-q-en="How can I contact you?">
-      <p data-fr="Avec grand plaisir ! Je suis disponible sur toute la métropole lilloise. Le plus simple est de m'écrire :" data-en="With great pleasure! I'm available throughout the Lille metropolitan area. The easiest way is to write to me:">Avec grand plaisir ! Je suis disponible sur toute la métropole lilloise. Le plus simple est de m'écrire :</p>
+      <p data-fr="Avec grand plaisir ! Je suis actuellement disponible pour de nouvelles opportunités et collaborations créatives. Un avis, un recrutement ? Laissez-moi un petit message ci-dessous, réponse garantie sous 24h, promis !" data-en="With great pleasure! I'm currently available for new opportunities and creative collaborations. Feedback, a recruitment offer? Leave me a little message below, answer guaranteed within 24h, I promise!">Avec grand plaisir ! Je suis actuellement disponible pour de nouvelles opportunités et collaborations créatives. Un avis, un recrutement ? Laissez-moi un petit message ci-dessous, réponse garantie sous 24h, promis !</p>
       <ul class="info-list">
         <li><span class="ico" data-icon="mail"></span><a href="mailto:thomas.druesnepro@gmail.com">thomas.druesnepro@gmail.com</a></li>
-        <li><span class="ico" data-icon="mappin"></span><span data-fr="Métropole lilloise" data-en="Lille metropolitan area">Métropole lilloise</span></li>
+        <li><span class="ico" data-icon="clock"></span><span data-fr="Du lundi au vendredi - 9h / 19h" data-en="Monday to Friday - 9am / 7pm">Du lundi au vendredi - 9h / 19h</span></li>
+        <li><span class="ico" data-icon="mappin"></span><span data-fr="Disponible sur toute la métropole lilloise" data-en="Available throughout the Lille metropolitan area">Disponible sur toute la métropole lilloise</span></li>
       </ul>
-      <div class="answer-actions">
-        <a href="contact.html" class="btn btn-accent"><span class="ico" data-icon="mail"></span><span data-fr="Ouvrir le formulaire de contact" data-en="Open the contact form">Ouvrir le formulaire de contact</span></a>
-        <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="linkedin"></span><span>LinkedIn</span></a>
-      </div>
+      <form class="contact-form" novalidate>
+        <div class="contact-row">
+          <label><span data-fr="Nom" data-en="Name">Nom</span><input type="text" name="name" required autocomplete="name" /></label>
+          <label><span data-fr="E-mail" data-en="E-mail">E-mail</span><input type="email" name="email" required autocomplete="email" /></label>
+        </div>
+        <label><span data-fr="Message" data-en="Message">Message</span><textarea name="message" rows="4" required></textarea></label>
+        <input type="text" name="website" class="contact-trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="contact-foot">
+          <button type="submit" class="btn btn-accent"><span class="ico" data-icon="send"></span><span data-fr="Envoyer" data-en="Send">Envoyer</span></button>
+          <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="linkedin"></span><span>LinkedIn</span></a>
+        </div>
+        <p class="contact-status" role="status" aria-live="polite"></p>
+      </form>
     </article>
 
     <!-- CV -->
@@ -162,9 +194,32 @@
 
     <!-- À PROPOS -->
     <article data-topic="apropos" data-q-fr="Qui es-tu ?" data-q-en="Who are you?">
-      <p data-fr="Je suis Thomas, Webdesigner UX &amp; Intégrateur WordPress, designer curieux et intégrateur rigoureux. Après une reconversion réussie dans le webdesign, j'ai exprimé ma créativité en start-up, en agence et en ESN." data-en="I'm Thomas, UX Webdesigner &amp; WordPress Integrator, a curious designer and rigorous integrator. After a successful career change into webdesign, I expressed my creativity in start-ups, agencies and IT service companies.">Je suis Thomas, Webdesigner UX &amp; Intégrateur WordPress, designer curieux et intégrateur rigoureux. Après une reconversion réussie dans le webdesign, j'ai exprimé ma créativité en start-up, en agence et en ESN.</p>
+      <p><strong data-fr="Un p'tit mot sur moi : designer curieux &amp; intégrateur rigoureux." data-en="A few words about me: curious designer &amp; rigorous integrator.">Un p'tit mot sur moi : designer curieux &amp; intégrateur rigoureux.</strong></p>
+      <figure class="answer-portrait"><img src="img/photo_profil_a_propos.png" alt="Thomas Druesne" /></figure>
+      <p data-fr="Après une reconversion réussie dans le webdesign et l'intégration post-pandémie et ayant un attrait pour la création web et digitale, j'ai pu exprimer, au cours de ces dernières années, ma créativité et mon savoir-faire au travers de différentes expériences en start-up, en agence et en ESN." data-en="After a successful career change into webdesign and integration post-pandemic, and with a fondness for web and digital creation, I was able to express my creativity and expertise through various experiences in start-ups, agencies and IT service companies.">Après une reconversion réussie dans le webdesign et l'intégration post-pandémie et ayant un attrait pour la création web et digitale, j'ai pu exprimer, au cours de ces dernières années, ma créativité et mon savoir-faire au travers de différentes expériences en start-up, en agence et en ESN.</p>
+      <p data-fr="Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un 360° sur la création web, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des projets réalisés de A à Z." data-en="My skills being now well-established and fully fulfilled in what I do, my current objective is to achieve a 360° in web creation, in order to offer website creation from graphic design through integration, along with all its visual branding, for projects carried out from A to Z.">Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un 360° sur la création web, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des projets réalisés de A à Z.</p>
+      <p data-fr="Et tout ceci ne serait pas possible sans mes meilleurs amis : la suite Adobe, Figma ainsi que WordPress !" data-en="And all of this would not be possible without my best friends: the Adobe suite, Figma and WordPress!">Et tout ceci ne serait pas possible sans mes meilleurs amis : la suite Adobe, Figma ainsi que WordPress !</p>
+      <p data-fr="Et quand je ne suis pas derrière Figma :" data-en="And when I'm not behind Figma:">Et quand je ne suis pas derrière Figma :</p>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <img src="img/img_hobby_mtg_a_propos.png" alt="Magic the Gathering" />
+          <div class="hobby-body">
+            <h3><span class="ico" data-icon="cards"></span>Magic the Gathering</h3>
+            <p data-fr="Jeu de cartes réputé pour sa complexité, son sens stratégique et sa tonne de statistiques et de contenu en ligne. Son aspect social m'a permis de rencontrer des gens merveilleux." data-en="Card game renowned for its complexity, strategic thinking and wealth of statistics and online content. Its social aspect allowed me to meet wonderful people.">Jeu de cartes réputé pour sa complexité, son sens stratégique et sa tonne de statistiques et de contenu en ligne. Son aspect social m'a permis de rencontrer des gens merveilleux.</p>
+          </div>
+        </div>
+        <div class="hobby-card">
+          <img src="img/img_hobby_jv_a_propos.png" alt="Jeux vidéo" />
+          <div class="hobby-body">
+            <h3><span class="ico" data-icon="gamepad"></span><span data-fr="Jeux vidéo" data-en="Video games">Jeux vidéo</span></h3>
+            <p data-fr="Collection et pratique de jeu vidéo depuis de nombreuses années (pour étancher ma soif de découverte et d'exploration !), c'est une passion qui ne m'a jamais quitté depuis tout petit." data-en="Collecting and playing video games for many years (to quench my thirst for discovery and exploration!), a passion that has never left me since childhood.">Collection et pratique de jeu vidéo depuis de nombreuses années (pour étancher ma soif de découverte et d'exploration !), c'est une passion qui ne m'a jamais quitté depuis tout petit.</p>
+          </div>
+        </div>
+      </div>
       <div class="answer-actions">
-        <a href="a-propos.html" class="btn btn-accent"><span class="ico" data-icon="user"></span><span data-fr="En savoir plus sur moi" data-en="More about me">En savoir plus sur moi</span></a>
+        <a href="img/CV_DRUESNE_Thomas.pdf" class="btn btn-accent" target="_blank" rel="noopener"><span class="ico" data-icon="cv"></span><span data-fr="Mon CV" data-en="My resume">Mon CV</span></a>
+        <a href="img/CV_DRUESNE_Thomas_ATS_Friendly.pdf" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="cv"></span><span data-fr="Mon CV ATS Friendly" data-en="My ATS Friendly resume">Mon CV ATS Friendly</span></a>
+        <a href="https://www.linkedin.com/in/thomas-druesne-webdesign-developpeur/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="ico" data-icon="linkedin"></span><span>LinkedIn</span></a>
       </div>
     </article>
 

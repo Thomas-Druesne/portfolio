@@ -1,10 +1,11 @@
 /* ============================================================
-   APP.CSS — Page d'accueil "interface IA"
+   APP.CSS — Interface "chat IA" (index.html + chat.html)
    Barre latérale (historique) + zone de chat centrale.
 
-   Toutes les couleurs passent par des variables : pour le futur
-   light mode, il suffira de redéfinir ces variables sur
-   [data-theme="light"] (les pictos SVG suivent automatiquement).
+   Toutes les couleurs passent par des variables :
+   - dark mode (par défaut) : :root
+   - light mode : [data-theme="light"] — le bleu ciel devient bleu
+   Les pictos SVG suivent automatiquement (currentColor).
 
    Breakpoints : 1500px / 1200px / 900px / 400px
 ============================================================ */
@@ -24,12 +25,37 @@
   --border:      rgba(255, 255, 255, 0.1);
   --accent-soft: rgba(0, 232, 232, 0.12);
   --accent-glow: rgba(0, 232, 232, 0.35);
+  --accent-haze: rgba(0, 232, 232, 0.06);   /* halo en haut de la zone de chat */
   --on-accent:   #1F1F1F;
+  --modal-bg:    #111111;
+  --shadow:      rgba(0, 0, 0, 0.5);
+  --logo-filter: none;
 
   --sidebar-w:   280px;
   --col-w:       780px;
   --radius:      16px;
   --ease:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===== LIGHT MODE — couleurs inversées, le bleu ciel devient bleu ===== */
+[data-theme="light"] {
+  --bg:          #FFFFFF;
+  --primary:     #1F1F1F;
+  --secondary:   #0B63CE;
+
+  --surface:     #F5F6F8;
+  --surface-2:   #ECEEF2;
+  --surface-3:   #E1E4EA;
+  --text-muted:  rgba(31, 31, 31, 0.68);
+  --text-faint:  rgba(31, 31, 31, 0.46);
+  --border:      rgba(31, 31, 31, 0.12);
+  --accent-soft: rgba(11, 99, 206, 0.1);
+  --accent-glow: rgba(11, 99, 206, 0.28);
+  --accent-haze: rgba(11, 99, 206, 0.05);
+  --on-accent:   #FFFFFF;
+  --modal-bg:    #FFFFFF;
+  --shadow:      rgba(31, 31, 31, 0.18);
+  --logo-filter: invert(1);      /* logo blanc → noir */
 }
 
 /* ===== Reset ===== */
@@ -45,6 +71,7 @@ body {
   line-height: 1.7;
   overflow: hidden;              /* le scroll se fait dans .chat-scroll */
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 img { max-width: 100%; display: block; }
@@ -102,7 +129,7 @@ a { color: inherit; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.15rem 0 0.25rem 0.5rem;
 }
-.sidebar-logo img { height: 30px; width: auto; }
+.sidebar-logo img { height: 30px; width: auto; filter: var(--logo-filter); transition: filter 0.3s; }
 
 .side-new {
   display: flex; align-items: center; gap: 0.75rem;
@@ -177,21 +204,10 @@ a { color: inherit; }
   display: flex; flex-direction: column; gap: 0.5rem;
 }
 
-/* CV / LinkedIn / Langue : une seule ligne de 3 boutons compacts */
-.side-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-.side-action {
-  display: flex; align-items: center; justify-content: center; gap: 0.4rem;
-  padding: 0.5rem 0.25rem;
-  border-radius: 10px;
-  font-size: 0.78rem; font-weight: 600;
-  color: var(--text-muted);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-}
-.side-action .ico { width: 16px; height: 16px; }
-.side-action:hover { background: var(--surface-2); color: var(--primary); }
-.side-action:hover .ico { color: var(--secondary); }
+/* CV / LinkedIn / Langue : liste verticale resserrée */
+.side-list--compact { gap: 0; }
+.side-list--compact .side-item { padding: 0.4rem 0.9rem; font-size: 0.88rem; }
+.side-list--compact .ico { width: 17px; height: 17px; }
 
 .side-profile {
   display: flex; align-items: center; gap: 0.75rem;
@@ -238,7 +254,7 @@ a { color: inherit; }
   flex-direction: column;
   position: relative;
   background:
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0, 232, 232, 0.06), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 0%, var(--accent-haze), transparent 70%),
     var(--bg);
 }
 
@@ -485,9 +501,9 @@ a { color: inherit; }
   display: flex; align-items: flex-end; gap: 0.5rem;
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 0.75rem 0.75rem 0.75rem 1.4rem;
-  transition: border-color 0.25s, box-shadow 0.3s;
+  border-radius: 22px;
+  padding: 0.45rem 0.5rem 0.45rem 1.25rem;
+  transition: border-color 0.25s, box-shadow 0.3s, background 0.3s;
 }
 .composer:focus-within {
   border-color: var(--secondary);
@@ -500,18 +516,20 @@ a { color: inherit; }
   color: var(--primary);
   font: inherit; font-size: 1rem;
   line-height: 1.5;
-  padding: 0.45rem 0;
+  padding: 0.3rem 0;
   max-height: 180px;
 }
 .composer textarea::placeholder { color: var(--text-faint); }
 
 .send-btn {
-  width: 40px; height: 40px; border-radius: 50%;
+  width: 32px; height: 32px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
   background: var(--secondary); color: var(--on-accent);
   flex-shrink: 0;
+  margin-bottom: 1px;
   transition: opacity 0.2s, transform 0.2s;
 }
+.send-btn .ico { width: 16px; height: 16px; }
 .send-btn:disabled { opacity: 0.3; cursor: default; }
 .send-btn:not(:disabled):hover { transform: scale(1.06); }
 
@@ -574,7 +592,7 @@ body.modal-open { overflow: hidden; }
   .sidebar {
     position: fixed; top: 0; bottom: 0; left: 0;
     transform: translateX(-100%);
-    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 0 60px var(--shadow);
   }
   .app.is-collapsed .sidebar { margin-left: 0; }
   .app.is-drawer-open .sidebar { transform: none; }
@@ -633,4 +651,82 @@ body.modal-open { overflow: hidden; }
   .welcome { padding-top: 0; padding-bottom: 1.75rem; }
   .welcome-title { font-size: 1.55rem; }
   .suggestions { margin-top: 1rem; }
+}
+
+/* ============================================================
+   BOUTON DARK / LIGHT (en haut à droite)
+============================================================ */
+.theme-btn .ico-moon { display: none; }
+[data-theme="light"] .theme-btn .ico-sun { display: none; }
+[data-theme="light"] .theme-btn .ico-moon { display: inline-flex; }
+.theme-btn:hover .ico { color: var(--secondary); }
+
+/* ============================================================
+   MODALES — suivent le thème (modal-inzerty.css est chargé après)
+============================================================ */
+.modal-overlay .modal {
+  background: var(--modal-bg);
+  box-shadow: 0 0 50px var(--accent-glow);
+  transition: opacity 0.35s ease, transform 0.35s ease, background 0.3s;
+}
+
+/* ============================================================
+   RÉPONSE "À PROPOS" — portrait + hobbies
+============================================================ */
+.answer-portrait img {
+  width: 180px; height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--secondary);
+}
+
+.hobby-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.hobby-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.hobby-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.hobby-body { padding: 1.1rem 1.25rem 1.25rem; }
+.hobby-body h3 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.02rem; margin-bottom: 0.4rem; line-height: 1.4; }
+.hobby-body h3 .ico { color: var(--secondary); }
+.hobby-body p { font-size: 0.92rem; color: var(--text-muted) !important; }
+
+/* ============================================================
+   RÉPONSE "CONTACT" — formulaire
+============================================================ */
+.contact-form {
+  display: flex; flex-direction: column; gap: 0.9rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.contact-form label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+.contact-form input,
+.contact-form textarea {
+  font: inherit; font-size: 0.95rem; font-weight: 500;
+  color: var(--primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.6rem 0.85rem;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px var(--accent-soft); }
+.contact-trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-foot { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.contact-foot .btn:disabled { opacity: 0.5; cursor: progress; transform: none; }
+.contact-status { font-size: 0.9rem; min-height: 1em; }
+.contact-status:empty { display: none; }
+.contact-status[data-kind="success"] { color: var(--secondary); font-weight: 600; }
+.contact-status[data-kind="error"] { color: #E5484D; }
+
+@media (max-width: 600px) {
+  .hobby-grid, .contact-row { grid-template-columns: 1fr; }
+  .answer-portrait img { width: 140px; height: 140px; }
 }

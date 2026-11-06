@@ -6,11 +6,13 @@
   <title>Portfolio - Thomas Druesne</title>
   <meta name="description" content="Thomas Druesne — Webdesigner UX &amp; Intégrateur WordPress. Projets, book graphique, compétences, parcours et outils." />
   <link rel="icon" type="image/png" href="img/favicon.png" />
+  <!-- Thème : appliqué avant l'affichage pour éviter un flash (dark par défaut) -->
+  <script>try { if (localStorage.getItem("portfolio-theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&amp;display=swap" />
-  <link rel="stylesheet" href="css/app.css?v=3" />
-  <link rel="stylesheet" href="css/modal-inzerty.css?v=3" />
+  <link rel="stylesheet" href="css/app.css?v=4" />
+  <link rel="stylesheet" href="css/modal-inzerty.css?v=4" />
 </head>
 <body data-page="home">
 
@@ -29,6 +31,10 @@
         <a href="chat.html" class="icon-btn" id="chat-new" data-action="new" aria-label="Nouvelle conversation" data-fr-aria="Nouvelle conversation" data-en-aria="New chat">
           <span class="ico" data-icon="newchat"></span>
         </a>
+        <button class="icon-btn theme-btn" id="theme-btn" type="button" aria-label="Passer en mode clair">
+          <span class="ico ico-sun" data-icon="sun"></span>
+          <span class="ico ico-moon" data-icon="moon"></span>
+        </button>
       </header>
 
       <div class="chat-scroll" id="chat-scroll">
@@ -82,10 +88,10 @@
   </div>
 
 
-  <script src="js/layout.js?v=3"></script>
-  <script src="js/answers.js?v=3"></script>
-  <script src="js/icons.js?v=3"></script>
-  <script src="js/particles.js?v=3"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/layout.js?v=4"></script>
+  <script src="js/answers.js?v=4"></script>
+  <script src="js/icons.js?v=4"></script>
+  <script src="js/particles.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
 </body>
 </html>
