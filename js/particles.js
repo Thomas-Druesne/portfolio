@@ -56,7 +56,7 @@
     if (triedFallback) return;
     triedFallback = true;
     var s = document.createElement('script');
-    s.src = 'js/photo-data.js';
+    s.src = 'js/photo-data.js?v=3';
     s.onload = function () {
       if (!window.PHOTO_FALLBACK) return;
       var img = new Image();
