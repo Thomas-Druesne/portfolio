@@ -342,6 +342,8 @@
   function autoGrow() {
     prompt.style.height = 'auto';
     prompt.style.height = Math.min(prompt.scrollHeight, 180) + 'px';
+    // barre de défilement seulement si le texte dépasse la hauteur maximale
+    prompt.style.overflowY = prompt.scrollHeight > 180 ? 'auto' : 'hidden';
     sendBtn.disabled = !prompt.value.trim();
   }
   prompt.addEventListener('input', autoGrow);
