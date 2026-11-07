@@ -534,25 +534,37 @@
 
   // ==========================================================
   // 3 bis. FORMULAIRE DE CONTACT (réponse "contact")
-  // Envoi via FormSubmit, même formulaire (même identifiant) que
-  // l'ancienne page contact → les messages arrivent dans la même
-  // boîte mail. On passe par l'adresse "/ajax/" de FormSubmit, prévue
-  // pour un envoi en JavaScript : elle répond en JSON et autorise
-  // l'appel depuis le site (l'adresse classique est pensée pour un
-  // formulaire HTML et peut être bloquée par le navigateur en fetch).
+  // Envoi via Web3Forms (https://web3forms.com). La clé d'accès n'est
+  // pas un secret : elle sert seulement à désigner la boîte qui reçoit.
+  // Plan de secours : si l'envoi échoue (panne, coupure, délai dépassé),
+  // un bouton ouvre la messagerie du visiteur avec le message déjà
+  // rempli → aucun message n'est perdu.
   // ==========================================================
-  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/7ec45ce06ef8a4f0a1b44f422af43ff4';
+  var FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+  var FORM_KEY      = '38d55af8-b0fb-4783-b373-353dd296034e';
+  var CONTACT_EMAIL = 'thomas.druesnepro@gmail.com';
+  var FORM_TIMEOUT  = 12000; // ms avant de basculer sur le plan de secours
   var RATE_KEY = 'portfolio-contact-last';
   var MSG = {
     fr: { missing: 'Merci de remplir les quatre champs.', email: 'Cette adresse e-mail ne semble pas valide.',
           wait: 'Un message vient déjà d’être envoyé, merci de patienter une minute.', sending: 'Envoi en cours…',
           ok: 'Merci ! Votre message a bien été envoyé, je vous recontacte très vite.',
-          fail: 'Oups, l’envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.' },
+          fail: 'Oups, l’envoi n’a pas pu aboutir. Pas de panique : votre message est prêt, il ne reste qu’à l’envoyer depuis votre messagerie.',
+          mail: 'Ouvrir ma messagerie' },
     en: { missing: 'Please fill in all four fields.', email: 'This e-mail address doesn’t look valid.',
           wait: 'A message was just sent, please wait a minute.', sending: 'Sending…',
           ok: 'Thank you! Your message has been sent, I’ll get back to you very soon.',
-          fail: 'Oops, sending failed. Please try again or e-mail me directly.' }
+          fail: 'Oops, the message couldn’t be sent. No worries: it’s ready, you just need to send it from your e-mail app.',
+          mail: 'Open my e-mail app' }
   };
+
+  // Lien « mailto » vers Thomas, avec l'objet et le message déjà remplis
+  function mailtoLink(name, email, subject, message) {
+    var body = message + '\n\n— ' + name + ' (' + email + ')';
+    return 'mailto:' + CONTACT_EMAIL +
+           '?subject=' + encodeURIComponent('Portfolio — ' + subject) +
+           '&body=' + encodeURIComponent(body);
+  }
 
   document.addEventListener('submit', function (e) {
     var f = e.target.closest('.contact-form');
@@ -572,28 +584,47 @@
     var last = +localStorage.getItem(RATE_KEY) || 0;
     if (Date.now() - last < 60000) return say(t.wait, 'error');
 
-    var data = new FormData();
-    data.append('name', name);
-    data.append('email', email);
-    data.append('subject', subject);
-    data.append('message', message);
-    data.append('_subject', 'Portfolio — ' + subject + ' (' + name + ')');
-    data.append('_replyto', email);
-    data.append('_captcha', 'false');
-    data.append('_template', 'table');
+    // Échec : on garde le formulaire rempli et on propose la messagerie
+    function fallback() {
+      say(t.fail, 'error');
+      var a = document.createElement('a');
+      a.className = 'btn btn-ghost contact-mailto';
+      a.href = mailtoLink(name, email, subject, message);
+      a.innerHTML = '<span class="ico" data-icon="mail"></span><span>' + t.mail + '</span>';
+      window.Icons.render(a);
+      status.appendChild(a);
+    }
+
+    var payload = {
+      access_key: FORM_KEY,
+      subject: 'Portfolio — ' + subject + ' (' + name + ')',
+      from_name: 'Portfolio Thomas Druesne',
+      name: name,
+      email: email,
+      message: message,
+      'Objet': subject
+    };
 
     btn.disabled = true;
     say(t.sending);
-    fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-      .then(function (r) { return r.json(); })
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, FORM_TIMEOUT);
+    (FORM_KEY.indexOf('A_REMPLACER') === 0
+      ? Promise.reject(new Error('Clé Web3Forms manquante'))
+      : fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+          signal: ctrl ? ctrl.signal : undefined
+        }).then(function (r) { return r.json(); }))
       .then(function (res) {
-        if (String(res.success) !== 'true') throw new Error(res.message || 'FormSubmit');
+        if (!res || res.success !== true) throw new Error((res && res.message) || 'Web3Forms');
         localStorage.setItem(RATE_KEY, String(Date.now()));
         f.reset();
         say(t.ok, 'success');
       })
-      .catch(function () { say(t.fail, 'error'); })
-      .then(function () { btn.disabled = false; });
+      .catch(fallback)
+      .then(function () { clearTimeout(timer); btn.disabled = false; });
   });
 
   // Échap ferme le menu latéral sur mobile

@@ -753,21 +753,23 @@ html[lang="en"] #lang-btn .flag-en { display: none; }
 .hobby-card {
   display: grid;
   grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
-  align-items: center;
+  align-items: stretch;
   gap: 1.25rem;
   padding: 1rem;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
-/* Image entière (sans recadrage) ; même arrondi pour les trois images,
-   plus grand que celui déjà intégré dans les deux premières */
+/* L'image prend exactement la hauteur du texte : son haut est aligné sur
+   le titre, son bas sur la dernière ligne (height 0 + min-height 100 % :
+   c'est le texte qui fixe la hauteur, l'image s'y adapte en recadrant) */
 .hobby-card img {
-  width: 100%; height: auto;
-  aspect-ratio: 564 / 212;
-  object-fit: contain;
+  width: 100%; height: 0; min-height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 12px;
 }
+.hobby-card img[src*="mtg"] { object-position: left center; } /* garde le logo Magic */
 .hobby-body { padding: 0; }
 .hobby-body h3 { display: flex; align-items: center; gap: 0.5rem; font-size: calc(1.02rem - 1px); margin-bottom: 0.4rem; line-height: 1.4; }
 .hobby-body h3 .ico { color: var(--secondary); }
@@ -805,11 +807,14 @@ html[lang="en"] #lang-btn .flag-en { display: none; }
 .contact-status:empty { display: none; }
 .contact-status[data-kind="success"] { color: var(--secondary); font-weight: 600; }
 .contact-status[data-kind="error"] { color: #E5484D; }
+/* Plan de secours : bouton « Ouvrir ma messagerie » sous le message d'erreur */
+.contact-mailto { display: flex; width: fit-content; margin-top: 0.75rem; color: var(--primary); }
 
 @media (max-width: 600px) {
   .contact-row { grid-template-columns: 1fr; }
   /* Mobile : la carte hobby repasse en vertical (image au-dessus du texte) */
   .hobby-card { grid-template-columns: 1fr; gap: 0.9rem; }
+  .hobby-card img { height: auto; min-height: 0; aspect-ratio: 564 / 212; }
 }
 
 /* ============================================================
