@@ -162,10 +162,22 @@
 
   // Sujets déjà consultés : petite pastille dans la barre latérale et
   // coche sur les boutons « Voulez-vous savoir autre chose ? ».
-  // Gardés dans le navigateur, comme des liens déjà visités.
+  // Valables le temps de la visite : gardés quand on passe d'une page du
+  // site à l'autre, effacés si on rafraîchit la page ou si on revient
+  // depuis un autre site (ou un nouvel onglet).
   var SEEN_KEY = 'portfolio-seen';
+  (function resetSeen() {
+    try {
+      localStorage.removeItem(SEEN_KEY); // ancienne version (gardée pour toujours)
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      var type = nav ? nav.type : (performance.navigation && performance.navigation.type === 1 ? 'reload' : 'navigate');
+      var base = location.origin + location.pathname.replace(/[^\/]*$/, '');
+      var fromSite = !!document.referrer && document.referrer.indexOf(base) === 0;
+      if (type === 'reload' || (type === 'navigate' && !fromSite)) sessionStorage.removeItem(SEEN_KEY);
+    } catch (e) {}
+  }());
   function seenList() {
-    try { return JSON.parse(localStorage.getItem(SEEN_KEY)) || []; } catch (e) { return []; }
+    try { return JSON.parse(sessionStorage.getItem(SEEN_KEY)) || []; } catch (e) { return []; }
   }
   function paintSeen() {
     var seen = seenList();
@@ -177,7 +189,7 @@
     var seen = seenList();
     if (seen.indexOf(topic) === -1) {
       seen.push(topic);
-      try { localStorage.setItem(SEEN_KEY, JSON.stringify(seen)); } catch (e) {}
+      try { sessionStorage.setItem(SEEN_KEY, JSON.stringify(seen)); } catch (e) {}
     }
     paintSeen();
   }

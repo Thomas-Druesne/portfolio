@@ -16,6 +16,7 @@
     return document.documentElement.dataset.theme === 'light' ? 'img/PP_chatbot_light.png' : 'img/PP_chatbot.png';
   }
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function sfx(name, arg) { if (window.Sfx) window.Sfx.play(name, arg); }
 
   // ---------- Déclencheur : 5 clics sur la photo ----------
   var count = 0, last = 0;
@@ -110,6 +111,8 @@
           '<span class="dice-roll-label">' + t('Lancer les dés', 'Roll the dice') + '</span></button>' +
       '</div>';
     document.body.appendChild(overlay);
+    var mute = window.Sfx ? window.Sfx.button(fr()) : null;
+    if (mute) overlay.querySelector('.dice-card').appendChild(mute);
 
     els = {
       card:    overlay.querySelector('.dice-card'),
@@ -136,7 +139,7 @@
     overlay.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') { e.stopPropagation(); close(); }
       if (e.key === 'Tab') { // la tabulation reste dans la modale
-        var f = [els.close, els.btn].filter(function (b) { return !b.disabled; });
+        var f = [mute, els.close, els.btn].filter(function (b) { return b && !b.disabled; });
         var i = f.indexOf(document.activeElement);
         e.preventDefault();
         f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
@@ -145,11 +148,12 @@
   }
 
   function open() {
-    if (overlay) return;
+    if (overlay || document.querySelector('.dice-overlay')) return; // un jeu à la fois
     lastFocus = document.activeElement;
     build();
     state = 'idle';
     requestAnimationFrame(function () { overlay.classList.add('is-open'); });
+    sfx('ding');
     setTimeout(function () { els.btn.focus(); }, 50);
   }
 
@@ -171,6 +175,7 @@
     els.totals[who].textContent = '…';
     els.totals[who].classList.remove('is-pop');
     dice.forEach(function (d) { d.classList.remove('is-landed'); d.classList.add('is-rolling'); });
+    sfx('rattle', 950);
 
     var spin = setInterval(function () {
       dice.forEach(function (d) { d.dataset.v = roll(); });
@@ -185,6 +190,7 @@
         void d.offsetWidth;
         d.classList.add('is-landed');
       });
+      sfx('clack');
       var total = values[0] + values[1];
       els.totals[who].textContent = total;
       void els.totals[who].offsetWidth;
@@ -194,6 +200,7 @@
         tag.className = 'dice-double';
         tag.textContent = values[0] === 6 ? t('Double six !', 'Double six!') : t('Double !', 'Doubles!');
         lane.appendChild(tag);
+        sfx('ding');
         later(function () { tag.remove(); }, 1600);
       }
       done(total);
@@ -218,6 +225,7 @@
       later(function () {
         els.bubble.textContent = line('aiTurn');
         els.bubble.classList.add('is-visible');
+        sfx('pop');
         els.label.textContent = t('L\'IA réfléchit…', 'The AI is thinking…');
         later(function () {
           rollDice('ai', function (theirs) {
@@ -246,6 +254,7 @@
     els.result.textContent = line(outcome);
     els.result.className = 'dice-result is-visible is-' + outcome;
     if (outcome === 'win') confetti();
+    sfx(outcome === 'win' && mine === 12 ? 'jackpot' : outcome);
 
     els.label.textContent = t('Rejouer', 'Play again');
     els.btn.disabled = false;

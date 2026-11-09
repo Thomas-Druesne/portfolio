@@ -1223,3 +1223,142 @@ html[lang="en"] #lang-btn .flag-en { display: none; }
   border-left: 2px solid var(--secondary); border-bottom: 2px solid var(--secondary);
   transform: rotate(-45deg);
 }
+
+/* Bouton son (haut-parleur) des mini-jeux, en haut à gauche */
+.game-mute {
+  position: absolute; top: 0.8rem; left: 0.8rem; z-index: 4;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; color: var(--text-muted);
+  transition: background 0.2s, color 0.2s, transform 0.3s var(--ease);
+}
+.game-mute:hover { background: var(--surface-3); color: var(--primary); }
+.game-mute:active { transform: scale(0.9); }
+.game-mute[aria-pressed="true"] { color: var(--text-faint); }
+.game-mute svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* La photo de profil : pas de menu « enregistrer l'image » sur appui long */
+.side-profile { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+.side-profile img { -webkit-user-drag: none; }
+
+/* ============================================================
+   EASTER EGG — Blackjack (3 clics droits / appui long sur la photo)
+   Reprend la fenêtre du duel de dés (.dice-*)
+============================================================ */
+.bj-dialog { width: min(520px, 100%); }
+
+.bj-lane {
+  position: relative; text-align: left;
+  padding: 0.8rem 1rem 0.9rem;
+  border-radius: 18px; background: var(--bg); border: 1.5px solid var(--border);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+}
+.bj-lane.is-winner { border-color: var(--secondary); box-shadow: 0 0 22px var(--accent-glow); }
+.bj-lane.is-loser { opacity: 0.6; }
+.bj-lane.is-active { border-color: var(--secondary); transform: translateY(-2px); }
+.bj-dealer.is-winner .dice-ai-avatar { animation: dice-dance 0.6s 2; }
+.bj-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin-bottom: 0.65rem; }
+.bj-total {
+  min-width: 2.2rem; padding: 0.15rem 0.6rem; border-radius: 999px; text-align: center;
+  background: var(--accent-soft); color: var(--secondary);
+  font-weight: 800; font-size: calc(1rem - 1px); font-variant-numeric: tabular-nums;
+}
+.bj-total:empty { visibility: hidden; }
+
+/* La bulle de l'IA passe sous le couloir de la banque */
+.bj .dice-bubble {
+  top: calc(100% + 0.45rem); bottom: auto;
+  border-radius: 4px 14px 14px 14px; transform-origin: top left;
+}
+
+.bj-hands {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.65rem;
+  margin-top: 3rem;
+}
+
+/* Étiquette de résultat sur une main */
+.bj-tag {
+  position: absolute; top: -0.7rem; right: 0.9rem;
+  padding: 0.15rem 0.65rem; border-radius: 999px;
+  font-size: calc(0.75rem - 1px); font-weight: 800;
+  background: var(--surface-3); color: var(--primary);
+  animation: dice-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.bj-tag.is-win { background: var(--secondary); color: var(--on-accent); }
+.bj-tag.is-bj  { background: #FFD166; color: #1F1F1F; }
+.bj-tag.is-lose { background: #E5484D; color: #FFFFFF; }
+
+/* Cartes à jouer */
+.pcards { display: flex; min-height: 76px; padding-right: 0.5rem; }
+.pcard { width: 54px; height: 76px; flex-shrink: 0; perspective: 600px; }
+.pcard + .pcard { margin-left: -16px; }
+.bj-hands.is-split .pcard + .pcard { margin-left: -28px; }
+.pcard.is-dealt { animation: pcard-deal 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+.pcard-inner {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+.pcard.is-down .pcard-inner { transform: rotateY(180deg); }
+.pcard-face, .pcard-back {
+  position: absolute; inset: 0; border-radius: 8px;
+  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
+}
+.pcard-face {
+  background: linear-gradient(150deg, #FFFFFF, #EEF0F4);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #1F1F1F; font-weight: 800;
+}
+.pcard.is-red .pcard-face { color: #E0364C; }
+.pc-corner {
+  position: absolute; top: 4px; left: 5px;
+  display: flex; flex-direction: column; align-items: center;
+  font-size: 13px; line-height: 1;
+}
+.pc-corner i, .pc-suit { font-style: normal; font-family: 'Segoe UI Symbol', 'Apple Symbols', 'DejaVu Sans', sans-serif; }
+.pc-corner i { font-size: 11px; margin-top: 1px; }
+.pc-corner--br { top: auto; left: auto; bottom: 4px; right: 5px; transform: rotate(180deg); }
+.pc-suit { position: absolute; inset: 0; display: grid; place-items: center; font-size: 26px; }
+.pcard-back {
+  transform: rotateY(180deg);
+  border: 3px solid #FFFFFF;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0 9px, transparent 10px),
+    repeating-linear-gradient(45deg, #00E8E8 0 5px, #00BDBD 5px 10px);
+}
+[data-theme="light"] .pcard-back {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0 9px, transparent 10px),
+    repeating-linear-gradient(45deg, #2F86EE 0 5px, #0B63CE 5px 10px);
+}
+@keyframes pcard-deal {
+  from { transform: translate(70px, -60px) rotate(14deg); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* Boutons d'action */
+.bj-actions { display: flex; gap: 0.55rem; }
+.bj-actions .dice-roll { flex: 1; }
+.bj-btn {
+  flex: 1; padding: 0.85rem 0.6rem; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--bg); color: var(--primary);
+  font-weight: 800; font-size: calc(0.95rem - 1px); white-space: nowrap;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, opacity 0.2s;
+}
+.bj-btn.is-primary { background: var(--secondary); border-color: var(--secondary); color: var(--on-accent); box-shadow: 0 6px 20px var(--accent-glow); }
+.bj-btn:hover:not(:disabled) { border-color: var(--secondary); transform: translateY(-2px); }
+.bj-btn:active:not(:disabled) { transform: scale(0.96); }
+.bj-btn:disabled { opacity: 0.5; cursor: default; box-shadow: none; }
+.bj-btn[hidden] { display: none; }
+.bj-actions[data-phase="player"] .bj-deal,
+.bj-actions:not([data-phase="player"]) .bj-btn { display: none; }
+.bj-actions[data-phase="dealing"] .bj-deal,
+.bj-actions[data-phase="dealer"] .bj-deal { display: inline-flex; opacity: 0.6; pointer-events: none; }
+
+@media (max-width: 420px) {
+  .pcard { width: 46px; height: 66px; }
+  .pcards { min-height: 66px; }
+  .pc-suit { font-size: 22px; }
+  .bj-hands { grid-template-columns: 1fr; }
+  .bj-btn { padding: 0.8rem 0.4rem; font-size: calc(0.88rem - 1px); }
+}
