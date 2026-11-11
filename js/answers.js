@@ -82,8 +82,8 @@
         </div>
         <div class="skill-card">
           <span class="ico skill-ico" data-icon="sparkle"></span>
-          <h3 data-fr="IA &amp; automatisation" data-en="AI &amp; automation">IA &amp; automatisation</h3>
-          <p data-fr="Claude et ChatGPT au quotidien : création de skills, d'agents et automatisation des tâches" data-en="Claude and ChatGPT every day: building skills, agents and task automation">Claude et ChatGPT au quotidien : création de skills, d'agents et automatisation des tâches</p>
+          <h3 data-fr="Intelligence artificielle" data-en="Artificial intelligence">Intelligence artificielle</h3>
+          <p data-fr="Claude et ChatGPT au quotidien pour améliorer ma productivité et mes compétences" data-en="Claude and ChatGPT every day to boost my productivity and my skills">Claude et ChatGPT au quotidien pour améliorer ma productivité et mes compétences</p>
         </div>
       </div>
     </article>
@@ -95,7 +95,7 @@
         <li>
           <span class="timeline-date">2025/2026</span>
           <h3 data-fr="Webdesigner UX/Intégrateur" data-en="UX Webdesigner/Integrator">Webdesigner UX/Intégrateur</h3>
-          <p data-fr="Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z." data-en="First contract signed at (inzerty), to carry out showcase &amp; e-commerce web projects from A to Z.">Premier contrat signé chez (inzerty), afin de réaliser des projets web vitrine &amp; e-commerce de A à Z.</p>
+          <p data-fr="Premier contrat signé chez Inzerty, afin de réaliser des projets web vitrine, e-commerce, interface admin et logiciel de A à Z." data-en="First contract signed at Inzerty, to carry out showcase websites, e-commerce, admin interfaces and software from A to Z.">Premier contrat signé chez Inzerty, afin de réaliser des projets web vitrine, e-commerce, interface admin et logiciel de A à Z.</p>
         </li>
         <li>
           <span class="timeline-date">2024</span>
@@ -110,7 +110,7 @@
         <li>
           <span class="timeline-date">2022</span>
           <h3>UI/UX Designer</h3>
-          <p data-fr="Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels." data-en="Integration of the digital incubator « Eurotechnologie » on Figma in real projects.">Intégration de l'incubateur numérique « d'Eurotechnologie » sur Figma en projets réels.</p>
+          <p data-fr="Intégration dans l'incubateur numérique « Eurotechnologie » : réalisation de projets réels en maquette sur Figma." data-en="Joined the « Eurotechnologie » digital incubator: designing real projects as Figma mockups.">Intégration dans l'incubateur numérique « Eurotechnologie » : réalisation de projets réels en maquette sur Figma.</p>
         </li>
         <li>
           <span class="timeline-date">2021/2022</span>
@@ -197,7 +197,7 @@
     <!-- À PROPOS -->
     <article data-topic="apropos" data-q-fr="Qui es-tu ?" data-q-en="Who are you?">
       <p><strong data-fr="Un p'tit mot sur moi : designer curieux &amp; intégrateur rigoureux." data-en="A few words about me: curious designer &amp; rigorous integrator.">Un p'tit mot sur moi : designer curieux &amp; intégrateur rigoureux.</strong></p>
-      <p class="project-desc" data-fr-html="<strong>Webdesigner intégrateur depuis plus de 4 ans</strong>, j'exprime au quotidien ma créativité et mon savoir-faire en création web et digitale, au travers de différentes expériences <strong>en start-up, en agence et en ESN</strong>." data-en-html="<strong>A webdesigner and integrator for more than 4 years</strong>, I put my creativity and expertise in web and digital creation to work every day, through various experiences <strong>in start-ups, agencies and IT service companies</strong>.">Webdesigner intégrateur depuis plus de 4 ans, j'exprime au quotidien ma créativité et mon savoir-faire en création web et digitale, au travers de différentes expériences en start-up, en agence et en ESN.</p>
+      <p class="project-desc" data-fr-html="<strong>Webdesigner intégrateur depuis plus de 5 ans</strong>, j'exprime au quotidien ma créativité et mon savoir-faire en création web et digitale, au travers de différentes expériences <strong>en start-up, en agence et en ESN</strong>." data-en-html="<strong>A webdesigner and integrator for more than 5 years</strong>, I put my creativity and expertise in web and digital creation to work every day, through various experiences <strong>in start-ups, agencies and IT service companies</strong>.">Webdesigner intégrateur depuis plus de 5 ans, j'exprime au quotidien ma créativité et mon savoir-faire en création web et digitale, au travers de différentes expériences en start-up, en agence et en ESN.</p>
       <p class="project-desc" data-fr-html="Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un <strong>360° sur la création web</strong>, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des <strong>projets réalisés de A à Z</strong>." data-en-html="My skills being now well-established and fully fulfilled in what I do, my current objective is to achieve a <strong>360° in web creation</strong>, in order to offer website creation from graphic design through integration, along with all its visual branding, for <strong>projects carried out from A to Z</strong>.">Mes compétences étant aujourd'hui éprouvées et étant totalement épanoui dans ce que je fais, mon objectif actuel est de faire un 360° sur la création web, afin de pouvoir proposer la création d'un site web depuis sa conception graphique en passant par son intégration, ainsi que tout son branding visuel, pour des projets réalisés de A à Z.</p>
       <p class="project-desc" data-fr-html="Et tout ceci ne serait pas possible sans mes meilleurs amis : la <strong>suite Adobe</strong> et <strong>WordPress</strong>, ainsi que <strong>Figma</strong> et <strong>Claude</strong>, qui m'aident à booster ma productivité et mes performances au quotidien !" data-en-html="And all of this would not be possible without my best friends: the <strong>Adobe suite</strong> and <strong>WordPress</strong>, as well as <strong>Figma</strong> and <strong>Claude</strong>, which help me boost my productivity and performance every day!">Et tout ceci ne serait pas possible sans mes meilleurs amis : la suite Adobe et WordPress, ainsi que Figma et Claude, qui m'aident à booster ma productivité et mes performances au quotidien !</p>
       <p data-fr="Et quand je ne suis pas derrière mes logiciels :" data-en="And when I'm not behind my software:">Et quand je ne suis pas derrière mes logiciels :</p>

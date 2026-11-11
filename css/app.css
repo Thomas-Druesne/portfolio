@@ -1204,8 +1204,9 @@ html[lang="en"] #lang-btn .flag-en { display: none; }
 }
 
 /* Sujets déjà consultés : pastille à droite dans la barre latérale (toutes alignées) */
+/* Placée dans la marge droite du lien : elle ne prend pas de place au texte */
 .side-item.is-seen::after {
-  content: ''; flex-shrink: 0; margin-left: auto;
+  content: ''; position: absolute; right: 0.4rem; top: 50%; margin-top: -3.5px;
   width: 7px; height: 7px; border-radius: 50%;
   background: var(--secondary);
 }

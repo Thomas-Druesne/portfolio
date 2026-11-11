@@ -1,11 +1,11 @@
 // ============================================================
-// DICE.JS — Easter egg : 5 clics d'affilée sur la photo de profil
+// DICE.JS — Easter egg : 3 clics d'affilée sur la photo de profil
 // (en bas de la barre latérale) ouvrent un duel de dés contre l'IA.
 // Chacun lance 2 dés, le plus gros total gagne.
 // ============================================================
 
 (function () {
-  var CLICKS_NEEDED = 5;
+  var CLICKS_NEEDED = 3;
   var CLICK_GAP = 1200; // ms max entre deux clics
 
   function fr() { return (localStorage.getItem('portfolio-lang') || 'fr') === 'fr'; }
